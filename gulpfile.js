@@ -6,6 +6,7 @@ const sass = require('gulp-sass')
 const cleanCss = require('gulp-clean-css')
 const concatCss = require('gulp-concat-css')
 const concatJs = require('gulp-concat')
+const autoPrefixer = require('gulp-autoprefixer')
 const browserSync = require('browser-sync').create()
 
 /* 
@@ -56,6 +57,9 @@ gulp.task('less', gulp.series(function(done) {
 gulp.task('sass', gulp.series(function(done) {
     gulp.src('src/scss/**/*.scss')
         .pipe(sass())
+        .pipe(autoPrefixer({
+            browsers: ['last 2 versions', '> 5%', 'Firefox ESR']
+        }))
         .pipe(cleanCss())
         .pipe(gulp.dest('build/css'))
         .pipe(browserSync.stream())
