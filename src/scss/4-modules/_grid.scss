@@ -1,0 +1,49 @@
+/*****************************************************************************************************************
+MENU COMMENT FUNCTION
+------------------------------------------------------------------------------------------------------------------
+1. Load container classes
+2. Load comtainer-fluid classes
+3. Load row classes
+4. Load columns classes
+
+DICTIONARY WORD:
+.C    =====> .column
+.ct   =====> .container
+.ct_f =====> .container_fluid
+.r    =====> .row
+.no_g =====> .no_gutters
+*****************************************************************************************************************/
+
+@if $enable-grid-classes {
+    .ct {
+      @include make-container();
+      @include make-container-max-widths();
+    }
+  }
+  
+  @if $enable-grid-classes {
+    .ct_f {
+      @include make-container();
+    }
+  }
+  
+  @if $enable-grid-classes {
+    .r {
+      @include make-row();
+    }
+    .no_g {
+      margin-right: 0;
+      margin-left: 0;
+  
+      > .c,
+      > [class*="c_"] {
+        padding-right: 0;
+        padding-left: 0;
+      }
+    }
+  }
+  
+  @if $enable-grid-classes {
+    @include make-grid-columns();
+  }
+  
