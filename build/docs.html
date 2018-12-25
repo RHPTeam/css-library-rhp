@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Build front-end page faster with css architecture</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <!-- TEMPLATE: DOC CSS LIBRARY FOR RHP TEAM -->
+    <!-- 
+        Note: Info author build web 
+        @Author: RHP Team
+    -->
+
+
+    <!-- This is a page using header component -->
+
+    <!-- Start: Content -->
+    <section id="content" class="content">
+        <!-- Start: Sidebar (Have search component) -->
+        <aside class="menu menu--hoz">
+            <!-- Start: Search component -->
+            <form action="docs.html" method="POST">
+                <!-- When using framework, u can remove form element to using. Endjoy!!! -->
+                <input type="text" placeholder="Search..." autocomplete="off" name="textSearch" value="">
+            </form>
+            <!-- End: Search component -->
+
+            <!-- Start: List menu sidebar component -->
+            <nav class="nav">
+                <ul class="nav--list">
+                    <li class="nav--list-item">
+                        <a href="#" class="nav--link">Getting Started</a>
+                        <!-- Note: Sub item, u can remove it (when u use item not collapse) -->
+                        <ul class="list--sub">
+                            <li class="list--sub-item">
+                                <a href="#" class="nav--link sub">Introduction</a>
+                            </li>
+                            <li class="list--sub-item">
+                                <a href="#" class="nav--link sub">Download</a>
+                            </li>
+                            <li class="list--sub-item">
+                                <a href="#" class="nav--link sub">Contents</a>
+                            </li>
+                        </ul>
+                        <!-- End: Note sub item -->
+                    </li>
+                    <li class="nav--list-item">
+                        <a href="#" class="nav--link">Layout</a>
+                        <!-- Note: Sub item, u can remove it (when u use item not collapse) -->
+                        <ul class="list--sub">
+                            <li class="list--sub-item">
+                                <a href="#" class="nav--link sub">Overview</a>
+                            </li>
+                            <li class="list--sub-item">
+                                <a href="#" class="nav--link sub">Grid</a>
+                            </li>
+                            <li class="list--sub-item">
+                                <a href="#" class="nav--link sub">Other for layout</a>
+                            </li>
+                        </ul>
+                        <!-- End: Note sub item -->
+                    </li>
+                    <li class="nav--list-item">
+                        <a href="#" class="nav--link">Components</a>
+                        <!-- Note: Sub item, u can remove it (when u use item not collapse) -->
+                        <ul class="list--sub">
+                            <li class="list--sub-item">
+                                <a href="#" class="nav--link sub">Alerts</a>
+                            </li>
+                            <li class="list--sub-item">
+                                <a href="#" class="nav--link sub">Buttons</a>
+                            </li>
+                            <li class="list--sub-item">
+                                <a href="#" class="nav--link sub">Labels</a>
+                            </li>
+                        </ul>
+                        <!-- End: Note sub item -->
+                    </li>
+                </ul>
+            </nav>
+            <!-- End: List menu sidebar component -->
+        </aside>
+        <!-- End: Sidebar (have search component) -->
+        
+        <!-- Start: Main (Using rules - history) -->
+        <main class="main">
+            <div class="main--wrapper">
+                <article class="section">
+                    <h1 class="section--title">Something</h1>
+                    <p class="section--desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint molestias ducimus vitae, maiores temporibus nulla eos, laudantium beatae quasi enim officiis quia rerum modi tenetur similique consequatur. Dignissimos, nesciunt magni.</p>
+                    <div class="section--content">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error totam cumque blanditiis neque atque inventore quod ipsum, pariatur distinctio delectus sed eaque impedit iure, eos natus, voluptatibus temporibus perferendis consectetur!</p>
+                        <h2 class="section--title-sub">Examples</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae obcaecati, voluptatem ullam consequatur odio ex iste unde mollitia sint quod modi. Mollitia distinctio exercitationem veritatis cupiditate tenetur impedit quis voluptates.</p>
+                        <div class="box box--example">
+
+                        </div>
+                        <div class="box box--code">
+                            <code class="library"></code>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </main>
+        <!-- End: Main (Using rules - history) -->
+    </section>
+    <!-- End: Content -->
+
+    <!-- This is a page not using footer component -->
+</body>
+</html>
