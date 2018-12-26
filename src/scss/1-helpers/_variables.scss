@@ -2,40 +2,125 @@
 //
 // Variables should follow the `$component-state-property-size` formula for
 // consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
-// Color system
+
+// Color white
+// From: 
+/* To:
+	 $yiq-text-light, $body-bg ,$component-active-color, $btn-box-shadow,$input-bg, $card-bg,$btn-box-shadow, $pagination-bg, $pagination-disabled-bg, $close-text-shadow
+*/
 $white: #fff !default;
+// Color system
+// From: 
+// To: $light,
 $gray-100: #f8f9fa !default;
+//To: $grays, $input-disabled-bg, $input-group-addon-bg, $custom-select-disabled-bg, $breadcrumb-bg, $pagination-hover-bg
 $gray-200: #e9ecef !default;
+//To: $grays, $custom-range-track-bg, $pagination-border-color, $pagination-hover-border-color, $pagination-disabled-border-color
 $gray-300: #dee2e6 !default;
+//To: $grays, $input-border-color
 $gray-400: #ced4da !default;
+//To: $grays, $custom-control-indicator-border-color, $custom-range-thumb-disabled-bg
 $gray-500: #adb5bd !default;
+/*To: $grays, $secondary, $text-muted, $btn-link-disabled-color, $input-placeholder-color, $custom-control-label-disabled-color,$custom-select-disabled-color
+	  $text-muted, $blockquote-small-color, $breadcrumb-divider-color, $breadcrumb-active-color, $btn-link-disabled-color, $pagination-disabled-color
+*/
 $gray-600: #6c757d !default;
+//To: $grays, $input-color
 $gray-700: #495057 !default;
+//To: $grays, $dark, $custom-select-indicator-color
 $gray-800: #343a40 !default;
+//To: $grays, $yiq-text-dark, $body-color
 $gray-900: #212529 !default;
+/*To: $btn-box-shadow, $btn-active-box-shadow, $input-box-shadow, $custom-select-box-shadow, $custom-range-track-box-shadow, $card-border-color
+      $card-cap-bg, $hr-border-color, $kbd-box-shadow, $btn-box-shadow, $btn-active-box-shadow, $close-color   
+*/
 $black: #000 !default;
+
+//Grays is a list have strings value 
+//From:
+//To:
 $grays: () !default;
-// stylelint-disable-next-line scss/dollar-variable-default
+// stylelint-disable-next-line scss/dollar-variable-default,
 $grays: map-merge( ( "100": $gray-100, "200": $gray-200, "300": $gray-300, "400": $gray-400, "500": $gray-500, "600": $gray-600, "700": $gray-700, "800": $gray-800, "900": $gray-900), $grays);
+
+//Color blue
+//From:
+//To:$primary
 $blue: #007bff !default;
+//Color dark blue
+//From:
+//To:
 $indigo: #6610f2 !default;
+//Color purple
+//From:
+//To:
 $purple: #6f42c1 !default;
+//Color pink
+//From:
+//To: 
 $pink: #e83e8c !default;
+//Color red
+//From:
+//To:$danger
 $red: #dc3545 !default;
+//Color orange
+//From:
+//To:
 $orange: #fd7e14 !default;
+//Color yellow
+//From:
+//To:$warning
 $yellow: #ffc107 !default;
+//Color green
+//From:
+//To:$success
 $green: #28a745 !default;
+//Color light green
+//From:
+//To:
 $teal: #20c997 !default;
+//Color cyan
+//From:
+//To:
 $cyan: #17a2b8 !default;
 // stylelint-disable-next-line scss/dollar-variable-default
+//Return color blue
+//From:$blue
+//To: $theme-colors;
 $primary: $blue !default;
+//Return color gray with 600 
+//From:$gray-600
+//To: $theme-colors;
 $secondary: $gray-600 !default;
+//Return color green
+//From:$green
+//To: $theme-colors;
 $success: $green !default;
+//Return color cyan
+//From:$cyan
+//To: $theme-colors;
 $info: $cyan !default;
+//Return color yellow
+//From:$yellow
+//To: $theme-colors;
 $warning: $yellow !default;
+//Return color red
+//From:$red
+//To: $theme-colors;
 $danger: $red !default;
+//Return color light grey
+//From:$gray-100
+//To: $theme-colors;
 $light: $gray-100 !default;
+//Return dark grey
+//From:$gray-800
+//To: $theme-colors;
 $dark: $gray-800 !default;
+//A object to mapping value string and return color.
+//From:
+/*To: $link-color, $component-active-bg, $component-active-bg, $custom-control-indicator-checked-disabled-bg, $form-feedback-valid-color
+      $form-feedback-invalid-color, 
+*/
 $theme-colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
 $theme-colors: map-merge( ( "primary": $primary, "secondary": $secondary, "success": $success, "info": $info, "warning": $warning, "danger": $danger, "light": $light, "dark": $dark), $theme-colors);

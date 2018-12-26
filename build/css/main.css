@@ -1,3 +1,6 @@
+/* To:
+	 $yiq-text-light, $body-bg ,$component-active-color, $btn-box-shadow,$input-bg, $card-bg,$btn-box-shadow, $pagination-bg, $pagination-disabled-bg, $close-text-shadow
+*/
 .close {
   float: right;
   font-size: 1.5rem;
@@ -342,7 +345,6 @@ h6,
   background-color: #d6d8d9;
   border-color: #c6c8ca; }
 
-<<<<<<< HEAD
 .breadcrumb {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -451,7 +453,7 @@ h6,
 .pagination-sm .page-item:last-child .page-link {
   border-top-right-radius: 0.2rem;
   border-bottom-right-radius: 0.2rem; }
-=======
+
 .label {
   display: inline-block;
   padding: 0.25em 0.4em;
@@ -2799,7 +2801,6 @@ button.bg-dark:focus {
   .align-self-xl-stretch {
     -ms-flex-item-align: stretch !important;
         align-self: stretch !important; } }
->>>>>>> dev-chinhht
 
 body {
   padding: 30px !important; }
