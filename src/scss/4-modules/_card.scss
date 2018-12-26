@@ -13,31 +13,31 @@
     @include border-radius($card-border-radius);
 }
 
-.card-body {
+.card_body {
     // Enable `flex-grow: 1` for decks and groups so that card blocks take up
     // as much space as possible, ensuring footers are aligned to the bottom.
     flex: 1 1 auto;
     padding: $card-spacer-x;
 }
 
-.card-title {
+.card_title {
     margin-bottom: $card-spacer-y;
 }
 
-.card-subtitle {
+.card_subtitle {
     margin-top: -$card-spacer-y / 2;
     margin-bottom: 0;
 }
 
-.card-text:last-child {
+.card_text:last-child {
     margin-bottom: 0;
 }
 
-.card-link {
+.card_link {
     @include hover {
         text-decoration: none;
     }
-    +.card-link {
+    +.card_link {
         margin-left: $card-spacer-x;
     }
 }
@@ -45,7 +45,7 @@
 //
 // Optional textual caps
 //
-.card-header {
+.card_header {
     padding: $card-spacer-y $card-spacer-x;
     margin-bottom: 0; // Removes the default margin-bottom of <hN>
     color: $card-cap-color;
@@ -56,7 +56,7 @@
     }
 }
 
-.card-footer {
+.card_footer {
     padding: $card-spacer-y $card-spacer-x;
     background-color: $card-cap-bg;
     border-top: $card-border-width solid $card-border-color;
@@ -66,7 +66,7 @@
 }
 
 // Card image
-.card-img-overlay {
+.card_img_overlay {
     position: absolute;
     top: 0;
     right: 0;
@@ -75,18 +75,18 @@
     padding: $card-img-overlay-padding;
 }
 
-.card-img {
+.card_img {
     width: 100%; // Required because we use flexbox and this inherently applies align-self: stretch
     @include border-radius($card-inner-border-radius);
 }
 
 // Card image caps
-.card-img-top {
+.card_img_top {
     width: 100%; // Required because we use flexbox and this inherently applies align-self: stretch
     @include border-top-radius($card-inner-border-radius);
 }
 
-.card-img-bottom {
+.card_img_bottom {
     width: 100%; // Required because we use flexbox and this inherently applies align-self: stretch
     @include border-bottom-radius($card-inner-border-radius);
 }
@@ -94,7 +94,7 @@
 //
 // Card groups
 //
-.card-group {
+.card_group {
     display: flex;
     flex-direction: column;
     // The child selector allows nested `.card` within `.card-group`
@@ -118,43 +118,43 @@
             @if $enable-rounded {
                 &:first-child {
                     @include border-right-radius(0);
-                    .card-img-top,
-                    .card-header {
+                    .card_img_top,
+                    .card_header {
                         border-top-right-radius: 0;
                     }
-                    .card-img-bottom,
-                    .card-footer {
+                    .card_img_bottom,
+                    .card_footer {
                         border-bottom-right-radius: 0;
                     }
                 }
                 &:last-child {
                     @include border-left-radius(0);
-                    .card-img-top,
-                    .card-header {
+                    .card_img_top,
+                    .card_header {
                         border-top-left-radius: 0;
                     }
-                    .card-img-bottom,
-                    .card-footer {
+                    .card_img_bottom,
+                    .card_footer {
                         border-bottom-left-radius: 0;
                     }
                 }
                 &:only-child {
                     @include border-radius($card-border-radius);
-                    .card-img-top,
-                    .card-header {
+                    .card_img_top,
+                    .card_header {
                         @include border-top-radius($card-border-radius);
                     }
-                    .card-img-bottom,
-                    .card-footer {
+                    .card_img_bottom,
+                    .card_footer {
                         @include border-bottom-radius($card-border-radius);
                     }
                 }
                 &:not(:first-child):not(:last-child):not(:only-child) {
                     @include border-radius(0);
-                    .card-img-top,
-                    .card-img-bottom,
-                    .card-header,
-                    .card-footer {
+                    .card_img_top,
+                    .card_img_bottom,
+                    .card_header,
+                    .card_footer {
                         @include border-radius(0);
                     }
                 }
@@ -164,7 +164,7 @@
 }
 
 // Card deck
-.card-deck {
+.card_deck {
     display: flex;
     flex-direction: column;
     .card {
@@ -189,7 +189,7 @@
 //
 // Columns
 //
-.card-columns {
+.card_columns {
     .card {
         margin-bottom: $card-columns-margin;
     }
