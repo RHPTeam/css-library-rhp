@@ -2779,7 +2779,8 @@ textarea.form_control {
 .rbox_tooltip_top, .rbox_tooltip_auto[x-placement^="top"] {
   padding: 0.4rem 0; }
   .rbox_tooltip_top .arrow, .rbox_tooltip_auto[x-placement^="top"] .arrow {
-    bottom: 0; }
+    bottom: 0;
+    left: 45%; }
     .rbox_tooltip_top .arrow::before, .rbox_tooltip_auto[x-placement^="top"] .arrow::before {
       top: 0;
       border-width: 0.4rem 0.4rem 0;
@@ -2788,6 +2789,7 @@ textarea.form_control {
 .rbox_tooltip_right, .rbox_tooltip_auto[x-placement^="right"] {
   padding: 0 0.4rem; }
   .rbox_tooltip_right .arrow, .rbox_tooltip_auto[x-placement^="right"] .arrow {
+    top: 25%;
     left: 0;
     width: 0.4rem;
     height: 0.8rem; }
@@ -2799,7 +2801,8 @@ textarea.form_control {
 .rbox_tooltip_bottom, .rbox_tooltip_auto[x-placement^="bottom"] {
   padding: 0.4rem 0; }
   .rbox_tooltip_bottom .arrow, .rbox_tooltip_auto[x-placement^="bottom"] .arrow {
-    top: 0; }
+    top: 0;
+    left: 45%; }
     .rbox_tooltip_bottom .arrow::before, .rbox_tooltip_auto[x-placement^="bottom"] .arrow::before {
       bottom: 0;
       border-width: 0 0.4rem 0.4rem;
@@ -2808,6 +2811,7 @@ textarea.form_control {
 .rbox_tooltip_left, .rbox_tooltip_auto[x-placement^="left"] {
   padding: 0 0.4rem; }
   .rbox_tooltip_left .arrow, .rbox_tooltip_auto[x-placement^="left"] .arrow {
+    top: 25%;
     right: 0;
     width: 0.4rem;
     height: 0.8rem; }
