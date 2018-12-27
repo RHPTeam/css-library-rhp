@@ -3,8 +3,8 @@
     <h3>Bootstrap</h3>
     <p>Sleek, intuitive, and powerful front-end framework for faster and easier web development.</p>
     <a>Explore Bootstrap docs » </a>
-    <table align="center">
-        <tr> 
+    <table border="0" >
+        <tr > 
            <td> <a >Report bug</a></td>
            <td> <a >Request feature </a></td>
             <td><a >Themes</a></td>
