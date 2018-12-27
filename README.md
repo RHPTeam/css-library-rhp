@@ -1,14 +1,16 @@
-<div style="text-align:center">
-    <img src=./images/luon.jpg style="width:100px; height:100px;">
+<div align="center">
+    <img src=./images/luon.jpg width=100px height=100px>
     <h3>Bootstrap</h3>
     <p>Sleek, intuitive, and powerful front-end framework for faster and easier web development.</p>
     <a>Explore Bootstrap docs » </a>
-    <div class="menu">
-        <a style="margin:0 5px;">Report bug</a>
-        <a style="margin:0 5px;">Request feature </a>
-        <a style="margin:0 5px;">Themes</a>
-        <a style="margin:0 5px;">Blog</a>
-    </div>
+    <table>
+        <tr> 
+           <td> <a >Report bug</a></td>
+           <td> <a >Request feature </a></td>
+            <td><a >Themes</a></td>
+            <td><a >Blog</a></td>
+        </tr>
+    </table>
 </div>
 
 # Table of contents
@@ -126,3 +128,4 @@ Support this project by becoming a sponsor. Your logo will show up here with a l
 
 # Copyright and license
 Code and documentation copyright 2011-2018 the [Bootstrap Authors](https://github.com/twbs/bootstrap/graphs/contributors) and [Twitter, Inc](https://twitter.com/). Code released under the [MIT License](https://github.com/twbs/bootstrap/blob/master/LICENSE). Docs released under [Creative Commons](https://github.com/twbs/bootstrap/blob/master/docs/LICENSE).
+
