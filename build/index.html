@@ -11,79 +11,127 @@
 
 <body>
     <h1 style="margin-top: 0">Alert component</h1>
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <div class="alert alert_success alert_dismissible fade show" role="alert">
         Alert component
 
     </div>
-    <div class="alert alert-primary alert-dismissible fade show" role="alert">
+    <div class="alert alert_primary alert_dismissible fade show" role="alert">
         Alert component
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
+    <h1>Label</h1>
+    <h5>Example heading
+        <span class="label label_warning">New</span>
+    </h5>
+    <button type="button" class="btn btn_primary">
+  Notifications
+  <span class="label label_light">4</span>
+</button>
+    <span class="label label_secondary">Secondary</span>
+    <span class="label label_success">Success</span>
+    <span class="label label_pill label_info">Info</span>
+    <span class="label label_pill label_dark">Dark</span>
+    <a href="#" class="label label_danger">Danger</a>
+    <a href="#" class="label label_light">Light</a>
 
     <h1>Button component</h1>
-    <button type="button" class="btn btn-primary">Primary</button>
-    <button type="button" class="btn btn-link">Link</button>
-    <a class="btn btn-primary" href="#" role="button">Link</a>
-    <button type="button" class="btn btn-outline-warning">Warning</button>
-    <button type="button" class="btn btn-outline-danger">Danger</button>
+    <button type="button" class="btn btn_primary">Primary</button>
+    <button type="button" class="btn btn_link">Link</button>
+    <a class="btn btn_primary" href="#" role="button">Link</a>
+    <button type="button" class="btn btn_outline_warning">Warning</button>
+    <button type="button" class="btn btn_outline_danger">Danger</button>
 
     <h1>Card component</h1>
     <div class="card" style="width: 18rem;">
-        <div class="card-header">
+        <div class="card_header">
             Featured
         </div>
-        <img src="https://via.placeholder.com/280x180" class="card-img-top" alt="...">
+        <img src="https://via.placeholder.com/280x180" class="card_img_top" alt="...">
 
-        <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div class="card_body">
+            <h5 class="card_title">Special title treatment</h5>
+            <p class="card_text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn_primary">Go somewhere</a>
         </div>
-        <div class="card-footer text-muted">
+        <div class="card_footer text_muted">
             2 days ago
         </div>
     </div>
-    <h1>Colors</h1>
-    <p><a href="#" class="text-primary">Primary link</a></p>
-    <p><a href="#" class="text-secondary">Secondary link</a></p>
-    <div class="p-3 mb-2 bg-success text-white">.bg-success</div>
-    <div class="p-3 mb-2 bg-danger text-white">.bg-danger</div>
+    <div class="card_group">
+        <div class="card">
+            <img src="https://via.placeholder.com/280x180" class="card_img_top" alt="...">
+            <div class="card_body">
+                <h5 class="card_title">Card title</h5>
+                <p class="card_text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card_text"><small class="text_muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/280x180" class="card_img_top" alt="...">
+            <div class="card_body">
+                <h5 class="card_title">Card title</h5>
+                <p class="card_text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card_text"><small class="text_muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/280x180" class="card_img_top" alt="...">
+            <div class="card_body">
+                <h5 class="card_title">Card title</h5>
+                <p class="card_text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card_text"><small class="text_muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+    </div>
+    <div class="card_deck">
+        <div class="card">
+            <img src="https://via.placeholder.com/280x180" class="card_img_top" alt="...">
+            <div class="card_body">
+                <h5 class="card_title">Card title</h5>
+                <p class="card_text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card_text"><small class="text_muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/280x180" class="card_img_top" alt="...">
+            <div class="card_body">
+                <h5 class="card_title">Card title</h5>
+                <p class="card_text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card_text"><small class="text_muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/280x180" class="card_img_top" alt="...">
+            <div class="card_body">
+                <h5 class="card_title">Card title</h5>
+                <p class="card_text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card_text"><small class="text_muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+    </div>
 
-    <h1>Label</h1>
-    <h5>Example heading
-        <span class="label label-warning">New</span>
-    </h5>
-    <button type="button" class="btn btn-primary">
-        Notifications
-        <span class="label label-light">4</span>
-    </button>
-    <span class="label label-secondary">Secondary</span>
-    <span class="label label-success">Success</span>
-    <span class="label label-pill label-info">Info</span>
-    <span class="label label-pill label-dark">Dark</span>
-    <a href="#" class="label label-danger">Danger</a>
-    <a href="#" class="label label-light">Light</a>
     <h1>Form</h1>
-    <div class="form-group">
+    <div class="form_group">
         <label for="exampleFormControlInput1">Email address</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        <input type="email" class="form_control" id="exampleFormControlInput1" placeholder="name@example.com">
     </div>
-    <div class="form-group">
+    <div class="form_group">
         <label for="exampleFormControlSelect1">Example select</label>
-        <select class="form-control" id="exampleFormControlSelect1">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-        </select>
+        <select class="form_control" id="exampleFormControlSelect1">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+  </select>
     </div>
-    <div class="form-group">
+    <div class="form_group">
         <label for="formControlRange">Example Range input</label>
-        <input type="range" class="form-control-range" id="formControlRange">
+        <input type="range" class="form_control_range" id="formControlRange">
     </div>
+<<<<<<< HEAD
     <h1>Display</h1>
     <div class="d-inline p-2 bg-primary text-white">d-inline</div>
     <div class="d-inline p-2 bg-dark text-white">d-inline</div>
@@ -104,6 +152,102 @@
     <script>
         tooltip();
     </script>
+=======
+
+    <h1>Colors</h1>
+    <p><a href="#" class="text_primary">Primary link</a></p>
+    <p><a href="#" class="text_secondary">Secondary link</a></p>
+    <div class="bg_success text_white">.bg-success</div>
+    <div class="bg_danger text_white">.bg-danger</div>
+
+    <h1>Display</h1>
+    <div class="d_inline bg_primary text_white">d-inline</div>
+    <div class="d_inline bg_dark text_white">d-inline</div>
+
+    <h1>Flex</h1>
+    <div class="d_flex" style="border: 1px solid rgba(86,61,124,.15);background-color: rgba(86,61,124,.15);">I'm a flexbox container!</div>
+    <div class="d_inline_flex" style="border: 1px solid rgba(86,61,124,.15);background-color: rgba(86,61,124,.15);">I'm an inline flexbox container!</div>
+
+    <!-- Float -->
+    <h1>Float</h1>
+    <div class="float_left">Float left on all viewport sizes</div>
+    <br>
+    <div class="float_right">Float right on all viewport sizes</div>
+    <br>
+    <div class="float_none">Don't float on all viewport sizes</div>
+
+    <!-- Position -->
+    <h1>Position</h1>
+    <div class="position_static">static...</div>
+    <div class="position_relative">relative...</div>
+    <div class="position_absolute">absolute...</div>
+    <div class="position_fixed">fixed...</div>
+    <div class="position_sticky">sticky...</div>
+
+
+    <h1>Text</h1>
+    <b>Text alignment</b>
+    <p class="text_justify">Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi
+        concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.</p>
+    <p class="text_left">Left aligned text on all viewport sizes.</p>
+    <p class="text_center">Center aligned text on all viewport sizes.</p>
+    <p class="text_right">Right aligned text on all viewport sizes.</p>
+    <hr><b>Text wrapping and overflow</b><br>
+    <div class="label label_primary text_wrap" style="width: 6rem;">
+        This text should wrap.
+    </div>
+    <div class="text_nowrap" style="width: 8rem; border: 1px solid rgba(86,61,124,.15);background-color: rgba(86,61,124,.15);">
+        This text should overflow the parent.
+    </div>
+    <!-- Block level -->
+    <div class="r">
+        <div class="c_2 text_truncate">
+            Praeterea iter est quasdam res quas ex communi.
+        </div>
+    </div>
+
+    <!-- Inline level -->
+    <span class="d_inline_block text_truncate" style="max-width: 150px;">
+        Praeterea iter est quasdam res quas ex communi.
+    </span><br>
+    <hr>
+    <b>Text transform</b>
+    <p class="text_lowercase">Lowercased text.</p>
+    <p class="text_uppercase">Uppercased text.</p>
+    <p class="text_capitalize">CapiTaliZed text.</p>
+    <hr><b>Font weight and italics</b>
+    <p class="font_weight_bold">Bold text.</p>
+    <p class="font_weight_bolder">Bolder weight text (relative to the parent element).</p>
+    <p class="font_weight_normal">Normal weight text.</p>
+    <p class="font_weight_light">Light weight text.</p>
+    <p class="font_weight_lighter">Lighter weight text (relative to the parent element).</p>
+    <p class="font_italic">Italic text.</p>
+    <hr><b>Monospace</b>
+    <p class="text_monospace">This is in monospace</p>
+    <hr><b>Reset color</b>
+    <p class="text_muted">
+        Muted text with a
+        <a href="#" class="text_reset">reset link</a>.
+    </p>
+    <hr><b>Text decoration</b><br>
+    <a href="#" class="text_decoration_none">Non-underlined link</a>
+
+
+    <!-- Show -->
+    <h1>Show</h1>
+    <div class="show">Show</div>
+    <div class="hide">Hide</div>
+
+    <!-- Tooltips -->
+    <h1>Tooltips Component</h1>
+    <button type="button" class="btn btn-_econdary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+        Tooltip on top
+    </button>
+
+
+>>>>>>> dev-chinhht
 </body>
+<script>
+</script>
 
 </html>

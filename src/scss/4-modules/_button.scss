@@ -46,14 +46,14 @@
 //
 @each $color,
 $value in $theme-colors {
-    .btn-#{$color} {
+    .btn_#{$color} {
         @include button-variant($value, $value);
     }
 }
 
 @each $color,
 $value in $theme-colors {
-    .btn-outline-#{$color} {
+    .btn_outline_#{$color} {
         @include button-outline-variant($value);
     }
 }
@@ -62,7 +62,7 @@ $value in $theme-colors {
 // Link buttons
 //
 // Make a button look and behave like a link
-.btn-link {
+.btn_link {
     font-weight: $font-weight-normal;
     color: $link-color;
     @include hover {
@@ -86,7 +86,7 @@ $value in $theme-colors {
 input[type="submit"],
 input[type="reset"],
 input[type="button"] {
-    &.btn-block {
+    &.btn_block {
         width: 100%;
     }
 }

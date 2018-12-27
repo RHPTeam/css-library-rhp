@@ -1,0 +1,92 @@
+// stylelint-disable declaration-no-important
+//
+// Text
+//
+.text_monospace {
+    font-family: $font-family-monospace;
+}
+
+// Alignment
+.text_justify {
+    text-align: justify !important;
+}
+
+.text_wrap {
+    white-space: normal !important;
+}
+
+.text_nowrap {
+    white-space: nowrap !important;
+}
+
+.text_truncate {
+    @include text-truncate;
+}
+
+// Responsive alignment
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+        $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+        .text#{$infix}_left {
+            text-align: left !important;
+        }
+        .text#{$infix}_right {
+            text-align: right !important;
+        }
+        .text#{$infix}_center {
+            text-align: center !important;
+        }
+    }
+}
+
+// Transformation
+.text_lowercase {
+    text-transform: lowercase !important;
+}
+
+.text_uppercase {
+    text-transform: uppercase !important;
+}
+
+.text_capitalize {
+    text-transform: capitalize !important;
+}
+
+// Weight and italics
+.font_weight_light {
+    font-weight: $font-weight-light !important;
+}
+
+.font_weight_lighter {
+    font-weight: $font-weight-lighter !important;
+}
+
+.font_weight_normal {
+    font-weight: $font-weight-normal !important;
+}
+
+.font_weight_bold {
+    font-weight: $font-weight-bold !important;
+}
+
+.font_weight_bolder {
+    font-weight: $font-weight-bolder !important;
+}
+
+.font_italic {
+    font-style: italic !important;
+}
+
+// Misc
+.text_hide {
+    @include text-hide($ignore-warning: true);
+}
+
+.text_decoration_none {
+    text-decoration: none !important;
+}
+
+// Reset
+.text_reset {
+    color: inherit !important;
+}

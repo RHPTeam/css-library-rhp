@@ -2,7 +2,7 @@
 //
 // Textual form controls
 //
-.form-control {
+.form_control {
     display: block;
     width: 100%;
     height: $input-height;
@@ -51,7 +51,7 @@
     }
 }
 
-select.form-control {
+select.form_control {
     &:focus::-ms-value {
         // Suppress the nested default white text on blue background highlight given to
         // the selected option text when the (still closed) <select> receives focus
@@ -64,8 +64,8 @@ select.form-control {
 }
 
 // Make file inputs better match text inputs by forcing them to new lines.
-.form-control-file,
-.form-control-range {
+.form_control_file,
+.form_control_range {
     display: block;
     width: 100%;
 }
@@ -75,7 +75,7 @@ select.form-control {
 //
 // For use with horizontal and inline forms, when you need the label (or legend)
 // text to align with the form controls.
-.col-form-label {
+.col_form_label {
     padding-top: calc(#{$input-padding-y} + #{$input-border-width});
     padding-bottom: calc(#{$input-padding-y} + #{$input-border-width});
     margin-bottom: 0; // Override the `<label>/<legend>` default
@@ -84,7 +84,7 @@ select.form-control {
 }
 
 // stylelint-disable-next-line no-duplicate-selectors
-select.form-control {
+select.form_control {
     &[size],
     &[multiple] {
         height: auto;
@@ -92,7 +92,7 @@ select.form-control {
 }
 
 // stylelint-disable-next-line no-duplicate-selectors
-textarea.form-control {
+textarea.form_control {
     height: auto;
 }
 
@@ -100,7 +100,7 @@ textarea.form-control {
 //
 // Apply class to a readonly input to make it appear like regular plain
 // text (without any border, background color, focus indicator)
-.form-control-plaintext {
+.form_control_plaintext {
     display: block;
     width: 100%;
     padding-top: $input-padding-y;
@@ -117,11 +117,11 @@ textarea.form-control {
 //
 // Designed to help with the organization and spacing of vertical forms. For
 // horizontal forms, use the predefined grid classes.
-.form-group {
+.form_group {
     margin-bottom: $form-group-margin-bottom;
 }
 
-.form-text {
+.form_text {
     display: block;
     margin-top: $form-text-margin-top;
 }
@@ -129,13 +129,13 @@ textarea.form-control {
 // Form grid
 //
 // Special replacement for our grid system's `.row` for tighter form layouts.
-.form-row {
+.form_row {
     display: flex;
     flex-wrap: wrap;
     margin-right: -$form-grid-gutter-width / 2;
     margin-left: -$form-grid-gutter-width / 2;
-    >.col,
-    >[class*="col-"] {
+    >.c,
+    >[class*="c_"] {
         padding-right: $form-grid-gutter-width / 2;
         padding-left: $form-grid-gutter-width / 2;
     }
@@ -144,32 +144,32 @@ textarea.form-control {
 // Checkboxes and radios
 //
 // Indent the labels to position radios/checkboxes as hanging controls.
-.form-check {
+.form_check {
     position: relative;
     display: block;
     padding-left: $form-check-input-gutter;
 }
 
-.form-check-input {
+.form_check_input {
     position: absolute;
     margin-top: $form-check-input-margin-y;
     margin-left: -$form-check-input-gutter;
-    &:disabled~.form-check-label {
+    &:disabled~.form_check_label {
         color: $text-muted;
     }
 }
 
-.form-check-label {
+.form_check_label {
     margin-bottom: 0; // Override default `<label>` bottom margin
 }
 
-.form-check-inline {
+.form_check_inline {
     display: inline-flex;
     align-items: center;
     padding-left: 0; // Override base .form-check
     margin-right: $form-check-inline-margin-x;
     // Undo .form-check-input defaults and add some `margin-right`.
-    .form-check-input {
+    .form_check_input {
         position: static;
         margin-top: 0;
         margin-right: $form-check-inline-input-margin-x;
@@ -193,14 +193,14 @@ textarea.form-control {
 //
 // Requires wrapping inputs and labels with `.form-group` for proper display of
 // default HTML form controls and our custom form controls (e.g., input groups).
-.form-inline {
+.form_inline {
     display: flex;
     flex-flow: row wrap;
     align-items: center; // Prevent shorter elements from growing to same height as others (e.g., small buttons growing to normal sized button height)
     // Because we use flex, the initial sizing of checkboxes is collapsed and
     // doesn't occupy the full-width (which is what we want for xs grid tier),
     // so we force that here.
-    .form-check {
+    .form_check {
         width: 100%;
     }
     // Kick in the inline
@@ -212,7 +212,7 @@ textarea.form-control {
             margin-bottom: 0;
         }
         // Inline-block all the things for "inline"
-        .form-group {
+        .form_group {
             display: flex;
             flex: 0 0 auto;
             flex-flow: row wrap;
@@ -220,39 +220,39 @@ textarea.form-control {
             margin-bottom: 0;
         }
         // Allow folks to *not* use `.form-group`
-        .form-control {
+        .form_control {
             display: inline-block;
             width: auto; // Prevent labels from stacking above inputs in `.form-group`
             vertical-align: middle;
         }
         // Make static controls behave like regular ones
-        .form-control-plaintext {
+        .form_control_plaintext {
             display: inline-block;
         }
-        .input-group,
-        .custom-select {
+        .input_group,
+        .custom_select {
             width: auto;
         }
         // Remove default margin on radios/checkboxes that were used for stacking, and
         // then undo the floating of radios and checkboxes to match.
-        .form-check {
+        .form_check {
             display: flex;
             align-items: center;
             justify-content: center;
             width: auto;
             padding-left: 0;
         }
-        .form-check-input {
+        .form_check_input {
             position: relative;
             margin-top: 0;
             margin-right: $form-check-input-margin-x;
             margin-left: 0;
         }
-        .custom-control {
+        .custom_control {
             align-items: center;
             justify-content: center;
         }
-        .custom-control-label {
+        .custom_control_label {
             margin-bottom: 0;
         }
     }
@@ -267,29 +267,29 @@ textarea.form-control {
 // Checkboxes and radios
 //
 // Base class takes care of all the key behavioral aspects.
-.custom-control {
+.custom_control {
     position: relative;
     display: block;
     min-height: $font-size-base * $line-height-base;
     padding-left: $custom-control-gutter + $custom-control-indicator-size;
 }
 
-.custom-control-inline {
+.custom_control_inline {
     display: inline-flex;
     margin-right: $custom-control-spacer-x;
 }
 
-.custom-control-input {
+.custom_control_input {
     position: absolute;
     z-index: -1; // Put the input behind the label so it doesn't overlay text
     opacity: 0;
-    &:checked~.custom-control-label::before {
+    &:checked~.custom_control_label::before {
         color: $custom-control-indicator-checked-color;
         border-color: $custom-control-indicator-checked-border-color;
         @include gradient-bg($custom-control-indicator-checked-bg);
         @include box-shadow($custom-control-indicator-checked-box-shadow);
     }
-    &:focus~.custom-control-label::before {
+    &:focus~.custom_control_label::before {
         // the mixin is not used here to make sure there is feedback
         @if $enable-shadows {
             box-shadow: $input-box-shadow, $input-focus-box-shadow;
@@ -298,17 +298,17 @@ textarea.form-control {
             box-shadow: $custom-control-indicator-focus-box-shadow;
         }
     }
-    &:focus:not(:checked)~.custom-control-label::before {
+    &:focus:not(:checked)~.custom_control_label::before {
         border-color: $custom-control-indicator-focus-border-color;
     }
-    &:not(:disabled):active~.custom-control-label::before {
+    &:not(:disabled):active~.custom_control_label::before {
         color: $custom-control-indicator-active-color;
         background-color: $custom-control-indicator-active-bg;
         border-color: $custom-control-indicator-active-border-color;
         @include box-shadow($custom-control-indicator-active-box-shadow);
     }
     &:disabled {
-        ~.custom-control-label {
+        ~.custom_control_label {
             color: $custom-control-label-disabled-color;
             &::before {
                 background-color: $custom-control-indicator-disabled-bg;
@@ -320,7 +320,7 @@ textarea.form-control {
 // Custom control indicators
 //
 // Build the custom controls out of pseudo-elements.
-.custom-control-label {
+.custom_control_label {
     position: relative;
     margin-bottom: 0;
     vertical-align: top;
@@ -356,16 +356,16 @@ textarea.form-control {
 // Checkboxes
 //
 // Tweak just a few things for checkboxes.
-.custom-checkbox {
-    .custom-control-label::before {
+.custom_checkbox {
+    .custom_control_label::before {
         @include border-radius($custom-checkbox-indicator-border-radius);
     }
-    .custom-control-input:checked~.custom-control-label {
+    .custom_control_input:checked~.custom_control_label {
         &::after {
             background-image: $custom-checkbox-indicator-icon-checked;
         }
     }
-    .custom-control-input:indeterminate~.custom-control-label {
+    .custom_control_input:indeterminate~.custom_control_label {
         &::before {
             border-color: $custom-checkbox-indicator-indeterminate-border-color;
             @include gradient-bg($custom-checkbox-indicator-indeterminate-bg);
@@ -375,11 +375,11 @@ textarea.form-control {
             background-image: $custom-checkbox-indicator-icon-indeterminate;
         }
     }
-    .custom-control-input:disabled {
-        &:checked~.custom-control-label::before {
+    .custom_control_input:disabled {
+        &:checked~.custom_control_label::before {
             background-color: $custom-control-indicator-checked-disabled-bg;
         }
-        &:indeterminate~.custom-control-label::before {
+        &:indeterminate~.custom_control_label::before {
             background-color: $custom-control-indicator-checked-disabled-bg;
         }
     }
@@ -388,17 +388,17 @@ textarea.form-control {
 // Radios
 //
 // Tweak just a few things for radios.
-.custom-radio {
-    .custom-control-label::before {
+.custom_radio {
+    .custom_control_label::before {
         border-radius: $custom-radio-indicator-border-radius;
     }
-    .custom-control-input:checked~.custom-control-label {
+    .custom_control_input:checked~.custom_control_label {
         &::after {
             background-image: $custom-radio-indicator-icon-checked;
         }
     }
-    .custom-control-input:disabled {
-        &:checked~.custom-control-label::before {
+    .custom_control_input:disabled {
+        &:checked~.custom_control_label::before {
             background-color: $custom-control-indicator-checked-disabled-bg;
         }
     }
@@ -407,9 +407,9 @@ textarea.form-control {
 // switches
 //
 // Tweak a few things for switches
-.custom-switch {
+.custom_switch {
     padding-left: $custom-switch-width + $custom-control-gutter;
-    .custom-control-label {
+    .custom_control_label {
         &::before {
             left: -($custom-switch-width + $custom-control-gutter);
             width: $custom-switch-width;
@@ -426,14 +426,14 @@ textarea.form-control {
             @include transition(transform .15s ease-in-out, $custom-forms-transition);
         }
     }
-    .custom-control-input:checked~.custom-control-label {
+    .custom_control_input:checked~.custom_control_label {
         &::after {
             background-color: $custom-control-indicator-bg;
             transform: translateX($custom-switch-width - $custom-control-indicator-size);
         }
     }
-    .custom-control-input:disabled {
-        &:checked~.custom-control-label::before {
+    .custom_control_input:disabled {
+        &:checked~.custom_control_label::before {
             background-color: $custom-control-indicator-checked-disabled-bg;
         }
     }
@@ -444,7 +444,7 @@ textarea.form-control {
 // Replaces the browser default select with a custom one, mostly pulled from
 // https://primer.github.io/.
 //
-.custom-select {
+.custom_select {
     display: inline-block;
     width: 100%;
     height: $custom-select-height;
@@ -502,7 +502,7 @@ textarea.form-control {
 // File
 //
 // Custom file input.
-.custom-file {
+.custom_file {
     position: relative;
     display: inline-block;
     width: 100%;
@@ -510,32 +510,32 @@ textarea.form-control {
     margin-bottom: 0;
 }
 
-.custom-file-input {
+.custom_file_input {
     position: relative;
     z-index: 2;
     width: 100%;
     height: $custom-file-height;
     margin: 0;
     opacity: 0;
-    &:focus~.custom-file-label {
+    &:focus~.custom_file_label {
         border-color: $custom-file-focus-border-color;
         box-shadow: $custom-file-focus-box-shadow;
     }
-    &:disabled~.custom-file-label {
+    &:disabled~.custom_file_label {
         background-color: $custom-file-disabled-bg;
     }
     @each $lang,
     $value in $custom-file-text {
-        &:lang(#{$lang})~.custom-file-label::after {
+        &:lang(#{$lang})~.custom_file_label::after {
             content: $value;
         }
     }
-    ~.custom-file-label[data-browse]::after {
+    ~.custom_file_label[data-browse]::after {
         content: attr(data-browse);
     }
 }
 
-.custom-file-label {
+.custom_file_label {
     position: absolute;
     top: 0;
     right: 0;
@@ -573,7 +573,7 @@ textarea.form-control {
 // Style range inputs the same across browsers. Vendor-specific rules for pseudo
 // elements cannot be mixed. As such, there are no shared styles for focus or
 // active states on prefixed selectors.
-.custom-range {
+.custom_range {
     width: 100%;
     height: calc(#{$custom-range-thumb-height} + #{$custom-range-thumb-focus-box-shadow-width * 2});
     padding: 0; // Need to reset padding
@@ -697,8 +697,8 @@ textarea.form-control {
     }
 }
 
-.custom-control-label::before,
-.custom-file-label,
-.custom-select {
+.custom_control_label::before,
+.custom_file_label,
+.custom_select {
     @include transition($custom-forms-transition);
 }

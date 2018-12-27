@@ -32,7 +32,7 @@
 // Pill labels
 //
 // Make them extra rounded with a modifier to replace v3's labels.
-.label-pill {
+.label_pill {
     padding-right: $label-pill-padding-x;
     padding-left: $label-pill-padding-x;
     @include border-radius($label-pill-border-radius);
@@ -43,7 +43,7 @@
 // Contextual variations (linked labels get darker on :hover).
 @each $color,
 $value in $theme-colors {
-    .label-#{$color} {
+    .label_#{$color} {
         @include label-variant($value);
     }
 }

@@ -1,0 +1,10 @@
+//
+// Visibility utilities
+//
+.show {
+    @include invisible(visible);
+}
+
+.hide {
+    @include invisible(hidden);
+}
