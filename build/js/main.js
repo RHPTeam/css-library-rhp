@@ -1,1 +1,1 @@
-console.log("Hello code one line"),console.log("Hello code two line"),console.log("Hello code three line"),console.log("second file test");
+function tooltip(){$arBtn=document.getElementsByTagName("button");for(var t=0;t<$arBtn.length;t++)$arBtn[t].hasAttribute("data-toggle")&&"tooltip"==$arBtn[t].getAttribute("data-toggle")&&$arBtn[t].addEventListener("click",function(){template='<div class="tooltip" role="tooltip"><div class="arrow"></div><div class="tooltip-inner"></div></div>'})}console.log("second file test");
