@@ -76,6 +76,7 @@ $grid-gutter-width: 30px !default;
 // Options
 //
 // Quickly modify global styling by enabling or disabling optional features.
+$enable-caret: true !default;
 $enable-rounded: true !default;
 $enable-shadows: false !default;
 $enable-gradients: false !default;
@@ -132,6 +133,7 @@ $border-width: 1px !default;
 $border-radius: .25rem !default;
 $component-active-color: $white !default;
 $component-active-bg: theme-color("primary") !default;
+$caret-width: .3em !default;
 $transition-base: all .2s ease-in-out !default;
 // stylelint-disable-next-line scss/dollar-variable-default
 // Fonts
@@ -377,14 +379,39 @@ $form-feedback-icon-invalid: str-replace(url("data:image/svg+xml,%3csvg xmlns='h
 // Dropdowns
 //
 // Dropdown menu container and contents.
+$dropdown-min-width: 10rem !default;
+$dropdown-padding-y: .5rem !default;
+$dropdown-spacer: .125rem !default;
+$dropdown-bg: $white !default;
+$dropdown-border-color: rgba($black,
+.15) !default;
+$dropdown-border-radius: $border-radius !default;
+$dropdown-border-width: $border-width !default;
+$dropdown-inner-border-radius: calc(#{$dropdown-border-radius} - #{$dropdown-border-width}) !default;
+$dropdown-divider-bg: $gray-200 !default;
+$dropdown-box-shadow: 0 .5rem 1rem rgba($black,
+.175) !default;
+$dropdown-link-color: $gray-900 !default;
+$dropdown-link-hover-color: darken($gray-900,
+5%) !default;
+$dropdown-link-hover-bg: $gray-100 !default;
+$dropdown-link-active-color: $component-active-color !default;
+$dropdown-link-active-bg: $component-active-bg !default;
+$dropdown-link-disabled-color: $gray-600 !default;
+$dropdown-item-padding-y: .25rem !default;
+$dropdown-item-padding-x: 1.5rem !default;
+$dropdown-header-color: $gray-600 !default;
 // Z-index master list
 //
 // Warning: Avoid customizing these values. They're used for a bird's eye view
 // of components dependent on the z-axis and are designed to all work together.
+$zindex-dropdown: 1000 !default;
 $zindex-sticky: 1020 !default;
 $zindex-fixed: 1030 !default;
 $zindex-tooltip: 1070 !default;
 // Navs
+$nav-divider-color: $gray-200 !default;
+$nav-divider-margin-y: $spacer / 2 !default;
 // Navbar
 // Compute the navbar-brand padding-y so the navbar-brand will have the same height as navbar-text and nav-link
 // Pagination

@@ -170,6 +170,10 @@
     <p class="text_left">Left aligned text on all viewport sizes.</p>
     <p class="text_center">Center aligned text on all viewport sizes.</p>
     <p class="text_right">Right aligned text on all viewport sizes.</p>
+    <p class="text_sm_left">Left aligned text on viewports sized SM (small) or wider.</p>
+    <p class="text_md_left">Left aligned text on viewports sized MD (medium) or wider.</p>
+    <p class="text_lg_left">Left aligned text on viewports sized LG (large) or wider.</p>
+    <p class="text_xl_left">Left aligned text on viewports sized XL (extra-large) or wider.</p>
     <hr><b>Text wrapping and overflow</b><br>
     <div class="label label_primary text_wrap" style="width: 6rem;">
         This text should wrap.
@@ -218,11 +222,255 @@
 
     <!-- Tooltips -->
     <h1>Tooltips Component</h1>
-    <button type="button" class="btn btn-_econdary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+    <button type="button" class="btn btn_secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
         Tooltip on top
     </button>
 
+    <!-- Dropdowns -->
+    <h1>Dropdowns</h1>
+    <b>Single button</b>
+    <div class="dropdown">
+        <button class="btn btn_secondary dropdown_toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown button
+        </button>
+        <div class="dropdown_menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown_item" href="#">Action</a>
+            <a class="dropdown_item" href="#">Another action</a>
+            <a class="dropdown_item" href="#">Something else here</a>
+        </div>
+    </div>
+    <br>
+    <b>Split button</b><br>
+    <!-- Example split danger button -->
+    <div class="btn_group">
+        <button type="button" class="btn btn_danger">Action</button>
+        <button type="button" class="btn btn_danger dropdown_toggle dropdown_toggle_split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        </button>
+        <div class="dropdown_menu">
+            <a class="dropdown_item" href="#">Action</a>
+            <a class="dropdown_item" href="#">Another action</a>
+            <a class="dropdown_item" href="#">Something else here</a>
+            <div class="dropdown_divider"></div>
+            <a class="dropdown_item" href="#">Separated link</a>
+        </div>
+    </div>
+    <br><br><b>Directions</b><br>
+    <!-- Default dropup button -->
+    <div class="btn_group dropup">
+        <button type="button" class="btn btn_secondary dropdown_toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropup
+        </button>
+        <div class="dropdown_menu">
+            <a class="dropdown_item" href="#">Action</a>
+            <a class="dropdown_item" href="#">Another action</a>
+            <a class="dropdown_item" href="#">Something else here</a>
+            <div class="dropdown_divider"></div>
+            <a class="dropdown_item" href="#">Separated link</a>
+        </div>
+    </div>
 
+    <!-- Split dropup button -->
+    <div class="btn_group dropup">
+        <button type="button" class="btn btn_secondary">
+            Split dropup
+        </button>
+        <button type="button" class="btn btn_secondary dropdown_toggle dropdown_toggle_split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        </button>
+        <div class="dropdown_menu">
+            <a class="dropdown_item" href="#">Action</a>
+            <a class="dropdown_item" href="#">Another action</a>
+            <a class="dropdown_item" href="#">Something else here</a>
+            <div class="dropdown_divider"></div>
+            <a class="dropdown_item" href="#">Separated link</a>
+        </div>
+    </div><br><br>
+    <!-- Default dropright button -->
+    <div class="btn_group dropright">
+        <button type="button" class="btn btn_secondary dropdown_toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropright
+        </button>
+        <div class="dropdown_menu">
+            <a class="dropdown_item" href="#">Action</a>
+            <a class="dropdown_item" href="#">Another action</a>
+            <a class="dropdown_item" href="#">Something else here</a>
+            <div class="dropdown_divider"></div>
+            <a class="dropdown_item" href="#">Separated link</a>
+        </div>
+    </div>
+
+    <!-- Split dropright button -->
+    <div class="btn_group dropright">
+        <button type="button" class="btn btn_secondary">
+            Split dropright
+        </button>
+        <button type="button" class="btn btn_secondary dropdown_toggle dropdown_toggle_split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        </button>
+        <div class="dropdown_menu">
+            <a class="dropdown_item" href="#">Action</a>
+            <a class="dropdown_item" href="#">Another action</a>
+            <a class="dropdown_item" href="#">Something else here</a>
+            <div class="dropdown_divider"></div>
+            <a class="dropdown_item" href="#">Separated link</a>
+        </div>
+    </div><br><br>
+    <!-- Default dropleft button -->
+    <div class="btn_group dropleft">
+        <button type="button" class="btn btn_secondary dropdown_toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropleft
+        </button>
+        <div class="dropdown_menu">
+            <a class="dropdown_item" href="#">Action</a>
+            <a class="dropdown_item" href="#">Another action</a>
+            <a class="dropdown_item" href="#">Something else here</a>
+            <div class="dropdown_divider"></div>
+            <a class="dropdown_item" href="#">Separated link</a>
+        </div>
+    </div>
+
+    <!-- Split dropleft button -->
+    <div class="btn_group">
+        <div class="btn_group dropleft" role="group">
+            <button type="button" class="btn btn_secondary dropdown_toggle dropdown_toggle_split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            </button>
+            <div class="dropdown_menu">
+                <a class="dropdown_item" href="#">Action</a>
+                <a class="dropdown_item" href="#">Another action</a>
+                <a class="dropdown_item" href="#">Something else here</a>
+                <div class="dropdown_divider"></div>
+                <a class="dropdown_item" href="#">Separated link</a>
+            </div>
+        </div>
+        <button type="button" class="btn btn_secondary">
+            Split dropleft
+        </button>
+    </div><br><br>
+    <b>Menu items</b><br>
+    <div class="dropdown">
+        <button class="btn btn_secondary dropdown_toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown
+  </button>
+        <div class="dropdown_menu" aria-labelledby="dropdownMenu2">
+            <button class="dropdown_item" type="button">Action</button>
+            <button class="dropdown_item active" type="button">Another action</button>
+            <button class="dropdown_item disabled" type="button">Something else here</button>
+        </div>
+    </div>
+
+    <br><b>Menu alignment</b><br>
+    <div class="btn_group">
+        <button type="button" class="btn btn_secondary dropdown_toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Right-aligned menu
+  </button>
+        <div class="dropdown_menu dropdown_menu_right">
+            <button class="dropdown_item" type="button">Action</button>
+            <button class="dropdown_item" type="button">Another action</button>
+            <button class="dropdown_item" type="button">Something else here</button>
+        </div>
+    </div>
+
+    <br><br><b>Responsive alignment</b><br>
+    <div class="btn_group">
+        <button type="button" class="btn btn_secondary dropdown_toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
+    Left-aligned but right aligned when large screen
+  </button>
+        <div class="dropdown_menu dropdown_menu_lg_right">
+            <button class="dropdown_item" type="button">Action</button>
+            <button class="dropdown_item" type="button">Another action</button>
+            <button class="dropdown_item" type="button">Something else here</button>
+        </div>
+    </div>
+    <div class="btn_group">
+        <button type="button" class="btn btn_secondary dropdown_toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
+        Right-aligned but left aligned when large screen
+    </button>
+        <div class="dropdown_menu dropdown_menu_right dropdown_menu_lg_left">
+            <button class="dropdown_item" type="button">Action</button>
+            <button class="dropdown_item" type="button">Another action</button>
+            <button class="dropdown_item" type="button">Something else here</button>
+        </div>
+    </div>
+
+    <br><br><b>Menu content</b>
+    <div class="dropdown">
+        <button class="btn btn_secondary dropdown_toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown Headers and Dividers
+        </button>
+        <div class="dropdown_menu" aria-labelledby="dropdownMenuButton1">
+            <h6 class="dropdown_header">Dropdown header</h6>
+            <a class="dropdown_item" href="#">Action</a>
+            <a class="dropdown_item" href="#">Another action</a>
+            <div class="dropdown_divider"></div>
+            <a class="dropdown_item" href="#">Separated link</a>
+        </div>
+    </div><br>
+    <div class="dropdown">
+        <button class="btn btn_secondary dropdown_toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown Text
+        </button>
+        <div class="dropdown_menu text_muted" style="max-width: 200px; padding: 4px;" aria-labelledby="dropdownMenuButton2">
+            <p>
+                Some example text that's free-flowing within the dropdown menu.
+            </p>
+            <p style="margin-bottom: 0">
+                And this is more example text.
+            </p>
+        </div>
+    </div><br>
+    <div class="dropdown">
+        <button class="btn btn_secondary dropdown_toggle" type="button" id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Dropdown Forms
+    </button>
+        <div class="dropdown_menu" aria-labelledby="dropdownMenuButton3">
+            <form>
+                <div class="form_group">
+                    <label for="exampleDropdownFormEmail1">Email address</label>
+                    <input type="email" class="form_control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
+                </div>
+                <div class="form_group">
+                    <label for="exampleDropdownFormPassword1">Password</label>
+                    <input type="password" class="form_control" id="exampleDropdownFormPassword1" placeholder="Password">
+                </div>
+                <div class="form_group">
+                    <div class="form_check">
+                        <input type="checkbox" class="form_check_input" id="dropdownCheck">
+                        <label class="form_check_label" for="dropdownCheck">
+                            Remember me
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn_primary">Sign in</button>
+            </form>
+            <div class="dropdown_divider"></div>
+            <a class="dropdown_item" href="#">New around here? Sign up</a>
+            <a class="dropdown_item" href="#">Forgot password?</a>
+        </div>
+    </div>
+
+    <br><br><b>Dropdown options</b>
+    <div class="d_flex">
+        <div class="dropdown" style="margin-right: 1px">
+            <button type="button" class="btn btn_secondary dropdown_toggle" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20">
+      Offset
+    </button>
+            <div class="dropdown_menu" aria-labelledby="dropdownMenuOffset">
+                <a class="dropdown_item" href="#">Action</a>
+                <a class="dropdown_item" href="#">Another action</a>
+                <a class="dropdown_item" href="#">Something else here</a>
+            </div>
+        </div>
+        <div class="btn_group">
+            <button type="button" class="btn btn_secondary">Reference</button>
+            <button type="button" class="btn btn_secondary dropdown_toggle dropdown_toggle_split" id="dropdownMenuReference" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">
+        </button>
+            <div class="dropdown_menu" aria-labelledby="dropdownMenuReference">
+                <a class="dropdown_item" href="#">Action</a>
+                <a class="dropdown_item" href="#">Another action</a>
+                <a class="dropdown_item" href="#">Something else here</a>
+                <div class="dropdown_divider"></div>
+                <a class="dropdown_item" href="#">Separated link</a>
+            </div>
+        </div>
+    </div>
 </body>
 <script>
 </script>
