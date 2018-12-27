@@ -1,4 +1,14 @@
 <link rel="stylesheet" href="./readme.css">
+<style>
+    .menu a{
+    margin: 0 5px;
+    }
+    .menu a::after{
+        content:".";
+    
+        
+    }
+</style>
 <div style="text-align:center">
     <img src=./images/luon.jpg style="width:100px; height:100px;">
     <h3>Bootstrap</h3>
