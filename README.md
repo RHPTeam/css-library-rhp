@@ -1,24 +1,13 @@
-<link rel="stylesheet" href="./readme.css">
-<style>
-    .menu a{
-    margin: 0 5px;
-    }
-    .menu a::after{
-        content:".";
-    
-        
-    }
-</style>
 <div style="text-align:center">
     <img src=./images/luon.jpg style="width:100px; height:100px;">
     <h3>Bootstrap</h3>
     <p>Sleek, intuitive, and powerful front-end framework for faster and easier web development.</p>
     <a>Explore Bootstrap docs » </a>
     <div class="menu">
-        <a>Report bug</a>
-        <a>Request feature </a>
-        <a>Themes</a>
-        <a>Blog</a>
+        <a style="margin:0 5px;">Report bug</a>
+        <a style="margin:0 5px;">Request feature </a>
+        <a style="margin:0 5px;">Themes</a>
+        <a style="margin:0 5px;">Blog</a>
     </div>
 </div>
 
