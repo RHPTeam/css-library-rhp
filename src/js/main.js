@@ -11,35 +11,25 @@ function tooltip(){
 
             //check attribute data-toggle is tooltip
            if($arBtn[i].getAttribute("data-toggle")=='tooltip'){
-
-               //get position to add class rbox_tooltip_
-               pos= $arBtn[i].getAttribute("data-placement");
-
-               //set position relative for button index
-                $arBtn[i].style.position="relative";
-
-               //create component tooltip html
-                template = '<div class="tooltip rbox_tooltip_'+pos+'" role="tooltip">' +
-                '<div class="arrow"></div>' +
-                '<div class="tooltip_inner">'+$arBtn[i].innerHTML+'</div></div>';
-
-                //add component tooltip to inside button 
-                $arBtn[i].innerHTML+=template;
-
-                //setting attribute title null to it don't display when mouse hover button
-                $arBtn[i].setAttribute("title","");
-
                 //add event mouseover for button index
                 $arBtn[i].addEventListener("mouseover",function(){
+                    //create component tooltip html
+                    template = '<div class="tooltip fade rbox_tooltip_'+this.getAttribute("data-placement")+'" id="tooltip" role="tooltip">' +
+                    '<div class="arrow"></div>' +
+                    '<div class="tooltip_inner">'+this.getAttribute("data-title")+'</div></div>';
+
+                    //add component tooltip to inside button 
+                    this.innerHTML+=template;
+
                     //set display block for this
                     this.children[0].style.display="block";
-
+                  
                     //get height button
                     height=  this.offsetHeight ;
 
                     //get width button
-                    width=  this.offsetWidth +'px ' ;
-
+                    width=  this.offsetWidth  ;
+                    this.style.position="relative";
                     //get position from data-placement
                     pos= this.getAttribute("data-placement");
 
@@ -49,16 +39,15 @@ function tooltip(){
                             this.children[0].style.top=height+"px" ;
                             break;
                         case "top":
-                            this.children[0].style.top="-"+(height+10) +"px" ;
+                            this.children[0].style.top="-"+(height+5) +"px" ;
                             break;
                         case "right":
-                            this.children[0].style.left=width;
-                            this.children[0].style.width=width;
+                            this.children[0].style.left=width +'px ';
                             this.children[0].style.top='10%';
                             break;
                         case "left":
-                            this.children[0].style.left="-"+width;
-                            this.children[0].style.width=width;
+                            this.children[0].style.left="-"+(width-10) +'px ';
+                            
                             this.children[0].style.top='10%';
                             break;
                     }
@@ -68,11 +57,9 @@ function tooltip(){
 
                 //add event mouseout for button index
                 $arBtn[i].addEventListener("mouseout",function(){
-                    //set display none for this
-                    this.children[0].style.display="none";
-
-                    //remove class show to element div class tooltip
-                    this.children[0].classList.remove("show");
+                    var element = document.getElementById("tooltip");
+                    element.parentNode.removeChild(element);
+                    
                 });
            }
         }
