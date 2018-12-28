@@ -1,8 +1,10 @@
 // Base class
+
 .tooltip {
+    
     position: absolute;
     z-index: $zindex-tooltip;
-    display: block;
+    display: none;
     margin: $tooltip-margin;
     // Our parent element can be arbitrary since tooltips are by default inserted as a sibling of their target element.
     // So reset our font and text properties to avoid inheriting weird values.
@@ -12,7 +14,9 @@
     word-wrap: break-word;
     opacity: 0;
     &.show {
+        transition: all 0.5s ease;
         opacity: $tooltip-opacity;
+
     }
     .arrow {
         position: absolute;
@@ -32,8 +36,10 @@
     padding: $tooltip-arrow-height 0;
     .arrow {
         bottom: 0;
+        left:45%;
         &::before {
             top: 0;
+           
             border-width: $tooltip-arrow-height ($tooltip-arrow-width / 2) 0;
             border-top-color: $tooltip-arrow-color;
         }
@@ -42,7 +48,9 @@
 
 .rbox_tooltip_right {
     padding: 0 $tooltip-arrow-height;
+    
     .arrow {
+        top:25%;
         left: 0;
         width: $tooltip-arrow-height;
         height: $tooltip-arrow-width;
@@ -58,6 +66,7 @@
     padding: $tooltip-arrow-height 0;
     .arrow {
         top: 0;
+        left:45%;
         &::before {
             bottom: 0;
             border-width: 0 ($tooltip-arrow-width / 2) $tooltip-arrow-height;
@@ -69,6 +78,7 @@
 .rbox_tooltip_left {
     padding: 0 $tooltip-arrow-height;
     .arrow {
+        top:25%;
         right: 0;
         width: $tooltip-arrow-height;
         height: $tooltip-arrow-width;

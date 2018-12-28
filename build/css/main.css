@@ -1,3 +1,15 @@
+/* To:
+	 $yiq-text-light, $body-bg ,$component-active-color, $btn-box-shadow,$input-bg, $card-bg,$btn-box-shadow, $pagination-bg, $pagination-disabled-bg, $close-text-shadow
+*/
+/* To: $grays, $secondary, $text-muted, $btn-link-disabled-color, $input-placeholder-color, $custom-control-label-disabled-color,$custom-select-disabled-color
+	  $text-muted, $blockquote-small-color, $breadcrumb-divider-color, $breadcrumb-active-color, $btn-link-disabled-color, $pagination-disabled-color
+*/
+/*To: $btn-box-shadow, $btn-active-box-shadow, $input-box-shadow, $custom-select-box-shadow, $custom-range-track-box-shadow, $card-border-color
+      $card-cap-bg, $hr-border-color, $kbd-box-shadow, $btn-box-shadow, $btn-active-box-shadow, $close-color   
+*/
+/* To: $link-color, $component-active-bg, $component-active-bg, $custom-control-indicator-checked-disabled-bg, $form-feedback-valid-color
+      $form-feedback-invalid-color, 
+*/
 /***********************************************************************************************************************************/
 /***********************************************************************************************************************************/
 /*****************************************************************************************************************
@@ -1289,6 +1301,115 @@ DICTIONARY WORD:
   color: #1b1e21;
   background-color: #d6d8d9;
   border-color: #c6c8ca; }
+
+.breadcrumb {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  list-style: none;
+  background-color: #e9ecef;
+  border-radius: 0.25rem; }
+
+.breadcrumb_item + .breadcrumb_item {
+  padding-left: 0.5rem; }
+  .breadcrumb_item + .breadcrumb_item::before {
+    display: inline-block;
+    padding-right: 0.5rem;
+    color: #6c757d;
+    content: "/"; }
+
+.breadcrumb_item + .breadcrumb_item:hover::before {
+  text-decoration: underline; }
+
+.breadcrumb_item + .breadcrumb_item:hover::before {
+  text-decoration: none; }
+
+.breadcrumb_item.active {
+  color: #6c757d; }
+
+.pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+  border-radius: 0.25rem; }
+
+.page_link {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  color: #007bff;
+  background-color: #fff;
+  border: 1px solid #dee2e6; }
+  .page_link:hover {
+    z-index: 2;
+    color: #0056b3;
+    text-decoration: none;
+    background-color: #e9ecef;
+    border-color: #dee2e6; }
+  .page_link:focus {
+    z-index: 2;
+    outline: 0;
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); }
+  .page_link:not(:disabled):not(.disabled) {
+    cursor: pointer; }
+
+.page-item:first-child .page_link {
+  margin-left: 0;
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem; }
+
+.page-item:last-child .page_link {
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem; }
+
+.page-item.active .page_link {
+  z-index: 1;
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff; }
+
+.page-item.disabled .page_link {
+  color: #6c757d;
+  pointer-events: none;
+  cursor: auto;
+  background-color: #fff;
+  border-color: #dee2e6; }
+
+.pagination_lg .page_link {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.25rem;
+  line-height: 1.5; }
+
+.pagination_lg .page_item:first-child .page_link {
+  border-top-left-radius: 0.3rem;
+  border-bottom-left-radius: 0.3rem; }
+
+.pagination_lg .page_item:last-child .page_link {
+  border-top-right-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem; }
+
+.pagination_sm .page_link {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.5; }
+
+.pagination_sm .page_item:first-child .page_link {
+  border-top-left-radius: 0.2rem;
+  border-bottom-left-radius: 0.2rem; }
+
+.pagination_sm .page_item:last-child .page_link {
+  border-top-right-radius: 0.2rem;
+  border-bottom-right-radius: 0.2rem; }
 
 .label {
   display: inline-block;
@@ -2839,7 +2960,7 @@ textarea.form_control {
 .tooltip {
   position: absolute;
   z-index: 1070;
-  display: block;
+  display: none;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-style: normal;
@@ -2859,6 +2980,8 @@ textarea.form_control {
   word-wrap: break-word;
   opacity: 0; }
   .tooltip.show {
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
     opacity: 0.9; }
   .tooltip .arrow {
     position: absolute;
@@ -2874,7 +2997,8 @@ textarea.form_control {
 .rbox_tooltip_top, .rbox_tooltip_auto[x-placement^="top"] {
   padding: 0.4rem 0; }
   .rbox_tooltip_top .arrow, .rbox_tooltip_auto[x-placement^="top"] .arrow {
-    bottom: 0; }
+    bottom: 0;
+    left: 45%; }
     .rbox_tooltip_top .arrow::before, .rbox_tooltip_auto[x-placement^="top"] .arrow::before {
       top: 0;
       border-width: 0.4rem 0.4rem 0;
@@ -2883,6 +3007,7 @@ textarea.form_control {
 .rbox_tooltip_right, .rbox_tooltip_auto[x-placement^="right"] {
   padding: 0 0.4rem; }
   .rbox_tooltip_right .arrow, .rbox_tooltip_auto[x-placement^="right"] .arrow {
+    top: 25%;
     left: 0;
     width: 0.4rem;
     height: 0.8rem; }
@@ -2894,7 +3019,8 @@ textarea.form_control {
 .rbox_tooltip_bottom, .rbox_tooltip_auto[x-placement^="bottom"] {
   padding: 0.4rem 0; }
   .rbox_tooltip_bottom .arrow, .rbox_tooltip_auto[x-placement^="bottom"] .arrow {
-    top: 0; }
+    top: 0;
+    left: 45%; }
     .rbox_tooltip_bottom .arrow::before, .rbox_tooltip_auto[x-placement^="bottom"] .arrow::before {
       bottom: 0;
       border-width: 0 0.4rem 0.4rem;
@@ -2903,6 +3029,7 @@ textarea.form_control {
 .rbox_tooltip_left, .rbox_tooltip_auto[x-placement^="left"] {
   padding: 0 0.4rem; }
   .rbox_tooltip_left .arrow, .rbox_tooltip_auto[x-placement^="left"] .arrow {
+    top: 25%;
     right: 0;
     width: 0.4rem;
     height: 0.8rem; }
@@ -3133,6 +3260,30 @@ textarea.form_control {
   display: block;
   padding: 0.25rem 1.5rem;
   color: #212529; }
+
+.fade {
+  -webkit-transition: opacity 0.15s linear;
+  transition: opacity 0.15s linear; }
+  @media screen and (prefers-reduced-motion: reduce) {
+    .fade {
+      -webkit-transition: none;
+      transition: none; } }
+  .fade:not(.show) {
+    opacity: 0; }
+
+.collapse:not(.show) {
+  display: none; }
+
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  -webkit-transition: height 0.35s ease;
+  transition: height 0.35s ease; }
+  @media screen and (prefers-reduced-motion: reduce) {
+    .collapsing {
+      -webkit-transition: none;
+      transition: none; } }
 
 .text_white {
   color: #fff !important; }
@@ -4229,7 +4380,7 @@ button.bg_dark:focus {
   visibility: hidden !important; }
 
 body {
-  padding: 30px !important; }
+  padding: 30px; }
 
 h1 {
-  margin-top: 50px; }
+  margin-top: 20px; }
