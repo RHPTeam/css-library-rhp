@@ -1,0 +1,79 @@
+/*****************************************************************************************************************
+MENU COMMENT MIXINS
+------------------------------------------------------------------------------------------------------------------
+This is file to build mixin which make grid columns with class
+
+DICTIONARY WORD:
+.C    =====> .column
+.o    =====> .offset
+.or   =====> .order
+.or_l =====> .order_last
+.or_f =====> .order_first
+*****************************************************************************************************************/
+@mixin make-grid-columns($columns: $grid-columns, $gutter: $grid-gutter-width, $breakpoints: $grid-breakpoints) {
+
+  %grid-column {
+    position: relative;
+    width: 100%;
+    padding-right: $gutter / 2;
+    padding-left: $gutter / 2;
+  }
+
+  @each $breakpoint in map-keys($breakpoints) {
+    $infix: breakpoint-infix($breakpoint, $breakpoints);
+
+    @for $i from 1 through $columns {
+      .c#{$infix}_#{$i} {
+        @extend %grid-column;
+      }
+    }
+
+    .c#{$infix},
+    .c#{$infix}_auto {
+      @extend %grid-column;
+    }
+
+    @include media-breakpoint-up($breakpoint, $breakpoints) {
+      .c#{$infix} {
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%;
+      }
+
+      .c#{$infix}_auto {
+        flex: 0 0 auto;
+        width: auto;
+        max-width: 100%;
+      }
+
+      @for $i from 1 through $columns {
+        .c#{$infix}_#{$i} {
+          @include make-col($i, $columns);
+        }
+      }
+
+      .or#{$infix}_f {
+        order: -1;
+      }
+
+      .or#{$infix}_l {
+        order: $columns + 1;
+      }
+
+      @for $i from 0 through $columns {
+        .or#{$infix}_#{$i} {
+          order: $i;
+        }
+      }
+
+      @for $i from 0 through ($columns - 1) {
+        @if not ($infix==""and $i==0) {
+
+          .o#{$infix}_#{$i} {
+            @include make-col-offset($i, $columns);
+          }
+        }
+      }
+    }
+  }
+}

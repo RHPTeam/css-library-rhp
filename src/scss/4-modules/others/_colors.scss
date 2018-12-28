@@ -1,26 +1,26 @@
 // Contextual colors
-.text-white {
+.text_white {
     color: $white !important;
 }
 
 @each $color,
 $value in $theme-colors {
-    @include text-emphasis-variant(".text-#{$color}", $value);
+    @include text-emphasis-variant(".text_#{$color}", $value);
 }
 
-.text-body {
+.text_body {
     color: $body-color !important;
 }
 
-.text-muted {
+.text_muted {
     color: $text-muted !important;
 }
 
-.text-black-50 {
+.text_black_50 {
     color: rgba($black, .5) !important;
 }
 
-.text-white-50 {
+.text_white_50 {
     color: rgba($white, .5) !important;
 }
 
@@ -28,13 +28,13 @@ $value in $theme-colors {
 // stylelint-disable declaration-no-important
 @each $color,
 $value in $theme-colors {
-    @include bg-variant(".bg-#{$color}", $value);
+    @include bg-variant(".bg_#{$color}", $value);
 }
 
 @if $enable-gradients {
     @each $color,
     $value in $theme-colors {
-        @include bg-gradient-variant(".bg-gradient-#{$color}", $value);
+        @include bg-gradient-variant(".bg-gradient_#{$color}", $value);
     }
 }
 

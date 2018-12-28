@@ -1,6 +1,6 @@
-@import "functions";
-@import "variables";
+@import "functions/functions";
+@import "variables/variables";
 @import "mixins/mixins";
-@import "close";
-@import "reboot";
-@import "type";
+@import "rbox/close";
+@import "rbox/reboot";
+@import "rbox/type";

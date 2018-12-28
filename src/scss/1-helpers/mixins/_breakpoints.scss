@@ -1,24 +1,95 @@
-// Returns a blank string if smallest breakpoint, otherwise returns the name with a dash in front.
-// Useful for making responsive utilities.
-//
-//    >> breakpoint-infix(xs, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px))
-//    ""  (Returns a blank string)
-//    >> breakpoint-infix(sm, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px))
-//    "-sm"
-@function breakpoint-infix($name, $breakpoints: $grid-breakpoints) {
-    @return if(breakpoint-min($name, $breakpoints)==null, "", "-#{$name}");
-}
+/*****************************************************************************************************************
+MENU COMMENT BREAKPOINTS MIXIN
+------------------------------------------------------------------------------------------------------------------
+1. Breakpoint next which return next point break
+2. Breakpoint min which return point min in breakpoints array
+3. Breakpoint max which return point max in breakpoints array
+4. Breakpoint infix which return null value if it is minest breakpoint
+5. Media breakpoint up which return media queries (min-width)
+6. Media breakpoint down which return media queries (max-width)
+7. Media breakpoint between which return media queries (min-width and max-width)
+8. Media breakpoint only which return media queriest only screen.
+*****************************************************************************************************************/
 
-// Media of at least the minimum breakpoint width. No query for the smallest breakpoint.
-// Makes the @content apply to the given breakpoint and wider.
-@mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
+@function breakpoint-next($name, $breakpoints: $grid-breakpoints, $breakpoint-names: map-keys($breakpoints)) {
+    $n: index($breakpoint-names, $name);
+    @return if($n != null and $n < length($breakpoint-names), nth($breakpoint-names, $n + 1), null);
+  }
+  
+
+  @function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
+    $min: map-get($breakpoints, $name);
+    @return if($min != 0, $min, null);
+  }
+  
+
+  @function breakpoint-max($name, $breakpoints: $grid-breakpoints) {
+    $next: breakpoint-next($name, $breakpoints);
+    @return if($next, breakpoint-min($next, $breakpoints) - .02, null);
+  }
+  
+
+  @function breakpoint-infix($name, $breakpoints: $grid-breakpoints) {
+    @return if(breakpoint-min($name, $breakpoints) == null, "", "_#{$name}");
+  }
+  
+  @mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
     $min: breakpoint-min($name, $breakpoints);
     @if $min {
-        @media (min-width: $min) {
-            @content;
-        }
-    }
-    @else {
+      @media (min-width: $min) {
         @content;
+      }
+    } @else {
+      @content;
     }
-}
+  }
+  
+  @mixin media-breakpoint-down($name, $breakpoints: $grid-breakpoints) {
+    $max: breakpoint-max($name, $breakpoints);
+    @if $max {
+      @media (max-width: $max) {
+        @content;
+      }
+    } @else {
+      @content;
+    }
+  }
+  
+  @mixin media-breakpoint-between($lower, $upper, $breakpoints: $grid-breakpoints) {
+    $min: breakpoint-min($lower, $breakpoints);
+    $max: breakpoint-max($upper, $breakpoints);
+  
+    @if $min != null and $max != null {
+      @media (min-width: $min) and (max-width: $max) {
+        @content;
+      }
+    } @else if $max == null {
+      @include media-breakpoint-up($lower, $breakpoints) {
+        @content;
+      }
+    } @else if $min == null {
+      @include media-breakpoint-down($upper, $breakpoints) {
+        @content;
+      }
+    }
+  }
+  
+  @mixin media-breakpoint-only($name, $breakpoints: $grid-breakpoints) {
+    $min: breakpoint-min($name, $breakpoints);
+    $max: breakpoint-max($name, $breakpoints);
+  
+    @if $min != null and $max != null {
+      @media (min-width: $min) and (max-width: $max) {
+        @content;
+      }
+    } @else if $max == null {
+      @include media-breakpoint-up($name, $breakpoints) {
+        @content;
+      }
+    } @else if $min == null {
+      @include media-breakpoint-down($name, $breakpoints) {
+        @content;
+      }
+    }
+  }
+  
