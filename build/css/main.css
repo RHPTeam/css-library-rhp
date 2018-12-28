@@ -1,8 +1,15 @@
-<<<<<<< HEAD
 /* To:
 	 $yiq-text-light, $body-bg ,$component-active-color, $btn-box-shadow,$input-bg, $card-bg,$btn-box-shadow, $pagination-bg, $pagination-disabled-bg, $close-text-shadow
 */
-=======
+/* To: $grays, $secondary, $text-muted, $btn-link-disabled-color, $input-placeholder-color, $custom-control-label-disabled-color,$custom-select-disabled-color
+	  $text-muted, $blockquote-small-color, $breadcrumb-divider-color, $breadcrumb-active-color, $btn-link-disabled-color, $pagination-disabled-color
+*/
+/*To: $btn-box-shadow, $btn-active-box-shadow, $input-box-shadow, $custom-select-box-shadow, $custom-range-track-box-shadow, $card-border-color
+      $card-cap-bg, $hr-border-color, $kbd-box-shadow, $btn-box-shadow, $btn-active-box-shadow, $close-color   
+*/
+/* To: $link-color, $component-active-bg, $component-active-bg, $custom-control-indicator-checked-disabled-bg, $form-feedback-valid-color
+      $form-feedback-invalid-color, 
+*/
 /***********************************************************************************************************************************/
 /***********************************************************************************************************************************/
 /*****************************************************************************************************************
@@ -51,7 +58,6 @@ MENU COMMENT BREAKPOINTS MIXIN
 7. Media breakpoint between which return media queries (min-width and max-width)
 8. Media breakpoint only which return media queriest only screen.
 *****************************************************************************************************************/
->>>>>>> dev-toantr
 .close {
   float: right;
   font-size: 1.5rem;
@@ -2859,7 +2865,7 @@ textarea.form_control {
 .tooltip {
   position: absolute;
   z-index: 1070;
-  display: block;
+  display: none;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-style: normal;
@@ -2879,6 +2885,8 @@ textarea.form_control {
   word-wrap: break-word;
   opacity: 0; }
   .tooltip.show {
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
     opacity: 0.9; }
   .tooltip .arrow {
     position: absolute;
