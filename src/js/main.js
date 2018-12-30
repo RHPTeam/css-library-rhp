@@ -1,7 +1,23 @@
 /*
 Notice: The code below just test, You can delete it and code normally. Enjoy!!!!
 */
+//function find child element by ClassName
+//paremeters: arr_ele: collections object html, name: classname need to find.
+//return: object html
+function findElementsByClassName(arr_ele,name){
+    for(var i = 0 ; i<arr_ele.length;i++){
+        if(arr_ele[i].className!=null){
+            if(arr_ele[i].className.search(name)>=0){
+                return arr_ele[i];
+            }
+        }
+        
+    }
+}
 //tooltip start
+// Function setting eventListener for all element tooltip
+//parameters:
+//return:
 function tooltip(){
     //get all button element in document file.
     $arBtn= document.getElementsByTagName("button");
@@ -68,22 +84,21 @@ function tooltip(){
 
 //notification start
 
-//  function close Notification
-function closeNotification(btnClose,time){
-    if (time === undefined) {
-        time = "500";
-    }
-    time=parseInt(time);
-    console.log(btnClose);
+// function close Notification
+// paremeters: divHeader: parent element  have button close notification 
+// return: 
+function closeNotification(divHeader){
     //get Parent element of button close notification
-    divParrent =  btnClose.parentNode;
+    divParrent =  divHeader.parentNode;
     //style opacity of divParrent to hide parent
     divParrent.style.opacity=0;
     //remove divParrent after 0.5s
-    setTimeout(function(){divParrent.remove(this)},time);
+    setTimeout(function(){divParrent.remove(this)},500);
 }
 
 // function checking auto hide all notification
+// paremeters:
+// return:
 function notification(){
     //get all elements have class toast
     var arrEle= document.getElementsByClassName("toast");
@@ -106,4 +121,32 @@ function notification(){
 }
 
 //notification end
+
+//dropdown start
+
+//function setting eventListener for all element dropdown button
+//parameters:
+//return:
+function dropdown(){
+    //get all element have classname dropdown_toggle
+    arrEle = document.getElementsByClassName("dropdown_toggle");
+    for(var i = 0 ; i<arrEle.length;i++){
+        //add event click for dropdown button
+        arrEle[i].addEventListener("click",function(){
+            //get parrent element div have classname btn_drop or dropdown
+            divParent=this.parentNode;
+            //get element have class dropdown_menu 
+            dropdown_menu= findElementsByClassName(divParent.childNodes,"dropdown_menu");
+            //check status dropdown is show or hide
+            if(dropdown_menu.className.search("show")>=0){
+                //setting hide dropdown menu
+                dropdown_menu.classList.remove("show");
+            }else{
+                //setting show dropdown menu
+                dropdown_menu.classList.add("show");
+            }       
+        })
+    }
+}
+//dropdown end
 
