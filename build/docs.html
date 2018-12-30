@@ -1,0 +1,2352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Build front-end page faster with css architecture</title>
+    <link rel="stylesheet" href="css/rbox.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <!-- TEMPLATE: DOC CSS LIBRARY FOR RHP TEAM -->
+    <!-- 
+		Note: Info author build web 
+		@Author: RHP Team
+	-->
+
+
+    <!-- This is a page using header component -->
+    <!-- Start: Header -->
+    <header class="header d_flex flex_row flex_nowrap justify_content_start align_items_center position_sticky" id="header">
+        <!-- Start: Logo -->
+        <div class="logo d_inline_block">
+            <a href="index.html">
+                <!-- Note: Using logo with svg type. -->
+                <img src="images/logo.svg" width="36" height="36" alt="Logo for homepage of documentation library" srcset="">
+            </a>
+        </div>
+        <!-- End: Logo -->
+
+        <!-- Start: Menu vertical -->
+        <nav class="menu menu--hor">
+            <ul class="menu--list d_flex flex_row">
+                <li class="menu--item"><a class="menu--item-link" href="index.html">Home</a></li>
+                <li class="menu--item"><a class="menu--item-link active" href="docs.html">Documentations</a></li>
+                <li class="menu--item"><a class="menu--item-link" href="">Examples</a></li>
+                <li class="menu--item"><a class="menu--item-link" href="">Next Plan</a></li>
+                <li class="menu--item"><a class="menu--item-link" href="">Blog</a></li>
+            </ul>
+        </nav>
+        <!-- End: Menu vertical -->
+
+        <!-- Start: Right menu -->
+
+        <!-- End: Right menu -->
+    </header>
+    <!-- End: Header -->
+    <!-- Start: Content -->
+    <section id="content" class="content d_flex align_items_stretch">
+        <!-- Start: Sidebar (Have search component) -->
+        <aside class="menu menu--ver sidebar position_sticky c_12 c_md_3 c_xl_2">
+            <!-- Start: Search component -->
+            <form action="docs.html" method="POST" class="menu--search d_flex align_items_center">
+                <!-- When using framework, u can remove form element to using. Endjoy!!! -->
+                <input type="text" class="form-control d_block" placeholder="Search..." autocomplete="off" name="textSearch" value="">
+            </form>
+            <!-- End: Search component -->
+
+            <!-- Start: List menu sidebar component -->
+            <nav class="nav">
+                <ul class="nav--list">
+                    <li class="nav--list-item">
+                        <a href="#" class="nav--link">Getting Started</a>
+                        <!-- Note: Sub item, u can remove it (when u use item not collapse) -->
+                        <ul class="list--sub">
+                            <li class="list--sub-item">
+                                <a href="#" class="nav--link sub">Introduction</a>
+                            </li>
+                            <li class="list--sub-item">
+                                <a href="#" class="nav--link sub">Download</a>
+                            </li>
+                            <li class="list--sub-item">
+                                <a href="#" class="nav--link sub">Contents</a>
+                            </li>
+                        </ul>
+                        <!-- End: Note sub item -->
+                    </li>
+                    <li class="nav--list-item">
+                        <a href="#" class="nav--link">Layout</a>
+                        <!-- Note: Sub item, u can remove it (when u use item not collapse) -->
+                        <ul class="list--sub">
+                            <li class="list--sub-item">
+                                <a href="#" class="nav--link sub">Overview</a>
+                            </li>
+                            <li class="list--sub-item">
+                                <a href="#" class="nav--link sub">Grid</a>
+                            </li>
+                            <li class="list--sub-item">
+                                <a href="#" class="nav--link sub">Other for layout</a>
+                            </li>
+                        </ul>
+                        <!-- End: Note sub item -->
+                    </li>
+                    <li class="nav--list-item">
+                        <a href="#" class="nav--link">Components</a>
+                        <!-- Note: Sub item, u can remove it (when u use item not collapse) -->
+                        <ul class="list--sub">
+                            <li class="list--sub-item">
+                                <a href="#" class="nav--link sub">Alerts</a>
+                            </li>
+                            <li class="list--sub-item">
+                                <a href="#" class="nav--link sub">Breadcrumb</a>
+                            </li>
+                            <li class="list--sub-item">
+                                <a href="#" class="nav--link sub">Buttons</a>
+                            </li>
+                            <li class="list--sub-item">
+                                <a href="#" class="nav--link sub">Button Group</a>
+                            </li>
+                            <li class="list--sub-item">
+                                <a href="#" class="nav--link sub active">Labels</a>
+                            </li>
+                        </ul>
+                        <!-- End: Note sub item -->
+                    </li>
+                    <li class="nav--list-item">
+                        <a href="#" class="nav--link">Utilities</a>
+                        <!-- Note: Sub item, u can remove it (when u use item not collapse) -->
+                        <ul class="list--sub">
+                            <li class="list--sub-item">
+                                <a href="#" class="nav--link sub">Close icon</a>
+                            </li>
+                            <li class="list--sub-item">
+                                <a href="#" class="nav--link sub">Colors</a>
+                            </li>
+                            <li class="list--sub-item">
+                                <a href="#" class="nav--link sub">Display</a>
+                            </li>
+                            <li class="list--sub-item">
+                                <a href="#" class="nav--link sub">Flex</a>
+                            </li>
+                            <li class="list--sub-item">
+                                <a href="#" class="nav--link sub">Float</a>
+                            </li>
+                            <li class="list--sub-item">
+                                <a href="#" class="nav--link sub">Position</a>
+                            </li>
+                            <li class="list--sub-item">
+                                <a href="#" class="nav--link sub">Text</a>
+                            </li>
+                            <li class="list--sub-item">
+                                <a href="#" class="nav--link sub">Show</a>
+                            </li>
+                        </ul>
+                        <!-- End: Note sub item -->
+                    </li>
+                </ul>
+            </nav>
+            <!-- End: List menu sidebar component -->
+        </aside>
+        <!-- End: Sidebar (have search component) -->
+
+        <!-- Start: Main (Using rules - history) -->
+        <main class="main c_12 c_md_9 c_xl_10">
+            <!-- Start: Component -->
+            <div class="main--wrapper">
+                <!-- Start: Breadcrumb -->
+                <article class="section">
+                    <h1 class="section--title">Breadcrumb</h1>
+                    <p class="section--desc">Indicate the current page’s location within a navigational hierarchy that automatically adds separators via CSS.</p>
+                    <div class="section--content">
+                        <!-- Start: Example -->
+                        <h2 class="section--title-sub">Examples</h2>
+                        <p>Labels scale to match the size of the immediate parent element by using relative font sizing and <code class="class-name">em</code> units.
+                        </p>
+                        <div class="box box--example">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb_item active" aria-current="page">Home</li>
+                                </ol>
+                            </nav>
+
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb_item">
+                                        <a href="#">Home</a>
+                                    </li>
+                                    <li class="breadcrumb_item active" aria-current="page">Library</li>
+                                </ol>
+                            </nav>
+
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb_item">
+                                        <a href="#">Home</a>
+                                    </li>
+                                    <li class="breadcrumb_item">
+                                        <a href="#">Library</a>
+                                    </li>
+                                    <li class="breadcrumb_item active" aria-current="page">Data</li>
+                                </ol>
+                            </nav>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;nav aria-label="breadcrumb"&gt;
+  &lt;ol class="breadcrumb"&gt;
+    &lt;li class="breadcrumb_item active" aria-current="page"&gt;Home&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/nav&gt;
+
+&lt;nav aria-label="breadcrumb"&gt;
+  &lt;ol class="breadcrumb"&gt;
+    &lt;li class="breadcrumb_item"&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="breadcrumb_item active" aria-current="page"&gt;Library&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/nav&gt;
+
+&lt;nav aria-label="breadcrumb"&gt;
+  &lt;ol class="breadcrumb"&gt;
+    &lt;li class="breadcrumb_item"&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="breadcrumb_item"&gt;&lt;a href="#"&gt;Library&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="breadcrumb_item active" aria-current="page"&gt;Data&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/nav&gt;
+									 </code></pre>
+                        </div>
+                        <!-- End: Example -->
+                    </div>
+                </article>
+                <!-- End: Breadcrumb -->
+
+                <!-- Start: Buttons -->
+                <article class="section">
+                    <h1 class="section--title">Buttons</h1>
+                    <p class="section--desc">Use Rbox’s custom button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more.
+                    </p>
+                    <div class="section--content">
+                        <!-- Start: Example -->
+                        <h2 class="section--title-sub">Examples</h2>
+                        <p>Rbox includes several predefined button styles, each serving its own semantic purpose, with a few extras thrown in for more control.</p>
+                        <div class="box box--example">
+                            <button type="button" class="btn btn_primary">Primary</button>
+                            <button type="button" class="btn btn_secondary">Secondary</button>
+                            <button type="button" class="btn btn_success">Success</button>
+                            <button type="button" class="btn btn_danger">Danger</button>
+                            <button type="button" class="btn btn_warning">Warning</button>
+                            <button type="button" class="btn btn_info">Info</button>
+                            <button type="button" class="btn btn_light">Light</button>
+                            <button type="button" class="btn btn_dark">Dark</button>
+
+                            <button type="button" class="btn btn_link">Link</button>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;button type="button" class="btn btn_primary"&gt;Primary&lt;/button&gt;
+&lt;button type="button" class="btn btn_secondary"&gt;Secondary&lt;/button&gt;
+&lt;button type="button" class="btn btn_success"&gt;Success&lt;/button&gt;
+&lt;button type="button" class="btn btn_danger"&gt;Danger&lt;/button&gt;
+&lt;button type="button" class="btn btn_warning"&gt;Warning&lt;/button&gt;
+&lt;button type="button" class="btn btn_info"&gt;Info&lt;/button&gt;
+&lt;button type="button" class="btn btn_light"&gt;Light&lt;/button&gt;
+&lt;button type="button" class="btn btn_dark"&gt;Dark&lt;/button&gt;
+
+&lt;button type="button" class="btn btn_link"&gt;Link&lt;/button&gt;										 
+									 </code></pre>
+                        </div>
+                        <!-- End: Example -->
+                        <!-- Start: Button tags -->
+                        <h2 class="section--title-sub">Button tags</h2>
+                        <p>The <code class="class-name">.btn</code> classes are designed to be used with the
+                            <code class="class-name">&lt;button&gt;</code> element. However, you can also use these classes on <code class="class-name">&lt;a&gt;</code> or <code class="class-name">&lt;input&gt;</code> elements (though some browsers may
+                            apply a slightly different rendering).</p>
+                        <p>When using button classes on <code class="class-name">&lt;a&gt;</code> elements that are used to trigger in-page functionality (like collapsing content), rather than linking to new pages or sections within the current page, these
+                            links should be given a <code class="class-name">role="button"</code> to appropriately convey their purpose to assistive technologies such as screen readers.</p>
+                        <div class="box box--example">
+                            <a class="btn btn_primary" href="#" role="button">Link</a>
+                            <button class="btn btn_primary" type="submit">Button</button>
+                            <input class="btn btn_primary" type="button" value="Input">
+                            <input class="btn btn_primary" type="submit" value="Submit">
+                            <input class="btn btn_primary" type="reset" value="Reset">
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;a class="btn btn_primary" href="#" role="button"&gt;Link&lt;/a&gt;
+&lt;button class="btn btn_primary" type="submit"&gt;Button&lt;/button&gt;
+&lt;input class="btn btn_primary" type="button" value="Input"&gt;
+&lt;input class="btn btn_primary" type="submit" value="Submit"&gt;
+&lt;input class="btn btn_primary" type="reset" value="Reset"&gt;
+									</code></pre>
+                        </div>
+                        <!-- End: Button tags -->
+
+                        <!-- Start: Outline buttons -->
+                        <h2 class="section--title-sub">Outline buttons</h2>
+                        <p>In need of a button, but not the hefty background colors they bring? Replace the default modifier classes with the <code class="class-name">.btn_outline_*</code> ones to remove all background images and colors on any button.
+                        </p>
+                        <div class="box box--example">
+                            <button type="button" class="btn btn_outline_primary">Primary</button>
+                            <button type="button" class="btn btn_outline_secondary">Secondary</button>
+                            <button type="button" class="btn btn_outline_success">Success</button>
+                            <button type="button" class="btn btn_outline_danger">Danger</button>
+                            <button type="button" class="btn btn_outline_warning">Warning</button>
+                            <button type="button" class="btn btn_outline_info">Info</button>
+                            <button type="button" class="btn btn_outline_light">Light</button>
+                            <button type="button" class="btn btn_outline_dark">Dark</button>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;button type="button" class="btn btn_outline_primary"&gt;Primary&lt;/button&gt;
+&lt;button type="button" class="btn btn_outline_secondary"&gt;Secondary&lt;/button&gt;
+&lt;button type="button" class="btn btn_outline_success"&gt;Success&lt;/button&gt;
+&lt;button type="button" class="btn btn_outline_danger"&gt;Danger&lt;/button&gt;
+&lt;button type="button" class="btn btn_outline_warning"&gt;Warning&lt;/button&gt;
+&lt;button type="button" class="btn btn_outline_info"&gt;Info&lt;/button&gt;
+&lt;button type="button" class="btn btn_outline_light"&gt;Light&lt;/button&gt;
+&lt;button type="button" class="btn btn_outline_dark"&gt;Dark&lt;/button&gt;								        
+								    </code></pre>
+                        </div>
+                        <!-- End: Outline buttons -->
+
+                        <!-- Start: Active state -->
+                        <h2 class="section--title-sub">Active state</h2>
+                        <p>Buttons will appear pressed (with a darker background, darker border, and inset shadow) when active. <b>There’s no need to add
+								a class to <code class="class-name">&lt;button&gt;</code>s as they use a pseudo-class</b>. However, you can still force the same active appearance with <code class="class-name">.active</code> (and include the <code class="class-name">aria-pressed="true"</code>                            attribute) should you need to replicate the state programmatically.
+                        </p>
+                        <div class="box box--example">
+                            <a href="#" class="btn btn_primary active" role="button" aria-pressed="true">Primary link</a>
+                            <a href="#" class="btn btn_secondary active" role="button" aria-pressed="true">Link</a>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;a href="#" class="btn btn_primary active" role="button" aria-pressed="true"&gt;Primary link&lt;/a&gt;
+&lt;a href="#" class="btn btn_secondary active" role="button" aria-pressed="true"&gt;Link&lt;/a&gt;								        
+								    </code></pre>
+                        </div>
+                        <!-- End: Active state -->
+
+                        <!-- Start: Disabled state -->
+                        <h2 class="section--title-sub">Disabled state</h2>
+                        <p>Make buttons look inactive by adding the <code class="class-name">disabled</code> boolean attribute to any <code class="class-name">&lt;button&gt;</code> element.
+                        </p>
+                        <div class="box box--example">
+                            <button type="button" class="btn btn_primary" disabled>Primary button</button>
+                            <button type="button" class="btn btn_secondary" disabled>Button</button>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;button type="button" class="btn btn_primary" disabled&gt;Primary button&lt;/button&gt;
+&lt;button type="button" class="btn btn_secondary" disabled&gt;Button&lt;/button&gt;								        
+								    </code></pre>
+                        </div>
+                        <p>
+                            Disabled buttons using the <code class="class-name">&lt;a&gt;</code> element behave a bit different:
+                        </p>
+                        <ul>
+                            <li>
+                                <code class="class-name">&lt;a&gt;</code>s don’t support the
+                                <code class="class-name">disabled</code> attribute, so you must add the
+                                <code class="class-name">.disabled</code> class to make it visually appear disabled.</li>
+                            <li>Some future-friendly styles are included to disable all
+                                <code class="class-name">pointer-events</code> on anchor buttons. In browsers which support that property, you won’t see the disabled cursor at all.</li>
+                            <li>Disabled buttons should include the
+                                <code class="class-name">aria-disabled="true"</code> attribute to indicate the state of the element to assistive technologies.</li>
+                        </ul>
+                        <div class="box box--example">
+                            <a href="#" class="btn btn_primary disabled" tabindex="-1" role="button" aria-disabled="true">Primary link</a>
+                            <a href="#" class="btn btn_secondary disabled" tabindex="-1" role="button" aria-disabled="true">Link</a>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;a href="#" class="btn btn_primary disabled" tabindex="-1" role="button" aria-disabled="true"&gt;Primary link&lt;/a&gt;
+&lt;a href="#" class="btn btn_secondary disabled" tabindex="-1" role="button" aria-disabled="true"&gt;Link&lt;/a&gt;
+								    </code></pre>
+                        </div>
+                        <div class="note--document border-warning">
+                            <h5 class="note--document-title">Link functionality caveat</h5>
+                            <p class="note--document-detail">The <code class="class-name">.disabled</code> class uses <code class="class-name">pointer-events: none</code> to try to disable the link functionality of
+                                <code class="class-name">&lt;a&gt;</code>s, but that CSS property is not yet standardized. In addition, even in browsers that do support <code class="class-name">pointer-events: none</code>, keyboard navigation remains
+                                unaffected, meaning that sighted keyboard users and users of assistive technologies will still be able to activate these links. So to be safe, add a <code class="class-name">tabindex="-1"</code> attribute on these links
+                                (to prevent them from receiving keyboard focus) and use custom JavaScript to disable their functionality.</p>
+                        </div>
+                        <!-- End: Disabled state -->
+                        <!-- Start: Button plugin -->
+                        <h2 class="section--title-sub">Button plugin</h2>
+                        <p>Do more with buttons. Control button states or create groups of buttons for more components like toolbars.
+                        </p>
+                        <!-- Start: Toggle states -->
+                        <h4 class="section--title-part">Toggle states</h4>
+                        <p>Add <code class="class-name">data-toggle="button"</code> to toggle a button’s <code class="class-name">active</code> state. If you’re pre-toggling a button, you must manually add the <code class="class-name">.active</code> class
+                            and <code class="class-name">aria-pressed="true"</code> to the <code class="class-name">&lt;a&gt;</code>.
+                        </p>
+                        <div class="box box--example">
+                            <button type="button" class="btn btn_primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+										Single toggle
+									</button>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;button type="button" class="btn btn_primary" data-toggle="button" aria-pressed="false" autocomplete="off"&gt;
+	Single toggle
+&lt;/button&gt;								        
+								    </code></pre>
+                        </div>
+                        <!-- End: Toggle states -->
+
+                        <!-- Start: Checkbox and radio buttons -->
+                        <h4 class="section--title-part">Checkbox and radio buttons</h4>
+                        <p>
+                            Rbox’s <code class="class-name">.button</code> styles can be applied to other elements, such as
+                            <code class="class-name">&lt;label&gt;</code>s, to provide checkbox or radio style button toggling. Add <code class="class-name">data-toggle="buttons"</code> to a <code class="class-name">.btn_group</code> containing those
+                            modified buttons to enable their toggling behavior via JavaScript and add <code class="class-name">.btn_group_toggle</code> to style the
+                            <code class="class-name">&lt;input&gt;</code>s within your buttons. <b>Note that you can create single input-powered buttons or groups of them.</b>
+                        </p>
+                        <p>The checked state for these buttons is <b>only updated via <code class="class-name">click</code> event</b> on the button. If you use another method to update the input—e.g., with <code class="class-name">&lt;input type="reset"&gt;</code>or
+                            by manually applying the input’s <code class="class-name">checked</code> property—you’ll need to toggle <code class="class-name">.active</code> on the
+                            <code class="class-name">&lt;label&gt;</code> manually.
+                        </p>
+                        <p>Note that pre-checked buttons require you to manually add the <code class="class-name">.active</code> class to the input’s <code class="class-name">&lt;label&gt;</code>.</p>
+                        <div class="box box--example">
+                            <div class="btn_group_toggle" data-toggle="buttons">
+                                <label class="btn btn_secondary active">
+                                <input type="checkbox" checked autocomplete="off"> Checked
+                            </label>
+                            </div>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="btn_group_toggle" data-toggle="buttons"&gt;
+  &lt;label class="btn btn_secondary active"&gt;
+    &lt;input type="checkbox" checked autocomplete="off"&gt; Checked
+  &lt;/label&gt;
+&lt;/div&gt;
+									 </code></pre>
+                        </div>
+                        <div class="box box--example">
+                            <div class="btn_group btn_group_toggle" data-toggle="buttons">
+                                <label class="btn btn_secondary active">
+                                    <input type="radio" name="options" id="option1" autocomplete="off" checked> Active
+                                </label>
+                                <label class="btn btn_secondary">
+                                    <input type="radio" name="options" id="option2" autocomplete="off"> Radio
+                                </label>
+                                <label class="btn btn_secondary">
+                                    <input type="radio" name="options" id="option3" autocomplete="off"> Radio
+                                </label>
+                            </div>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="btn_group btn_group_toggle" data-toggle="buttons"&gt;
+  &lt;label class="btn btn_secondary active"&gt;
+    &lt;input type="radio" name="options" id="option1" autocomplete="off" checked&gt; Active
+  &lt;/label&gt;
+  &lt;label class="btn btn_secondary"&gt;
+    &lt;input type="radio" name="options" id="option2" autocomplete="off"&gt; Radio
+  &lt;/label&gt;
+  &lt;label class="btn btn_secondary"&gt;
+    &lt;input type="radio" name="options" id="option3" autocomplete="off"&gt; Radio
+  &lt;/label&gt;
+&lt;/div&gt;
+                                </code></pre>
+                        </div>
+                        <!-- End: Checkbox and radio buttons -->
+                        <!-- End: Button plugin -->
+                    </div>
+                </article>
+                <!-- End: Buttons -->
+
+                <!-- Start: Labels -->
+                <article class="section">
+                    <h1 class="section--title">Labels</h1>
+                    <p class="section--desc">Documentation and examples for labels.</p>
+                    <div class="section--content">
+                        <!-- Start: Example -->
+                        <h2 class="section--title-sub">Examples</h2>
+                        <p>Labels scale to match the size of the immediate parent element by using relative font sizing and <code class="class-name">em</code> units.
+                        </p>
+                        <div class="box box--example">
+                            <h1>Example heading <span class="label label_secondary">New</span></h1>
+                            <h2>Example heading <span class="label label_secondary">New</span></h2>
+                            <h3>Example heading <span class="label label_secondary">New</span></h3>
+                            <h4>Example heading <span class="label label_secondary">New</span></h4>
+                            <h5>Example heading <span class="label label_secondary">New</span></h5>
+                            <h6>Example heading <span class="label label_secondary">New</span></h6>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;h1&gt;Example heading &lt;span class="label label_secondary"&gt;New&lt;/span&gt;&lt;/h1&gt;
+&lt;h2&gt;Example heading &lt;span class="label label_secondary"&gt;New&lt;/span&gt;&lt;/h2&gt;
+&lt;h3&gt;Example heading &lt;span class="label label_secondary"&gt;New&lt;/span&gt;&lt;/h3&gt;
+&lt;h4&gt;Example heading &lt;span class="label label_secondary"&gt;New&lt;/span&gt;&lt;/h4&gt;
+&lt;h5&gt;Example heading &lt;span class="label label_secondary"&gt;New&lt;/span&gt;&lt;/h5&gt;
+&lt;h6&gt;Example heading &lt;span class="label label_secondary"&gt;New&lt;/span&gt;&lt;/h6&gt;
+														</code></pre>
+                        </div>
+                        <p>Labels can be used as part of links or buttons to provide a counter.</p>
+                        <div class="box box--example">
+                            <button type="button" class="btn btn_primary">
+																Notifications <span class="label label_light">4</span>
+														</button>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;button type="button" class="btn btn_primary"&gt;
+  Notifications &lt;span class="label label_light"&gt;4&lt;/span&gt;
+&lt;/button&gt;
+														</code></pre>
+                        </div>
+                        <p>Note that depending on how they are used, labels may be confusing for users of screen readers and similar assistive technologies. While the styling of labels provides a visual cue as to their purpose, these users will simply be
+                            presented with the content of the label. Depending on the specific situation, these labels may seem like random additional words or numbers at the end of a sentence, link, or button.</p>
+                        <p>Unless the context is clear (as with the “Notifications” example, where it is understood that the “4” is the number of notifications), consider including additional context with a visually hidden piece of additional text.</p>
+                        <div class="box box--example">
+                            <button type="button" class="btn btn_primary">
+															Profile <span class="label label_light">9</span>
+														</button>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;button type="button" class="btn btn_primary"&gt;
+  Profile &lt;span class="label label_light"&gt;9&lt;/span&gt;
+&lt;/button&gt;
+														</code></pre>
+                        </div>
+                        <!-- End: Example -->
+                        <!-- Start: Contextual variations -->
+                        <h2 class="section--title-sub">Contextual variations</h2>
+                        <p>Add any of the below mentioned modifier classes to change the appearance of a label.</p>
+                        <div class="box box--example">
+                            <span class="label label_primary">Primary</span>
+                            <span class="label label_secondary">Secondary</span>
+                            <span class="label label_success">Success</span>
+                            <span class="label label_danger">Danger</span>
+                            <span class="label label_warning">Warning</span>
+                            <span class="label label_info">Info</span>
+                            <span class="label label_light">Light</span>
+                            <span class="label label_dark">Dark</span>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;span class="label label_primary"&gt;Primary&lt;/span&gt;
+&lt;span class="label label_secondary"&gt;Secondary&lt;/span&gt;
+&lt;span class="label label_success"&gt;Success&lt;/span&gt;
+&lt;span class="label label_danger"&gt;Danger&lt;/span&gt;
+&lt;span class="label label_warning"&gt;Warning&lt;/span&gt;
+&lt;span class="label label_info"&gt;Info&lt;/span&gt;
+&lt;span class="label label_light"&gt;Light&lt;/span&gt;
+&lt;span class="label label_dark"&gt;Dark&lt;/span&gt;
+														</code></pre>
+                        </div>
+                        <!-- End: Contextual variations -->
+                        <!-- Start: Pill labels -->
+                        <h2 class="section--title-sub">Pill labels</h2>
+                        <p>Use the <code class="class-name">.label_pill</code> modifier class to make labels more rounded (with a larger <code class="class-name">border-radius</code> and additional horizontal <code class="class-name">padding</code>). Useful
+                            if you miss the labels from v3.</p>
+                        <div class="box box--example">
+                            <span class="label label_primary">Primary</span>
+                            <span class="label label_secondary">Secondary</span>
+                            <span class="label label_success">Success</span>
+                            <span class="label label_danger">Danger</span>
+                            <span class="label label_warning">Warning</span>
+                            <span class="label label_info">Info</span>
+                            <span class="label label_light">Light</span>
+                            <span class="label label_dark">Dark</span>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;span class="label label_primary"&gt;Primary&lt;/span&gt;
+&lt;span class="label label_secondary"&gt;Secondary&lt;/span&gt;
+&lt;span class="label label_success"&gt;Success&lt;/span&gt;
+&lt;span class="label label_danger"&gt;Danger&lt;/span&gt;
+&lt;span class="label label_warning"&gt;Warning&lt;/span&gt;
+&lt;span class="label label_info"&gt;Info&lt;/span&gt;
+&lt;span class="label label_light"&gt;Light&lt;/span&gt;
+&lt;span class="label label_dark"&gt;Dark&lt;/span&gt;
+									</code></pre>
+                        </div>
+                        <!-- End: Pill labels -->
+                        <!-- Start: Links -->
+                        <h2 class="section--title-sub">Links</h2>
+                        <p>Using the contextual <code class="class-name">.label_*</code> classes on an <code class="class-name">&lt;a&gt;</code> element quickly provide actionable labels with hover and focus states.</p>
+                        <div class="box box--example">
+                            <a href="#" class="label label_primary">Primary</a>
+                            <a href="#" class="label label_secondary">Secondary</a>
+                            <a href="#" class="label label_success">Success</a>
+                            <a href="#" class="label label_danger">Danger</a>
+                            <a href="#" class="label label_warning">Warning</a>
+                            <a href="#" class="label label_info">Info</a>
+                            <a href="#" class="label label_light">Light</a>
+                            <a href="#" class="label label_dark">Dark</a>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;a href="#" class="label label_primary"&gt;Primary&lt;/a&gt;
+&lt;a href="#" class="label label_secondary"&gt;Secondary&lt;/a&gt;
+&lt;a href="#" class="label label_success"&gt;Success&lt;/a&gt;
+&lt;a href="#" class="label label_danger"&gt;Danger&lt;/a&gt;
+&lt;a href="#" class="label label_warning"&gt;Warning&lt;/a&gt;
+&lt;a href="#" class="label label_info"&gt;Info&lt;/a&gt;
+&lt;a href="#" class="label label_light"&gt;Light&lt;/a&gt;
+&lt;a href="#" class="label label_dark"&gt;Dark&lt;/a&gt;
+														</code></pre>
+                        </div>
+                        <!-- End: Links -->
+                    </div>
+                </article>
+                <!-- End: Labels -->
+                <article class="section">
+                    <h1 class="section--title">Something</h1>
+                    <p class="section--desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint molestias ducimus vitae, maiores temporibus nulla eos, laudantium beatae quasi enim officiis quia rerum modi tenetur similique consequatur. Dignissimos, nesciunt magni.</p>
+                    <div class="section--content">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error totam cumque blanditiis neque atque inventore quod ipsum, pariatur distinctio delectus sed eaque impedit iure, eos natus, voluptatibus temporibus perferendis consectetur!</p>
+                        <h2 class="section--title-sub">Examples</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae obcaecati, voluptatem ullam consequatur odio ex iste unde mollitia sint quod modi. Mollitia distinctio exercitationem veritatis cupiditate tenetur impedit quis
+                            voluptates.
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+            <!-- End: Component -->
+
+            <!-- Start: Utilities -->
+            <div class="main--wrapper">
+                <!-- Start: Close icon -->
+                <article class="section">
+                    <h1 class="section--title">Close icon</h1>
+                    <p class="section--desc">Use a generic close icon for dismissing content like modals and alerts.</p>
+                    <div class="section--content">
+                        <p><b>Be sure to include text for screen readers</b>, as we’ve done with <code class="class-name">aria-label</code>.</p>
+                        <div class="box box--example">
+                            <button type="button" class="close" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;button type="button" class="close" aria-label="Close"&gt;
+  &lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;
+&lt;/button&gt;        
+                            </code></pre>
+                        </div>
+                    </div>
+                </article>
+                <!-- End: Close icon -->
+                <!-- Start: Colors -->
+                <article class="section">
+                    <h1 class="section--title">Colors</h1>
+                    <p class="section--desc">Convey meaning through color with a handful of color utility classes. Includes support for styling links with hover states, too.</p>
+                    <div class="section--content">
+                        <!-- Start: Color -->
+                        <h2 class="section--title-sub">Color</h2>
+                        <div class="box box--example">
+                            <p class="text_primary">.text_primary</p>
+                            <p class="text_secondary">.text_secondary</p>
+                            <p class="text_success">.text_success</p>
+                            <p class="text_danger">.text_danger</p>
+                            <p class="text_warning">.text_warning</p>
+                            <p class="text_info">.text_info</p>
+                            <p class="text_light bg_dark">.text_light</p>
+                            <p class="text_dark">.text_dark</p>
+                            <p class="text_body">.text_body</p>
+                            <p class="text_muted">.text_muted</p>
+                            <p class="text_white bg_dark">.text_white</p>
+                            <p class="text_black_50">.text_black_50</p>
+                            <p class="text_white_50 bg_dark">.text_white_50</p>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;p class="text_primary"&gt;.text_primary&lt;/p&gt;
+&lt;p class="text_secondary"&gt;.text_secondary&lt;/p&gt;
+&lt;p class="text_success"&gt;.text_success&lt;/p&gt;
+&lt;p class="text_danger"&gt;.text_danger&lt;/p&gt;
+&lt;p class="text_warning"&gt;.text_warning&lt;/p&gt;
+&lt;p class="text_info"&gt;.text_info&lt;/p&gt;
+&lt;p class="text_light bg_dark"&gt;.text_light&lt;/p&gt;
+&lt;p class="text_dark"&gt;.text_dark&lt;/p&gt;
+&lt;p class="text_body"&gt;.text_body&lt;/p&gt;
+&lt;p class="text_muted"&gt;.text_muted&lt;/p&gt;
+&lt;p class="text_white bg_dark"&gt;.text_white&lt;/p&gt;
+&lt;p class="text_black_50"&gt;.text_black_50&lt;/p&gt;
+&lt;p class="text_white_50 bg-dark"&gt;.text_white_50&lt;/p&gt;
+                        </code></pre>
+                        </div>
+                        <p>Contextual text classes also work well on anchors with the provided hover and focus states. <b>Note that the <code
+            class="class-name">.text_white</code> and <code class="class-name">.text_muted</code> class has no
+        additional link styling beyond underline.</b></p>
+                        <div class="box box--example">
+                            <p><a href="#" class="text_primary">Primary link</a></p>
+                            <p><a href="#" class="text_secondary">Secondary link</a></p>
+                            <p><a href="#" class="text_success">Success link</a></p>
+                            <p><a href="#" class="text_danger">Danger link</a></p>
+                            <p><a href="#" class="text_warning">Warning link</a></p>
+                            <p><a href="#" class="text_info">Info link</a></p>
+                            <p><a href="#" class="text_light bg_dark">Light link</a></p>
+                            <p><a href="#" class="text_dark">Dark link</a></p>
+                            <p><a href="#" class="text_muted">Muted link</a></p>
+                            <p><a href="#" class="text_white bg_dark">White link</a></p>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;p&gt;&lt;a href="#" class="text_primary"&gt;Primary link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#" class="text_secondary"&gt;Secondary link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#" class="text_success"&gt;Success link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#" class="text_danger"&gt;Danger link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#" class="text_warning"&gt;Warning link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#" class="text_info"&gt;Info link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#" class="text_light bg_dark"&gt;Light link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#" class="text_dark"&gt;Dark link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#" class="text_muted"&gt;Muted link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#" class="text_white bg_dark"&gt;White link&lt;/a&gt;&lt;/p&gt;
+                        </code></pre>
+                        </div>
+                        <!-- End: Color -->
+
+                        <!-- Start: Background color -->
+                        <h2 class="section--title-sub">Background color</h2>
+                        <p>Similar to the contextual text color classes, easily set the background of an element to any contextual class. Anchor components will darken on hover, just like the text classes. Background utilities <b>do not set <code class="class-name">color</code></b>,
+                            so in some cases you’ll want to use <code class="class-name">.text_*</code> utilities.</p>
+                        <div class="box box--example">
+                            <div class="p_3 mb_2 bg_primary text_white">.bg_primary</div>
+                            <div class="p_3 mb_2 bg_secondary text_white">.bg_secondary</div>
+                            <div class="p_3 mb_2 bg_success text_white">.bg_success</div>
+                            <div class="p_3 mb_2 bg_danger text_white">.bg_danger</div>
+                            <div class="p_3 mb_2 bg_warning text_dark">.bg_warning</div>
+                            <div class="p_3 mb_2 bg_info text_white">.bg_info</div>
+                            <div class="p_3 mb_2 bg_light text_dark">.bg_light</div>
+                            <div class="p_3 mb_2 bg_dark text_white">.bg_dark</div>
+                            <div class="p_3 mb_2 bg_white text_dark">.bg_white</div>
+                            <div class="p_3 mb_2 bg_transparent text_dark">.bg_transparent</div>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="p_3 mb_2 bg_primary text_white"&gt;.bg_primary&lt;/div&gt;
+&lt;div class="p_3 mb_2 bg_secondary text_white"&gt;.bg_secondary&lt;/div&gt;
+&lt;div class="p_3 mb_2 bg_success text_white"&gt;.bg_success&lt;/div&gt;
+&lt;div class="p_3 mb_2 bg_danger text_white"&gt;.bg_danger&lt;/div&gt;
+&lt;div class="p_3 mb_2 bg_warning text_dark"&gt;.bg_warning&lt;/div&gt;
+&lt;div class="p_3 mb_2 bg_info text_white"&gt;.bg_info&lt;/div&gt;
+&lt;div class="p_3 mb_2 bg_light text_dark"&gt;.bg_light&lt;/div&gt;
+&lt;div class="p_3 mb_2 bg_dark text_white"&gt;.bg_dark&lt;/div&gt;
+&lt;div class="p_3 mb_2 bg_white text_dark"&gt;.bg_white&lt;/div&gt;
+&lt;div class="p_3 mb_2 bg_transparent text_dark"&gt;.bg_transparent&lt;/div&gt;
+                        </code></pre>
+                        </div>
+                        <!-- End: Background color -->
+
+                        <!-- Start: Background gradient -->
+                        <h2 class="section--title-sub">Background gradient</h2>
+                        <p>When <code class="class-name">$enable-gradients</code> is set to <code class="class-name">true</code> (default is
+                            <code class="class-name">false</code>), you can use <code class="class-name">.bg_gradient_</code> utility classes.</p>
+                        <ul>
+                            <li><code class="class-name">.bg_gradient_primary</code></li>
+                            <li><code class="class-name">.bg_gradient_secondary</code></li>
+                            <li><code class="class-name">.bg_gradient_success</code></li>
+                            <li><code class="class-name">.bg_gradient_danger</code></li>
+                            <li><code class="class-name">.bg_gradient_warning</code></li>
+                            <li><code class="class-name">.bg_gradient_info</code></li>
+                            <li><code class="class-name">.bg_gradient_light</code></li>
+                            <li><code class="class-name">.bg_gradient_dark</code></li>
+                        </ul>
+                        <div class="note--document border-info">
+                            <h5 class="note--document-title">Link functionality caveat</h5>
+                            <p class="note--document-detail">Sometimes contextual classes cannot be applied due to the specificity of another selector. In some cases, a sufficient workaround is to wrap your element’s content in a <code class="class-name">&lt;div&gt;</code> with the class.</p>
+                        </div>
+                        <!-- End: Background gradient -->
+                    </div>
+                </article>
+                <!-- End: Colors -->
+
+                <!-- Start: Display -->
+                <article class="section">
+                    <h1 class="section--title">Display property</h1>
+                    <p class="section--desc">Quickly and responsively toggle the display value of components and more with our display utilities. Includes support for some of the more common values, as well as some extras for controlling display when printing..
+                    </p>
+                    <div class="section--content">
+                        <!-- Start: How it works -->
+                        <h2 class="section--title-sub">How it works</h2>
+                        <p>Change the value of the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display">display property</a> with our responsive display utility classes. We purposely support only a subset of all possible values for <code class="class-name">display</code>. Classes can be combined for various effects as you need.</p>
+                        <!-- End: How it works -->
+                        <!-- Start: Notation -->
+                        <h2 class="section--title-sub">Notation</h2>
+                        <p>Display utility classes that apply to all <a href="https://getbootstrap.com/docs/4.2/layout/overview/#responsive-breakpoints">breakpoints</a>, from <code class="class-name">xs</code> to <code class="class-name">xl</code>, have no breakpoint abbreviation in them. This is because those classes are applied from <code class="class-name">min-width: 0;</code> and up, and thus are not bound by a media query. The remaining breakpoints, however, do include a breakpoint abbreviation.</p>
+                        <p>As such, the classes are named using the format:</p>
+                        <ul>
+                            <li><code class="class-name">.d_{value}</code> for <code class="class-name">xs</code></li>
+                            <li><code class="class-name">.d_{breakpoint}_{value}</code><code class="class-name">sm, md, lg,</code> and <code class="class-name">xl</code></li>
+                        </ul>
+                        <p>Where <i>value</i> is one of:</p>
+                        <ul>
+                            <li><code class="class-name">none</code></li>
+                            <li><code class="class-name">inline</code></li>
+                            <li><code class="class-name">inline_block</code></li>
+                            <li><code class="class-name">block</code></li>
+                            <li><code class="class-name">table</code></li>
+                            <li><code class="class-name">table_cell</code></li>
+                            <li><code class="class-name">table_row</code></li>
+                            <li><code class="class-name">flex</code></li>
+                            <li><code class="class-name">inline_flex</code></li>
+                        </ul>
+                        <p>The media queries effect screen widths with the given breakpoint or larger. For example, <code class="class-name">.d_lg_none</code> sets <code class="class-name">display: none;</code> on both <code class="class-name">lg</code> and <code class="class-name">xl</code> screens.</p>
+                        <!-- End: Notation -->
+
+                        <!-- Start: Examples -->
+                        <h2 class="section--title-sub">Examples</h2>
+                        <p>Rbox includes several predefined button styles, each serving its own semantic purpose, with a few extras thrown in for more
+                            control.</p>
+                        <div class="box box--example">
+									<div class="d_inline p_2 bg_primary text_white">d_inline</div>
+									<div class="d_inline p_2 bg_dark text_white">d_inline</div>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="d_inline p_2 bg_primary text_white"&gt;d_inline&lt;/div&gt;
+&lt;div class="d_inline p_2 bg_dark text_white"&gt;d_inline&lt;/div&gt;                                
+                            </code></pre>
+								</div>
+								                        <div class="box box--example">
+									<div class="d_block p_2 bg_primary text_white">d_block</div>
+									<div class="d_block p_2 bg_dark text_white">d_block</div>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="d_block p_2 bg_primary text_white"&gt;d_block&lt;/div&gt;
+&lt;div class="d_block p_2 bg_dark text_white"&gt;d_block&lt;/div&gt;                                
+                            </code></pre>
+                        </div>
+                        <!-- End: Examples -->
+								
+                        <!-- Start: Hiding elements -->
+                        <h2 class="section--title-sub">Hiding elements</h2>
+                        <p>For faster mobile-friendly development, use responsive display classes for showing and hiding elements by device. Avoid creating entirely different versions of the same site, instead hide elements responsively for each screen size.</p>
+                        <p>To hide elements simply use the <code class="class-name">.d_none</code> class or one of the <code class="class-name">.d_{sm,md,lg,xl}_none</code> classes for any responsive screen variation.</p>
+                        <p>To show an element only on a given interval of screen sizes you can combine one <code class="class-name">.d_*_none</code> class with a <code class="class-name">.d_*_*</code> class, for example <code class="class-name">.d_none .d_md_block .d_xl_none</code> will hide the element for all screen sizes except on medium and large devices.</p>
+                        <table class="table--document">
+                            <thead>
+                                <tr>
+                                    <th>Screen Size</th>
+                                    <th>Class</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Hidden on all</td>
+                                    <td><code class="class-name">.d_none</code></td>
+                                </tr>
+                                <tr>
+                                    <td>Hidden only on xs</td>
+                                    <td><code class="class-name">.d_none .d_sm_block</code></td>
+                                </tr>
+                                <tr>
+                                    <td>Hidden only on sm</td>
+                                    <td><code class="class-name">.d_sm_none .d_md_block</code></td>
+                                </tr>
+                                <tr>
+                                    <td>Hidden only on md</td>
+                                    <td><code class="class-name">.d_md_none .d_lg_block</code></td>
+                                </tr>
+                                <tr>
+                                    <td>Hidden only on lg</td>
+                                    <td><code class="class-name">.d_lg_none .d_xl_block</code></td>
+                                </tr>
+                                <tr>
+                                    <td>Hidden only on xl</td>
+                                    <td><code class="class-name">.d_xl_none</code></td>
+                                </tr>
+                                <tr>
+                                    <td>Visible on all</td>
+                                    <td><code class="class-name">.d_block</code></td>
+                                </tr>
+                                <tr>
+                                    <td>Visible only on xs</td>
+                                    <td><code class="class-name">.d_block .d_sm_none</code></td>
+                                </tr>
+                                <tr>
+                                    <td>Visible only on sm</td>
+                                    <td><code class="class-name">.d_none .d_sm_block .d_md_none</code></td>
+                                </tr>
+                                <tr>
+                                    <td>Visible only on md</td>
+                                    <td><code class="class-name">.d_none .d_md_block .d_lg_none</code></td>
+                                </tr>
+                                <tr>
+                                    <td>Visible only on lg</td>
+                                    <td><code class="class-name">.d_none .d_lg_block .d_xl_none</code></td>
+                                </tr>
+                                <tr>
+                                    <td>Visible only on xl</td>
+                                    <td><code class="class-name">.d_none .d_xl_block</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="box box--example">
+                            <div class="d_lg_none">hide on screens wider than lg</div>
+                            <div class="d_none d_lg_block">hide on screens smaller than lg</div>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="d_lg_none"&gt;hide on screens wider than lg&lt;/div&gt;
+&lt;div class="d_none d_lg_block"&gt;hide on screens smaller than lg&lt;/div&gt;										
+                            </code></pre>
+                        </div>
+                        <!-- End: Hiding elements -->
+                    </div>
+                </article>
+                <!-- End: Display -->
+
+                <!-- Start: Flex -->
+                <article class="section">
+                    <h1 class="section--title">Flex</h1>
+                    <p class="section--desc">Quickly manage the layout, alignment, and sizing of grid columns, navigation, components, and more with a full suite of responsive flexbox utilities. For more complex implementations, custom CSS may be necessary.</p>
+                    <div class="section--content">
+                        <!-- Start: Enable flex behaviors -->
+                        <h2 class="section--title-sub">Enable flex behaviors</h2>
+                        <p>Apply <code class="class-name">display</code> utilities to create a flexbox container and transform <b>direct children elements</b> into flex items. Flex containers and items are able to be modified further with additional flex properties.
+                        </p>
+                        <div class="box box--example">
+                            <div class="d_flex p_2 bd_highlight">I'm a flexbox container!</div>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="d_flex p_2 bd_highlight"&gt;I'm a flexbox container!&lt;/div&gt;                               
+                            </code></pre>
+                        </div>
+                        <div class="box box--example">
+                            <div class="d_inline_flex p_2 bd_highlight">I'm an inline flexbox container!</div>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="d_inline_flex p_2 bd_highlight"&gt;I'm an inline flexbox container!&lt;/div&gt;                                
+                            </code></pre>
+                        </div>
+                        <p>Responsive variations also exist for <code class="class-name">.d_flex</code> and <code class="class-name">.d_inline_flex</code>.</p>
+                        <ul>
+                            <li><code class="class-name">.d_flex</code></li>
+                            <li><code class="class-name">.d_inline_flex</code></li>
+                            <li><code class="class-name">.d_sm_flex</code></li>
+                            <li><code class="class-name">.d_sm_inline_flex</code></li>
+                            <li><code class="class-name">.d_md_flex</code></li>
+                            <li><code class="class-name">.d_md_inline_flex</code></li>
+                            <li><code class="class-name">.d_lg_flex</code></li>
+                            <li><code class="class-name">.d_lg_inline_flex</code></li>
+                            <li><code class="class-name">.d_xl_flex</code></li>
+                            <li><code class="class-name">.d_xl_inline_flex</code></li>
+                        </ul>
+                        <!-- End: Enable flex behaviors -->
+
+                        <!-- Start: Direction -->
+                        <h2 class="section--title-sub">Direction</h2>
+                        <p>Set the direction of flex items in a flex container with direction utilities. In most cases you can omit the horizontal class here as the browser default is <code class="class-name">row</code>. However, you may encounter situations where you needed to explicitly set this value (like responsive layouts).</p>
+                        <p>Use <code class="class-name">.flex_row</code> to set a horizontal direction (the browser default), or <code class="class-name">.flex_row_reverse</code> to start the horizontal direction from the opposite side.</p>
+                        <div class="box box--example">
+                            <div class="d_flex flex_row bd_highlight mb_3">
+                                <div class="p_2 bd_highlight">Flex item 1</div>
+                                <div class="p_2 bd_highlight">Flex item 2</div>
+                                <div class="p_2 bd_highlight">Flex item 3</div>
+                            </div>
+                            <div class="d_flex flex_row_reverse bd_highlight">
+                                <div class="p_2 bd_highlight">Flex item 1</div>
+                                <div class="p_2 bd_highlight">Flex item 2</div>
+                                <div class="p_2 bd_highlight">Flex item 3</div>
+                            </div>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="d_flex flex_row bd_highlight mb_3"&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item 1&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item 2&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item 3&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="d_flex flex_row_reverse bd_highlight"&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item 1&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item 2&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item 3&lt;/div&gt;
+&lt;/div&gt;                                
+                            </code></pre>
+                        </div>
+                        <p>Use <code class="class-name">.flex_column</code> to set a vertical direction, or <code class="class-name">.flex_column_reverse</code> to start the vertical direction from the opposite side.</p>
+                        <div class="box box--example">
+                            <div class="d_flex flex_column bd_highlight mb_3">
+                                <div class="p_2 bd_highlight">Flex item 1</div>
+                                <div class="p_2 bd_highlight">Flex item 2</div>
+                                <div class="p_2 bd_highlight">Flex item 3</div>
+                            </div>
+                            <div class="d_flex flex_column_reverse bd_highlight">
+                                <div class="p_2 bd_highlight">Flex item 1</div>
+                                <div class="p_2 bd_highlight">Flex item 2</div>
+                                <div class="p_2 bd_highlight">Flex item 3</div>
+                            </div>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="d_flex flex_column bd_highlight mb_3"&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item 1&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item 2&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item 3&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="d_flex flex_column_reverse bd_highlight"&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item 1&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item 2&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item 3&lt;/div&gt;
+&lt;/div&gt;                                
+                            </code></pre>
+                        </div>
+                        <p>Responsive variations also exist for <code class="class-name">flex-direction</code>.</p>
+                        <ul>
+                            <li><code class="class-name">.flex_row</code></li>
+                            <li><code class="class-name">.flex_row_reverse</code></li>
+                            <li><code class="class-name">.flex_column</code></li>
+                            <li><code class="class-name">.flex_column_reverse</code></li>
+                            <li><code class="class-name">.flex_sm_row</code></li>
+                            <li><code class="class-name">.flex_sm_row_reverse</code></li>
+                            <li><code class="class-name">.flex_sm_column</code></li>
+                            <li><code class="class-name">.flex_sm_column_reverse</code></li>
+                            <li><code class="class-name">.flex_md_row</code></li>
+                            <li><code class="class-name">.flex_md_row_reverse</code></li>
+                            <li><code class="class-name">.flex_md_column</code></li>
+                            <li><code class="class-name">.flex_md_column_reverse</code></li>
+                            <li><code class="class-name">.flex_lg_row</code></li>
+                            <li><code class="class-name">.flex_lg_row_reverse</code></li>
+                            <li><code class="class-name">.flex_lg_column</code></li>
+                            <li><code class="class-name">.flex_lg_column_reverse</code></li>
+                            <li><code class="class-name">.flex_xl_row</code></li>
+                            <li><code class="class-name">.flex_xl_row_reverse</code></li>
+                            <li><code class="class-name">.flex_xl_column</code></li>
+                            <li><code class="class-name">.flex_xl_column_reverse</code></li>
+                        </ul>
+                        <!-- End: Direction -->
+                        <!-- Start: Justify content -->
+                        <h2 class="section--title-sub">Justify content</h2>
+                        <p>Use <code class="class-name">justify_content</code> utilities on flexbox containers to change the alignment of flex items on the main axis (the x-axis to start, y-axis if <code class="class-name">flex-direction: column</code>). Choose from <code class="class-name">start</code> (browser default), <code class="class-name">end</code>, <code class="class-name">center</code>, <code class="class-name">between</code>, or <code class="class-name">around</code>.</p>
+                        <div class="section--content">
+                            <div class="box box--example">
+                                <div class="d_flex justify_content_start bd_highlight mb_3">
+                                    <div class="p_2 bd_highlight">Flex item</div>
+                                    <div class="p_2 bd_highlight">Flex item</div>
+                                    <div class="p_2 bd_highlight">Flex item</div>
+                                </div>
+                                <div class="d_flex justify_content_end bd_highlight mb_3">
+                                    <div class="p_2 bd_highlight">Flex item</div>
+                                    <div class="p_2 bd_highlight">Flex item</div>
+                                    <div class="p_2 bd_highlight">Flex item</div>
+                                </div>
+                                <div class="d_flex justify_content_center bd_highlight mb_3">
+                                    <div class="p_2 bd_highlight">Flex item</div>
+                                    <div class="p_2 bd_highlight">Flex item</div>
+                                    <div class="p_2 bd_highlight">Flex item</div>
+                                </div>
+                                <div class="d_flex justify_content_between bd_highlight mb_3">
+                                    <div class="p_2 bd_highlight">Flex item</div>
+                                    <div class="p_2 bd_highlight">Flex item</div>
+                                    <div class="p_2 bd_highlight">Flex item</div>
+                                </div>
+                                <div class="d_flex justify_content_around bd_highlight">
+                                    <div class="p_2 bd_highlight">Flex item</div>
+                                    <div class="p_2 bd_highlight">Flex item</div>
+                                    <div class="p_2 bd_highlight">Flex item</div>
+                                </div>
+                            </div>
+                            <div class="box box--code">
+                                <pre><code class="html">
+&lt;div class="d_flex justify_content_start bd_highlight mb_3"&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="d_flex justify_content_end bd_highlight mb_3"&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="d_flex justify_content_center bd_highlight mb_3"&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="d_flex justify_content_between bd_highlight mb_3"&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="d_flex justify_content_around bd_highlight"&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+&lt;/div&gt;                                
+                                </code></pre>
+                            </div>
+                            <p>Responsive variations also exist for <code class="class-name">justify-content</code>.</p>
+                            <ul>
+                                <li><code class="class-name">.justify_content_start</code></li>
+                                <li><code class="class-name">.justify_content_end</code></li>
+                                <li><code class="class-name">.justify_content_center</code></li>
+                                <li><code class="class-name">.justify_content_between</code></li>
+                                <li><code class="class-name">.justify_content_around</code></li>
+                                <li><code class="class-name">.justify_content_sm_start</code></li>
+                                <li><code class="class-name">.justify_content_sm_end</code></li>
+                                <li><code class="class-name">.justify_content_sm_center</code></li>
+                                <li><code class="class-name">.justify_content_sm_between</code></li>
+                                <li><code class="class-name">.justify_content_sm_around</code></li>
+                                <li><code class="class-name">.justify_content_md_start</code></li>
+                                <li><code class="class-name">.justify_content_md_end</code></li>
+                                <li><code class="class-name">.justify_content_md_center</code></li>
+                                <li><code class="class-name">.justify_content_md_between</code></li>
+                                <li><code class="class-name">.justify_content_md_around</code></li>
+                                <li><code class="class-name">.justify_content_lg_start</code></li>
+                                <li><code class="class-name">.justify_content_lg_end</code></li>
+                                <li><code class="class-name">.justify_content_lg_center</code></li>
+                                <li><code class="class-name">.justify_content_lg_between</code></li>
+                                <li><code class="class-name">.justify_content_lg_around</code></li>
+                                <li><code class="class-name">.justify_content_xl_start</code></li>
+                                <li><code class="class-name">.justify_content_xl_end</code></li>
+                                <li><code class="class-name">.justify_content_xl_center</code></li>
+                                <li><code class="class-name">.justify_content_xl_between</code></li>
+                                <li><code class="class-name">.justify_content_xl_around</code></li>
+                            </ul>
+                        </div>
+                        <!-- End: Justify content -->
+
+                        <!-- Start: Align items -->
+                        <h2 class="section--title-sub">Align items</h2>
+                        <p>Use <code class="class-name">align_items</code> utilities on flexbox containers to change the alignment of flex items on the cross axis (the x-axis to start, y-axis if <code class="class-name">flex-direction: column</code>). Choose from <code class="class-name">start</code>, <code class="class-name">end</code>, <code class="class-name">center</code>, <code class="class-name">baseline</code>, or <code class="class-name">stretch</code> (browser default).</p>
+                        <div class="box box--example">
+                            <div class="d_flex align_items_start bd_highlight mb_3" style="height: 100px">
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                            </div>
+                            <div class="d_flex align_items_end bd_highlight mb_3" style="height: 100px">
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                            </div>
+                            <div class="d_flex align_items_center bd_highlight mb_3" style="height: 100px">
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                            </div>
+                            <div class="d_flex align_items_baseline bd_highlight mb_3" style="height: 100px">
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                            </div>
+                            <div class="d_flex align_items_stretch bd_highlight" style="height: 100px">
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                            </div>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="d_flex align_items_start bd_highlight mb_3" style="height: 100px"&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="d_flex align_items_end bd_highlight mb_3" style="height: 100px"&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="d_flex align_items_center bd_highlight mb_3" style="height: 100px"&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="d_flex align_items_baseline bd_highlight mb_3" style="height: 100px"&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="d_flex align_items_stretch bd_highlight" style="height: 100px"&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+&lt;/div&gt;                                        
+                            </code></pre>
+                        </div>
+                        <p>Responsive variations also exist for <code class="class-name">align-items</code>.</p>
+                        <ul>
+                            <li><code class="class-name">.align_items_start</code></li>
+                            <li><code class="class-name">.align_items_end</code></li>
+                            <li><code class="class-name">.align_items_center</code></li>
+                            <li><code class="class-name">.align_items_baseline</code></li>
+                            <li><code class="class-name">.align_items_stretch</code></li>
+                            <li><code class="class-name">.align_items_sm_start</code></li>
+                            <li><code class="class-name">.align_items_sm_end</code></li>
+                            <li><code class="class-name">.align_items_sm_center</code></li>
+                            <li><code class="class-name">.align_items_sm_baseline</code></li>
+                            <li><code class="class-name">.align_items_sm_stretch</code></li>
+                            <li><code class="class-name">.align_items_md_start</code></li>
+                            <li><code class="class-name">.align_items_md_end</code></li>
+                            <li><code class="class-name">.align_items_md_center</code></li>
+                            <li><code class="class-name">.align_items_md_baseline</code></li>
+                            <li><code class="class-name">.align_items_md_stretch</code></li>
+                            <li><code class="class-name">.align_items_lg_start</code></li>
+                            <li><code class="class-name">.align_items_lg_end</code></li>
+                            <li><code class="class-name">.align_items_lg_center</code></li>
+                            <li><code class="class-name">.align_items_lg_baseline</code></li>
+                            <li><code class="class-name">.align_items_lg_stretch</code></li>
+                            <li><code class="class-name">.align_items_xl_start</code></li>
+                            <li><code class="class-name">.align_items_xl_end</code></li>
+                            <li><code class="class-name">.align_items_xl_center</code></li>
+                            <li><code class="class-name">.align_items_xl_baseline</code></li>
+                            <li><code class="class-name">.align_items_xl_stretch</code></li>
+                        </ul>
+                        <!-- End: Align items -->
+
+                        <!-- Start: Align self -->
+                        <h2 class="section--title-sub">Align self</h2>
+                        <p>Use <code class="class-name">align_self</code> utilities on flexbox items to individually change their alignment on the cross axis (the x-axis to start, y-axis if <code class="class-name">flex-direction: column</code>). Choose from the same options as <code class="class-name">align_items</code>: <code class="class-name">start</code>, <code class="class-name">end</code>, <code class="class-name">center</code>, <code class="class-name">baseline</code>, or <code class="class-name">stretch</code> (browser default).</p>
+                        
+                        <div class="box box--example">
+                            <div class="d_flex bd_highlight mb_3" style="height: 100px">
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="align_self_start p_2 bd_highlight">Aligned flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                            </div>
+                            <div class="d_flex bd_highlight mb_3" style="height: 100px">
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="align_self_end p_2 bd_highlight">Aligned flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                            </div>
+                            <div class="d_flex bd_highlight mb_3" style="height: 100px">
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="align_self_center p_2 bd_highlight">Aligned flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                            </div>
+                            <div class="d_flex bd_highlight mb_3" style="height: 100px">
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="align_self_baseline p_2 bd_highlight">Aligned flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                            </div>
+                            <div class="d_flex bd_highlight" style="height: 100px">
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="align_self_stretch p_2 bd_highlight">Aligned flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                            </div>
+                        </div>
+                        <div class="box box--code">
+                          <pre><code class="html">
+&lt;div class="d_flex bd_highlight mb_3" style="height: 100px"&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="align_self_start p_2 bd_highlight"&gt;Aligned flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="d_flex bd_highlight mb_3" style="height: 100px"&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="align_self_end p_2 bd_highlight"&gt;Aligned flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="d_flex bd_highlight mb_3" style="height: 100px"&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="align_self_center p_2 bd_highlight"&gt;Aligned flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="d_flex bd_highlight mb_3" style="height: 100px"&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="align_self_baseline p_2 bd_highlight"&gt;Aligned flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="d_flex bd_highlight" style="height: 100px"&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="align_self_stretch p_2 bd_highlight"&gt;Aligned flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+&lt;/div&gt;                            
+                          </code></pre>
+                        </div>
+                        <p>Responsive variations also exist for <code class="class-name">align-self</code>.</p>
+                        <ul>
+                             <li><code class="class-name">.align_self_start</code></li>
+                             <li><code class="class-name">.align_self_end</code></li>
+                             <li><code class="class-name">.align_self_center</code></li>
+                             <li><code class="class-name">.align_self_baseline</code></li>
+                             <li><code class="class-name">.align_self_stretch</code></li>
+                             <li><code class="class-name">.align_self_sm_start</code></li>
+                             <li><code class="class-name">.align_self_sm_end</code></li>
+                             <li><code class="class-name">.align_self_sm_center</code></li>
+                             <li><code class="class-name">.align_self_sm_baseline</code></li>
+                             <li><code class="class-name">.align_self_sm_stretch</code></li>
+                             <li><code class="class-name">.align_self_md_start</code></li>
+                             <li><code class="class-name">.align_self_md_end</code></li>
+                             <li><code class="class-name">.align_self_md_center</code></li>
+                             <li><code class="class-name">.align_self_md_baseline</code></li>
+                             <li><code class="class-name">.align_self_md_stretch</code></li>
+                             <li><code class="class-name">.align_self_lg_start</code></li>
+                             <li><code class="class-name">.align_self_lg_end</code></li>
+                             <li><code class="class-name">.align_self_lg_center</code></li>
+                             <li><code class="class-name">.align_self_lg_baseline</code></li>
+                             <li><code class="class-name">.align_self_lg_stretch</code></li>
+                             <li><code class="class-name">.align_self_xl_start</code></li>
+                             <li><code class="class-name">.align_self_xl_end</code></li>
+                             <li><code class="class-name">.align_self_xl_center</code></li>
+                             <li><code class="class-name">.align_self_xl_baseline</code></li>
+                             <li><code class="class-name">.align_self_xl_stretch</code></li>
+                        </ul>
+                        <!-- End: Align self -->
+
+                        <!-- Start: Fill -->
+                        <h2 class="section--title-sub">Fill</h2>
+                        <p>Use the <code class="class-name">.flex_fill</code> class on a series of sibling elements to force them into widths equal to their content (or equal widths if their content does not surpass their border-boxes) while taking up all available horizontal space.</p>
+                        <div class="box box--example">
+                            <div class="d_flex bd_highlight">
+                                <div class="p_2 flex_fill bd_highlight">Flex item with a lot of content</div>
+                                <div class="p_2 flex_fill bd_highlight">Flex item</div>
+                                <div class="p_2 flex_fill bd_highlight">Flex item</div>
+                            </div>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="d_flex bd_highlight"&gt;
+    &lt;div class="p_2 flex_fill bd_highlight"&gt;Flex item with a lot of content&lt;/div&gt;
+    &lt;div class="p_2 flex_fill bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 flex_fill bd_highlight"&gt;Flex item&lt;/div&gt;
+&lt;/div&gt;                                
+                            </code></pre>
+                            <p>Responsive variations also exist for <code class="class-name">.flex_fill</code>.</p>
+                            <ul>
+                                <li><code class="class-name">.flex_fill</code></li>
+                                <li><code class="class-name">.flex_sm_fill</code></li>
+                                <li><code class="class-name">.flex_md_fill</code></li>
+                                <li><code class="class-name">.flex_lg_fill</code></li>
+                                <li><code class="class-name">.flex_xl_fill</code></li>
+                            </ul>
+                        </div>
+                        <!-- End: Fill -->
+
+                        <!-- Start: Grow and shrink -->
+                        <h2 class="section--title-sub">Grow and shrink</h2>
+                        <p>Use <code class="class-name">.flex_grow_*</code> utilities to toggle a flex item’s ability to grow to fill available space. In the example below, the <code class="class-name">.flex_grow_1</code> elements uses all available space it can, while allowing the remaining two flex items their necessary space.</p>
+                        <div class="box box--example">
+                            <div class="d_flex bd_highlight">
+                                <div class="p_2 flex_grow_1 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Third flex item</div>
+                            </div>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="d_flex bd_highlight"&gt;
+    &lt;div class="p_2 flex_grow_1 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Third flex item&lt;/div&gt;
+&lt;/div&gt;                                
+                            </code></pre>
+                        </div>
+                        <p>Use <code class="class-name">.flex_shrink_*</code> utilities to toggle a flex item’s ability to shrink if necessary. In the example below, the second flex item with <code class="class-name">.flex_shrink_1</code> is forced to wrap it’s contents to a new line, “shrinking” to allow more space for the previous flex item with <code class="class-name">width: 100%</code>.</p>
+                        <div class="box box--example">
+                            <div class="d_flex bd_highlight">
+                                <div class="p_2 bd_highlight" style="width: 100%">Flex item</div>
+                                <div class="p_2 flex_shrink_1 bd_highlight">Flex item</div>
+                            </div>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="d_flex bd_highlight"&gt;
+    &lt;div class="p_2 bd_highlight" style="width: 100%"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 flex_shrink_1 bd_highlight"&gt;Flex item&lt;/div&gt;
+&lt;/div&gt;                                
+                            </code></pre>
+                        </div>
+                        <p>Responsive variations also exist for <code class="class-name">flex_grow</code> and <code class="class-name">flex_shrink</code>.</p>
+                        <ul>
+                            <li><code class="class-name">.flex_{grow|shrink}_0</code></li>
+                            <li><code class="class-name">.flex_{grow|shrink}_1</code></li>
+                            <li><code class="class-name">.flex_sm_{grow|shrink}_0</code></li>
+                            <li><code class="class-name">.flex_sm_{grow|shrink}_1</code></li>
+                            <li><code class="class-name">.flex_md_{grow|shrink}_0</code></li>
+                            <li><code class="class-name">.flex_md_{grow|shrink}_1</code></li>
+                            <li><code class="class-name">.flex_lg_{grow|shrink}_0</code></li>
+                            <li><code class="class-name">.flex_lg_{grow|shrink}_1</code></li>
+                            <li><code class="class-name">.flex_xl_{grow|shrink}_0</code></li>
+                            <li><code class="class-name">.flex_xl_{grow|shrink}_1</code></li>
+                        </ul>
+                        <!-- End: Grow and shrink -->
+
+                        <!-- Start: Auto margins -->
+                        <h2 class="section--title-sub">Auto margins</h2>
+                        <p>
+                            Flexbox can do some pretty awesome things when you mix flex alignments with auto margins. Shown below are three examples of controlling flex items via auto margins: default (no auto margin), pushing two items to the right (<code class="class-name">.mr_auto</code>), and pushing two items to the left (<code class="class-name">.ml_auto</code>).
+                        </p>
+                        <p>
+                            <b>Unfortunately, IE10 and IE11 do not properly support auto margins on flex items whose parent has a non-default <code class="class-name">justify_content</code> value</b>. <a href="https://stackoverflow.com/questions/37534254/flex-auto-margin-not-working-in-ie10-11/37535548#37535548">See this StackOverflow answer</a> for more details.
+                        </p>
+                        <div class="box box--example">
+                            <div class="d_flex bd_highlight mb_3">
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                            </div>
+
+                            <div class="d_flex bd_highlight mb_3">
+                                <div class="mr_auto p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                            </div>
+
+                            <div class="d_flex bd_highlight mb_3">
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="ml_auto p_2 bd_highlight">Flex item</div>
+                            </div>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="d_flex bd_highlight mb_3"&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="d_flex bd_highlight mb_3"&gt;
+    &lt;div class="mr_auto p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="d_flex bd_highlight mb_3"&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="ml_auto p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+&lt;/div&gt;                                
+                            </code></pre>
+                        </div>
+                        <h4 class="section--title-part">With align-items</h4>
+                        <p>Vertically move one flex item to the top or bottom of a container by mixing <code class="class-name">align-items</code>, <code class="class-name">flex-direction: column</code>, and <code class="class-name">margin-top: auto</code> or <code class="class-name">margin-bottom: auto</code>.</p>
+                        <div class="box box--example">
+                            <div class="d_flex align_items_start flex_column bd_highlight mb_3" style="height: 200px;">
+                                <div class="mb_auto p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                            </div>
+
+                            <div class="d_flex align_items_end flex_column bd_highlight mb_3" style="height: 200px;">
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="mt_auto p_2 bd_highlight">Flex item</div>
+                            </div>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="d_flex align_items_start flex_column bd_highlight mb_3" style="height: 200px;"&gt;
+    &lt;div class="mb_auto p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="d_flex align_items_end flex_column bd_highlight mb_3" style="height: 200px;"&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="mt_auto p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+&lt;/div&gt;                                
+                            </code></pre>
+                        </div>
+                        <!-- End: Auto margins -->
+
+                        <!-- Start: Wrap -->
+                        <h2 class="section--title-sub">Wrap</h2>
+                        <p>
+                            Change how flex items wrap in a flex container. Choose from no wrapping at all (the browser default) with <code class="class-name">.flex_nowrap</code>, wrapping with <code class="class-name">.flex_wrap</code>, or reverse wrapping with <code class="class-name">.flex_wrap_reverse</code>.
+                        </p>
+                        <div class="box box--example">
+                            <div class="d_flex flex_nowrap bd_highlight" style="width: 8rem;">
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                            </div>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="d_flex flex_nowrap bd_highlight" style="width: 8rem;"&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+&lt;/div&gt;                                
+                            </code></pre>
+                        </div>
+                        <div class="box box--example">
+                            <div class="d_flex flex_wrap bd_highlight">
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                            </div>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="d_flex flex_wrap bd_highlight"&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+&lt;/div&gt;                                
+                            </code></pre>
+                        </div>
+
+                        <div class="box box--example">
+                            <div class="d_flex flex_wrap_reverse bd_highlight">
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                            </div>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="d_flex flex_wrap_reverse bd_highlight"&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+&lt;/div&gt;                                
+                            </code></pre>
+                        </div>
+                        <p>Responsive variations also exist for <code class="class-name">flex-wrap</code>.</p>
+                        <ul>
+                            <li><code class="class-name">.flex_nowrap</code></li>
+                            <li><code class="class-name">.flex_wrap</code></li>
+                            <li><code class="class-name">.flex_wrap_reverse</code></li>
+                            <li><code class="class-name">flex_sm_nowrap</code></li>
+                            <li><code class="class-name">.flex_sm_wrap</code></li>
+                            <li><code class="class-name">.flex_sm_wrap_reverse</code></li>
+                            <li><code class="class-name">.flex_md_nowrap</code></li>
+                            <li><code class="class-name">.flex_md_wrap</code></li>
+                            <li><code class="class-name">.flex_md_wrap_reverse</code></li>
+                            <li><code class="class-name">.flex_lg_nowrap</code></li>
+                            <li><code class="class-name">.flex_lg_wrap</code></li>
+                            <li><code class="class-name">.flex_lg_wrap_reverse</code></li>
+                            <li><code class="class-name">.flex_xl_nowrap</code></li>
+                            <li><code class="class-name">.flex_xl_wrap</code></li>
+                            <li><code class="class-name">.flex_xl_wrap-reverse</code></li>
+                        </ul>
+                        <!-- End: Wrap -->
+
+                        <!-- Start: Order -->
+                        <h2 class="section--title-sub">Order</h2>
+                        <p>
+                            Change the <i>visual</i> order of specific flex items with a handful of <code class="class-name">order</code> utilities. We only provide options for making an item first or last, as well as a reset to use the DOM order. As <code class="class-name">order</code> takes any integer value (e.g., <code class="class-name">5</code>), add custom CSS for any additional values needed.
+                        </p>
+                        <div class="box box--example">
+                            <div class="d_flex flex_nowrap bd_highlight">
+                                <div class="order_3 p_2 bd_highlight">First flex item</div>
+                                <div class="order_2 p_2 bd_highlight">Second flex item</div>
+                                <div class="order_1 p_2 bd_highlight">Third flex item</div>
+                            </div>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="d_flex flex_nowrap bd_highlight"&gt;
+    &lt;div class="order_3 p_2 bd_highlight"&gt;First flex item&lt;/div&gt;
+    &lt;div class="order_2 p_2 bd_highlight"&gt;Second flex item&lt;/div&gt;
+    &lt;div class="order_1 p_2 bd_highlight"&gt;Third flex item&lt;/div&gt;
+&lt;/div&gt;                                
+                            </code></pre>                            
+                        </div>
+                        <p>Responsive variations also exist for <code class="class-name">order</code>.</p>
+                        <ul>
+                            <li><code class="class-name">.order_0</code></li>
+                            <li><code class="class-name">.order_1</code></li>
+                            <li><code class="class-name">.order_2</code></li>
+                            <li><code class="class-name">.order_3</code></li>
+                            <li><code class="class-name">.order_4</code></li>
+                            <li><code class="class-name">.order_5</code></li>
+                            <li><code class="class-name">.order_6</code></li>
+                            <li><code class="class-name">.order_7</code></li>
+                            <li><code class="class-name">.order_8</code></li>
+                            <li><code class="class-name">.order_9</code></li>
+                            <li><code class="class-name">.order_10</code></li>
+                            <li><code class="class-name">.order_11</code></li>
+                            <li><code class="class-name">.order_12</code></li>
+                            <li><code class="class-name">.order_sm_0</code></li>
+                            <li><code class="class-name">.order_sm_1</code></li>
+                            <li><code class="class-name">.order_sm_2</code></li>
+                            <li><code class="class-name">.order_sm_3</code></li>
+                            <li><code class="class-name">.order_sm_4</code></li>
+                            <li><code class="class-name">.order_sm_5</code></li>
+                            <li><code class="class-name">.order_sm_6</code></li>
+                            <li><code class="class-name">.order_sm_7</code></li>
+                            <li><code class="class-name">.order_sm_8</code></li>
+                            <li><code class="class-name">.order_sm_9</code></li>
+                            <li><code class="class-name">.order_sm_10</code></li>
+                            <li><code class="class-name">.order_sm_11</code></li>
+                            <li><code class="class-name">.order_sm_12</code></li>
+                            <li><code class="class-name">.order_md_0</code></li>
+                            <li><code class="class-name">.order_md_1</code></li>
+                            <li><code class="class-name">.order_md_2</code></li>
+                            <li><code class="class-name">.order_md_3</code></li>
+                            <li><code class="class-name">.order_md_4</code></li>
+                            <li><code class="class-name">.order_md_5</code></li>
+                            <li><code class="class-name">.order_md_6</code></li>
+                            <li><code class="class-name">.order_md_7</code></li>
+                            <li><code class="class-name">.order_md_8</code></li>
+                            <li><code class="class-name">.order_md_9</code></li>
+                            <li><code class="class-name">.order_md_10</code></li>
+                            <li><code class="class-name">.order_md_11</code></li>
+                            <li><code class="class-name">.order_md_12</code></li>
+                            <li><code class="class-name">.order_lg_0</code></li>
+                            <li><code class="class-name">.order_lg_1</code></li>
+                            <li><code class="class-name">.order_lg_2</code></li>
+                            <li><code class="class-name">.order_lg_3</code></li>
+                            <li><code class="class-name">.order_lg_4</code></li>
+                            <li><code class="class-name">.order_lg_5</code></li>
+                            <li><code class="class-name">.order_lg_6</code></li>
+                            <li><code class="class-name">.order_lg_7</code></li>
+                            <li><code class="class-name">.order_lg_8</code></li>
+                            <li><code class="class-name">.order_lg_9</code></li>
+                            <li><code class="class-name">.order_lg_10</code></li>
+                            <li><code class="class-name">.order_lg_11</code></li>
+                            <li><code class="class-name">.order_lg_12</code></li>
+                            <li><code class="class-name">.order_xl_0</code></li>
+                            <li><code class="class-name">.order_xl_1</code></li>
+                            <li><code class="class-name">.order_xl_2</code></li>
+                            <li><code class="class-name">.order_xl_3</code></li>
+                            <li><code class="class-name">.order_xl_4</code></li>
+                            <li><code class="class-name">.order_xl_5</code></li>
+                            <li><code class="class-name">.order_xl_6</code></li>
+                            <li><code class="class-name">.order_xl_7</code></li>
+                            <li><code class="class-name">.order_xl_8</code></li>
+                            <li><code class="class-name">.order_xl_9</code></li>
+                            <li><code class="class-name">.order_xl_10</code></li>
+                            <li><code class="class-name">.order_xl_11</code></li>
+                            <li><code class="class-name">.order_xl_12</code></li>
+                        </ul>
+                        <!-- End: Order -->
+
+                        <!-- Start: Align content -->
+                        <h2 class="section--title-sub">Align content</h2>
+                        <p>
+                            Use <code class="class-name">align_content</code> utilities on flexbox containers to align flex items together on the cross axis. Choose from <code class="class-name">start</code> (browser default), <code class="class-name">end</code>, <code class="class-name">center</code>, <code class="class-name">between</code>, <code class="class-name">around</code>, or <code class="class-name">stretch</code>. To demonstrate these utilities, we’ve enforced <code class="class-name">flex-wrap: wrap</code> and increased the number of flex items.
+                        </p>
+                        <p>
+                            <b>Heads up!</b> This property has no effect on single rows of flex items.
+                        </p>
+                        <!-- align_content_start -->
+                        <div class="box box--example">
+                            <div class="d_flex align_content_start flex_wrap bd_highlight mb_3" style="height: 200px">
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                            </div>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="d_flex align_content_start flex_wrap bd_highlight mb_3" style="height: 200px"&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+&lt;/div&gt;                                
+                            </code></pre>
+                        </div>
+                        <!-- align_content_end -->
+                        <div class="box box--example">
+                            <div class="d_flex align_content_end flex_wrap bd_highlight mb_3" style="height: 200px">
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                            </div>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="d_flex align_content_end flex_wrap bd_highlight mb_3" style="height: 200px"&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+&lt;/div&gt;                                
+                            </code></pre>
+                        </div>
+                        <!-- align_content_center -->
+                        <div class="box box--example">
+                            <div class="d_flex align_content_center flex_wrap bd_highlight mb_3" style="height: 200px">
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                            </div>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="d_flex align_content_center flex_wrap bd_highlight mb_3" style="height: 200px"&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+&lt;/div&gt;                                
+                            </code></pre>
+                        </div>
+                        <!-- align_content_between -->
+                        <div class="box box--example">
+                            <div class="d_flex align_content_between flex_wrap bd_highlight mb_3" style="height: 200px">
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                            </div>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="d_flex align_content_between flex_wrap bd_highlight mb_3" style="height: 200px"&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+&lt;/div&gt;                                
+                            </code></pre>
+                        </div>
+                        <!-- align_content_around -->
+                        <div class="box box--example">
+                            <div class="d_flex align_content_around flex_wrap bd_highlight mb_3" style="height: 200px">
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                            </div>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="d_flex align_content_around flex_wrap bd_highlight mb_3" style="height: 200px"&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+&lt;/div&gt;                                
+                            </code></pre>
+                        </div>
+                        <!-- align_content_stretch -->
+                        <div class="box box--example">
+                            <div class="d_flex align_content_stretch flex_wrap bd_highlight mb_3" style="height: 200px">
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                                <div class="p_2 bd_highlight">Flex item</div>
+                            </div>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="d_flex align_content_stretch flex_wrap bd_highlight mb_3" style="height: 200px"&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+    &lt;div class="p_2 bd_highlight"&gt;Flex item&lt;/div&gt;
+&lt;/div&gt;                                
+                            </code></pre>
+                        </div>
+                        <p>Responsive variations also exist for align-content.</p>
+                        <ul>
+                            <li><code class="class-name">.align_content_start</code></li>
+                            <li><code class="class-name">.align_content_end</code></li>
+                            <li><code class="class-name">.align_content_center</code></li>
+                            <li><code class="class-name">.align_content_around</code></li>
+                            <li><code class="class-name">.align_content_stretch</code></li>
+                            <li><code class="class-name">.align_content_sm_start</code></li>
+                            <li><code class="class-name">.align_content_sm_end</code></li>
+                            <li><code class="class-name">.align_content_sm_center</code></li>
+                            <li><code class="class-name">.align_content_sm_around</code></li>
+                            <li><code class="class-name">.align_content_sm_stretch</code></li>
+                            <li><code class="class-name">.align_content_md_start</code></li>
+                            <li><code class="class-name">.align_content_md_end</code></li>
+                            <li><code class="class-name">.align_content_md_center</code></li>
+                            <li><code class="class-name">.align_content_md_around</code></li>
+                            <li><code class="class-name">.align_content_md_stretch</code></li>
+                            <li><code class="class-name">.align_content_lg_start</code></li>
+                            <li><code class="class-name">.align_content_lg_end</code></li>
+                            <li><code class="class-name">.align_content_lg_center</code></li>
+                            <li><code class="class-name">.align_content_lg_around</code></li>
+                            <li><code class="class-name">.align_content_lg_stretch</code></li>
+                            <li><code class="class-name">.align_content_xl_start</code></li>
+                            <li><code class="class-name">.align_content_xl_end</code></li>
+                            <li><code class="class-name">.align_content_xl_center</code></li>
+                            <li><code class="class-name">.align_content_xl_around</code></li>
+                            <li><code class="class-name">.align_content_xl_stretch</code></li>
+                        </ul>
+                        <!-- End: Align content -->
+                    </div>
+                </article>
+                <!-- End: Flex -->
+
+                <!-- Start: Float -->
+                <article class="section">
+                    <h1 class="section--title">Float</h1>
+                    <p class="section--desc">Toggle floats on any element, across any breakpoint, using our responsive float utilities.</p>
+                    <div class="section--content">
+                        <!-- Start: Overview -->
+                        <h2 class="section--title-sub">Overview</h2>
+                        <p>
+                            These utility classes float an element to the left or right, or disable floating, based on the current viewport size using the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/float">CSS float property</a>. <code class="class-name">!important</code> is included to avoid specificity issues. These use the same viewport breakpoints as our grid system. Please be aware float utilities have no affect on flex items.
+                        </p>                        
+                        <!-- End: Overview -->
+
+                        <!-- Start: Classes -->
+                        <h2 class="section--title-sub">Classes</h2>
+                        <p>
+                            Toggle a float with a class:
+                        </p>
+                        <div class="box box--example">
+                            <div class="float_left">Float left on all viewport sizes</div><br>
+                            <div class="float_right">Float right on all viewport sizes</div><br>
+                            <div class="float_none">Don't float on all viewport sizes</div>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="float_left"&gt;Float left on all viewport sizes&lt;/div&gt;&lt;br&gt;
+&lt;div class="float_right"&gt;Float right on all viewport sizes&lt;/div&gt;&lt;br&gt;
+&lt;div class="float_none"&gt;Don't float on all viewport sizes&lt;/div&gt;                                
+                            </code></pre>
+                        </div>
+                        <!-- End: Classes -->
+                        <!-- Start: Mixins -->
+                        <h2 class="section--title-sub">Mixins</h2>
+                        <p>
+                            Or by Sass mixin:
+                        </p>
+                        <div class="box box--code">
+                            <pre><code class="css">
+.element {
+    @include float-left;
+}
+.another-element {
+    @include float-right;
+}
+.one-more {
+    @include float-none;
+}                                
+                            </code></pre>
+                        </div>
+                        <!-- End: Mixins -->
+                        <!-- Start: Responsive -->
+                        <h2 class="section--title-sub">Responsive</h2>
+                        <p>
+                            Responsive variations also exist for each <code class="class-name">float</code> value.
+                        </p>
+                        <div class="box box--example">
+                            <div class="float_sm_left">Float left on viewports sized SM (small) or wider</div><br>
+                            <div class="float_md_left">Float left on viewports sized MD (medium) or wider</div><br>
+                            <div class="float_lg_left">Float left on viewports sized LG (large) or wider</div><br>
+                            <div class="float_xl_left">Float left on viewports sized XL (extra-large) or wider</div><br>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="float_sm_left"&gt;Float left on viewports sized SM (small) or wider&lt;/div&gt;&lt;br&gt;
+&lt;div class="float_md_left"&gt;Float left on viewports sized MD (medium) or wider&lt;/div&gt;&lt;br&gt;
+&lt;div class="float_lg_left"&gt;Float left on viewports sized LG (large) or wider&lt;/div&gt;&lt;br&gt;
+&lt;div class="float_xl_left"&gt;Float left on viewports sized XL (extra-large) or wider&lt;/div&gt;&lt;br&gt;                                
+                            </code></pre>
+                        </div>
+                        <p>Here are all the support classes:</p>
+                        <ul>
+                            <li><code class="class-name">.float_left</code></li>
+                            <li><code class="class-name">.float_right</code></li>
+                            <li><code class="class-name">.float_none</code></li>
+                            <li><code class="class-name">.float_sm_left</code></li>
+                            <li><code class="class-name">.float_sm_right</code></li>
+                            <li><code class="class-name">.float_sm_none</code></li>
+                            <li><code class="class-name">.float_md_left</code></li>
+                            <li><code class="class-name">.float_md_right</code></li>
+                            <li><code class="class-name">.float_md_none</code></li>
+                            <li><code class="class-name">.float_lg_left</code></li>
+                            <li><code class="class-name">.float_lg_right</code></li>
+                            <li><code class="class-name">.float_lg_none</code></li>
+                            <li><code class="class-name">.float_xl_left</code></li>
+                            <li><code class="class-name">.float_xl_right</code></li>
+                            <li><code class="class-name">.float_xl_none</code></li>
+                        </ul>
+                        <!-- End: Responsive -->
+                    </div>
+                </article>
+                <!-- End: Float -->
+
+                <!-- Start: Position -->
+                <article class="section">
+                    <h1 class="section--title">Position</h1>
+                    <p class="section--desc">Use these shorthand utilities for quickly configuring the position of an element.</p>
+                    <div class="section--content">
+                        <!-- Start: Common values -->
+                        <h2 class="section--title-sub">Common values</h2>
+                        <p>
+                            Quick positioning classes are available, though they are not responsive.
+                        </p>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="position_static"&gt;...&lt;/div&gt;
+&lt;div class="position_relative"&gt;...&lt;/div&gt;
+&lt;div class="position_absolute"&gt;...&lt;/div&gt;
+&lt;div class="position_fixed"&gt;...&lt;/div&gt;
+&lt;div class="position_sticky"&gt;...&lt;/div&gt;                                
+                            </code></pre>
+                        </div>
+                        <!-- End: Common values -->
+                        <!-- Start: Fixed top -->
+                        <h2 class="section--title-sub">Fixed top</h2>
+                        <p>
+                            Position an element at the top of the viewport, from edge to edge. Be sure you understand the ramifications of fixed position in your project; you may need to add additional CSS.
+                        </p>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="fixed_top"&gt;...&lt;/div&gt;                                
+                            </code></pre>
+                        </div>
+                        <!-- End: Fixed top -->
+                        <!-- Start: Fixed bottom -->
+                        <h2 class="section--title-sub">Fixed bottom</h2>
+                        <p>
+                            Position an element at the bottom of the viewport, from edge to edge. Be sure you understand the ramifications of fixed position in your project; you may need to add additional CSS.
+                        </p>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="fixed_bottom"&gt;...&lt;/div&gt;                                
+                            </code></pre>
+                        </div>
+                        <!-- End: Fixed bottom -->
+                        <!-- Start: Sticky top -->
+                        <h2 class="section--title-sub">Sticky top</h2>
+                        <p>
+                            Position an element at the top of the viewport, from edge to edge, but only after you scroll past it. The <code class="class-name">.sticky_top</code> utility uses CSS’s <code class="class-name">position: sticky</code>, which isn’t fully supported in all browsers.
+                        </p>
+                        <p>
+                            <b>IE11 and IE10 will render <code class="class-name">position: sticky</code> as <code class="class-name">position: relative</code></b>. As such, we wrap the styles in a @supports query, limiting the stickiness to only browsers that can render it properly.
+                        </p>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="sticky_top"&gt;...&lt;/div&gt;                                
+                            </code></pre>
+                        </div>
+                        <!-- End: Sticky top -->
+                    </div>
+                </article>
+                <!-- End: Position -->
+                <!-- Start: Text -->
+                <article class="section">
+                    <h1 class="section--title">Text</h1>
+                    <p class="section--desc">Documentation and examples for common text utilities to control alignment, wrapping, weight, and more.</p>
+                    <div class="section--content">
+                        <!-- Start: Text alignment -->
+                        <h2 class="section--title-sub">Text alignment</h2>
+                        <p>
+                            Easily realign text to components with text alignment classes.
+                        </p>
+                        <div class="box box--example">
+                            <p class="text_justify">Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.</p>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;p class="text_justify"&gt;Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.&lt;/p&gt;                                
+                            </code></pre>
+                        </div>
+                        <p>For left, right, and center alignment, responsive classes are available that use the same viewport width breakpoints as the grid system.</p>
+                        <div class="box box--example">
+                            <p class="text_left">Left aligned text on all viewport sizes.</p>
+                            <p class="text_center">Center aligned text on all viewport sizes.</p>
+                            <p class="text_right">Right aligned text on all viewport sizes.</p>
+
+                            <p class="text_sm_left">Left aligned text on viewports sized SM (small) or wider.</p>
+                            <p class="text_md_left">Left aligned text on viewports sized MD (medium) or wider.</p>
+                            <p class="text_lg_left">Left aligned text on viewports sized LG (large) or wider.</p>
+                            <p class="text_xl_left">Left aligned text on viewports sized XL (extra-large) or wider.</p>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;p class="text_left"&gt;Left aligned text on all viewport sizes.&lt;/p&gt;
+&lt;p class="text_center"&gt;Center aligned text on all viewport sizes.&lt;/p&gt;
+&lt;p class="text_right"&gt;Right aligned text on all viewport sizes.&lt;/p&gt;
+
+&lt;p class="text_sm_left"&gt;Left aligned text on viewports sized SM (small) or wider.&lt;/p&gt;
+&lt;p class="text_md_left"&gt;Left aligned text on viewports sized MD (medium) or wider.&lt;/p&gt;
+&lt;p class="text_lg_left"&gt;Left aligned text on viewports sized LG (large) or wider.&lt;/p&gt;
+&lt;p class="text_xl_left"&gt;Left aligned text on viewports sized XL (extra-large) or wider.&lt;/p&gt;                                
+                            </code></pre>
+                        </div>
+                        <!-- End: Text alignment -->
+                        <!-- Start: Text wrapping and overflow -->
+                        <h2 class="section--title-sub">Text wrapping and overflow</h2>
+                        <p>
+                            Wrap text with a <code class="class-name">.text_wrap</code> class.
+                        </p>
+                        <div class="box box--example">
+                            <div class="label label_primary text_wrap" style="width: 6rem;">
+                                This text should wrap.
+                            </div>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="label label_primary text_wrap" style="width: 6rem;"&gt;
+    This text should wrap.
+&lt;/div&gt;                                
+                            </code></pre>
+                        </div>
+                        <p>Prevent text from wrapping with a <code class="class-name">.text_nowrap</code> class.</p>
+                        <div class="box box--example">
+                            <div class="text_nowrap bd_highlight" style="width: 8rem;">
+                                This text should overflow the parent.
+                            </div>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="text_nowrap bd_highlight" style="width: 8rem;"&gt;
+    This text should overflow the parent.
+&lt;/div&gt;                                
+                            </code></pre>
+                        </div>
+                        <p>
+                            For longer content, you can add a <code class="class-name">.text_truncate</code> class to truncate the text with an ellipsis. <b>Requires <code class="class-name">display: inline-block</code> or <code class="class-name">display: block</code>.</b>
+                        </p>
+                        <div class="box box--example">
+                            <!-- Block level -->
+                            <div class="r">
+                                <div class="c_2 text_truncate">
+                                    Praeterea iter est quasdam res quas ex communi.
+                                </div>
+                            </div>
+
+                            <!-- Inline level -->
+                            <span class="d_inline_block text_truncate" style="max-width: 200px;">
+                                Praeterea iter est quasdam res quas ex communi.
+                            </span>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;!-- Block level --&gt;
+&lt;div class="r"&gt;
+    &lt;div class="c_2 text_truncate"&gt;
+        Praeterea iter est quasdam res quas ex communi.
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Inline level --&gt;
+&lt;span class="d_inline_block text_truncate" style="max-width: 200px;"&gt;
+    Praeterea iter est quasdam res quas ex communi.
+&lt;/span&gt;                                
+                            </code></pre>
+                        </div>
+                        <!-- End: Text wrapping and overflow -->
+                        <!-- Start: Text transform -->
+                        <h2 class="section--title-sub">Text transform</h2>
+                        <p>
+                            Transform text in components with text capitalization classes.
+                        </p>
+                        <div class="box box--example">
+                            <p class="text_lowercase">Lowercased text.</p>
+                            <p class="text_uppercase">Uppercased text.</p>
+                            <p class="text_capitalize">CapiTaliZed text.</p>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;p class="text_lowercase"&gt;Lowercased text.&lt;/p&gt;
+&lt;p class="text_uppercase"&gt;Uppercased text.&lt;/p&gt;
+&lt;p class="text_capitalize"&gt;CapiTaliZed text.&lt;/p&gt;                        
+                            </code></pre>
+                        </div>
+                        <!-- End: Text transform -->
+                        <!-- Start: Font weight and italics -->
+                        <h2 class="section--title-sub">Font weight and italics</h2>
+                        <p>
+                            Quickly change the weight (boldness) of text or italicize text.
+                        </p>
+                        <div class="box box--example">
+                            <p class="font_weight_bold">Bold text.</p>
+                            <p class="font_weight_bolder">Bolder weight text (relative to the parent element).</p>
+                            <p class="font_weight_normal">Normal weight text.</p>
+                            <p class="font_weight_light">Light weight text.</p>
+                            <p class="font_weight_lighter">Lighter weight text (relative to the parent element).</p>
+                            <p class="font_italic">Italic text.</p>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;p class="font_weight_bold"&gt;Bold text.&lt;/p&gt;
+&lt;p class="font_weight_bolder"&gt;Bolder weight text (relative to the parent element).&lt;/p&gt;
+&lt;p class="font_weight_normal"&gt;Normal weight text.&lt;/p&gt;
+&lt;p class="font_weight_light"&gt;Light weight text.&lt;/p&gt;
+&lt;p class="font_weight_lighter"&gt;Lighter weight text (relative to the parent element).&lt;/p&gt;
+&lt;p class="font_italic"&gt;Italic text.&lt;/p&gt;                                
+                            </code></pre>
+                        </div>
+                        <!-- End: Font weight and italics -->
+                        <!-- Start: Monospace -->
+                        <h2 class="section--title-sub">Monospace</h2>
+                        <p>
+                            Change a selection to our monospace font stack with <code class="class-name">.text_monospace</code>.
+                        </p>
+                        <div class="box box--example">
+                            <p class="text_monospace">This is in monospace</p>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;p class="text_monospace"&gt;This is in monospace&lt;/p&gt;                                
+                            </code></pre>
+                        </div>
+                        <!-- End: Monospace -->
+
+                        <!-- Start: Reset color -->
+                        <h2 class="section--title-sub">Reset color</h2>
+                        <p>
+                            Reset a text or link’s color with <code class="class-name">.text_reset</code>, so that it inherits the color from its parent.
+                        </p>
+                        <div class="box box--example">
+                            <p class="text_muted">
+                                Muted text with a <a href="#" class="text_reset">reset link</a>.
+                            </p>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;p class="text_muted"&gt;
+    Muted text with a &lt;a href="#" class="text_reset"&gt;reset link&lt;/a&gt;.
+&lt;/p&gt;                                
+                            </code></pre>
+                        </div>
+                        <!-- End: Reset color -->
+
+                        <!-- Start: Text decoration -->
+                        <h2 class="section--title-sub">Text decoration</h2>
+                        <p>
+                            Remove a text decoration with a <code class="class-name">.text_decoration_none</code> class.
+                        </p>
+                        <div class="box box--example">
+                            <a href="#" class="text_decoration_none">Non-underlined link</a>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;a href="#" class="text_decoration_none"&gt;Non-underlined link&lt;/a&gt;                                
+                            </code></pre>
+                        </div>
+                        <!-- End: Text decoration -->
+
+                    </div>                    
+                </article>
+                <!-- End: Text -->
+                <!-- Start: Show -->
+                <article class="section">
+                    <h1 class="section--title">Show</h1>
+                    <p class="section--desc">Control the visibility, without modifying the display, of elements with visibility utilities.</p>
+                    <div class="section--content">
+                        <p>Set the <code class="class-name">show</code> of elements with our visibility utilities. These utility classes do not modify the <code class="class-name">display</code> value at all and do not affect layout – <code class="class-name">.hide</code> elements still take up space in the page. Content will be hidden both visually and for assistive technology/screen reader users.</p>
+                        <p>Apply <code class="class-name">.show</code> or <code class="class-name">.hide</code> as needed.</p>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="show"&gt;...&lt;/div&gt;
+&lt;div class="hide"&gt;...&lt;/div&gt;                                
+                            </code></pre>
+                        </div><br>
+                        <div class="box box--code">
+                            <pre><code class="css">
+// Class
+.show {
+  visibility: visible;
+}
+.hide {
+  visibility: hidden;
+}
+
+// Usage as a mixin
+.element {
+  @include invisible(visible);
+}
+.element {
+  @include invisible(hidden);
+}                                
+                            </code></pre>
+                        </div>
+                    </div>
+                </article>
+                <!-- End: Show -->
+                
+            </div>
+            <!-- End: Utilities -->
+        </main>
+        <!-- End: Main (Using rules - history) -->
+    </section>
+    <!-- End: Content -->
+
+    <!-- This is a page not using footer component -->
+</body>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+</html>

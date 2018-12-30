@@ -1,0 +1,36 @@
+.header {
+    min-height: 4rem;
+    background-color: $primary-color;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .05), inset 0 -1px 0 rgba(0, 0, 0, .1);
+    padding: 10px 15px;
+    width: 100%;
+    z-index: 1071;
+    top: 0;
+    .logo {
+        margin-right: 15px;
+    }
+    ul {
+        padding-left: 0;
+        margin-bottom: 0;
+        list-style: none;
+    }
+}
+
+.menu {
+    color: #fff;
+    .menu--item {
+        padding: 0 15px;
+        .menu--item-link {
+            text-decoration: none;
+            color: #d5cae8;
+            transition: all 0.5s ease;
+            &:hover {
+                color: #fff;
+            }
+            &.active {
+                color: #fff;
+                font-weight: 600;
+            }
+        }
+    }
+}
