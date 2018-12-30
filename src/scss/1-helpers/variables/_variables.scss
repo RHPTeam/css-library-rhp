@@ -27,7 +27,7 @@ $gray-500: #adb5bd !default;
 	  $text-muted, $blockquote-small-color, $breadcrumb-divider-color, $breadcrumb-active-color, $btn-link-disabled-color, $pagination-disabled-color
 */
 $gray-600: #6c757d !default;
-// To: $grays, $input-color
+// To: $grays, $input-color, $toast-header-color
 $gray-700: #495057 !default;
 // To: $grays, $dark, $custom-select-indicator-color
 $gray-800: #343a40 !default;
@@ -844,3 +844,20 @@ sticky !default;
 $transition-base:             all .2s ease-in-out !default;
 $transition-fade:             opacity .15s linear !default;
 $transition-collapse:         height .35s ease !default;
+
+//Toasts for notification 
+//Toasts
+//Modules: toats 
+$toast-max-width: 350px !default;
+$toast-padding-x: .75rem !default;
+$toast-padding-y: .25rem !default;
+$toast-font-size: .875rem !default;
+$toast-background-color: rgba($white, .85) !default;
+$toast-border-width: 1px !default;
+$toast-border-color: rgba(0, 0, 0, .1) !default;
+$toast-border-radius: .25rem !default;
+$toast-box-shadow: 0 .25rem .75rem rgba($black, .1) !default;
+
+$toast-header-color: $gray-600 !default;
+$toast-header-background-color: rgba($white, .85) !default;
+$toast-header-border-color: rgba(0, 0, 0, .05) !default;

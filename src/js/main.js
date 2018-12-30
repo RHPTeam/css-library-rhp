@@ -47,7 +47,6 @@ function tooltip(){
                             break;
                         case "left":
                             this.children[0].style.left="-"+(width-10) +'px ';
-                            
                             this.children[0].style.top='10%';
                             break;
                     }
@@ -59,12 +58,50 @@ function tooltip(){
                 $arBtn[i].addEventListener("mouseout",function(){
                     var element = document.getElementById("tooltip");
                     element.parentNode.removeChild(element);
-                    
+
                 });
            }
         }
     }
 }
-
 //tooltip end
+
+//notification start
+//  function close Notification
+function closeNotification(btnClose,time){
+    if (time === undefined) {
+        time = "500";
+    }
+    time=parseInt(time);
+    console.log(btnClose);
+    //get Parent element of button close notification
+    divParrent =  btnClose.parentNode;
+    //style opacity of divParrent to hide parent
+    divParrent.style.opacity=0;
+    //remove divParrent after 0.5s
+    setTimeout(function(){divParrent.remove(this)},time);
+}
+// function checking auto hide all notification
+function notification(){
+    //get all elements have class toast
+    var arrEle= document.getElementsByClassName("toast");
+
+    for(var i = 0 ; i< arrEle.length;i++){
+        ele =  arrEle[i];
+        //add class show to element toast
+        ele.classList.add("show");
+        if(ele.getAttribute("data-auto")=="true"){
+            //get time from data-delay
+            time= parseInt(ele.getAttribute('data-delay'));
+            //call function closeNotification after time
+            setTimeout(function(){
+                // console.log(ele);
+                closeNotification(ele.children[0]);
+            },time);
+            
+        }
+    }
+}
+
+//notification end
 
