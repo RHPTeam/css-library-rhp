@@ -67,6 +67,7 @@ function tooltip(){
 //tooltip end
 
 //notification start
+
 //  function close Notification
 function closeNotification(btnClose,time){
     if (time === undefined) {
@@ -81,6 +82,7 @@ function closeNotification(btnClose,time){
     //remove divParrent after 0.5s
     setTimeout(function(){divParrent.remove(this)},time);
 }
+
 // function checking auto hide all notification
 function notification(){
     //get all elements have class toast
