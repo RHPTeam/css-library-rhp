@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Build front-end page faster with css architecture</title>
+    <link rel="stylesheet" href="css/rbox.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <!-- TEMPLATE: DOC CSS LIBRARY FOR RHP TEAM -->
+    <!-- 
+		Note: Info author build web 
+		@Author: RHP Team
+	-->
+
+
+    <!-- This is a page using header component -->
+    <!-- Start: Header -->
+    <header class="header d_flex flex_row flex_nowrap justify_content_start align_items_center position_sticky" id="header">
+        <!-- Start: Logo -->
+        <div class="logo d_inline_block">
+            <a href="index.html">
+                <!-- Note: Using logo with svg type. -->
+                <img src="images/logo.svg" width="36" height="36" alt="Logo for homepage of documentation library" srcset="">
+            </a>
+        </div>
+        <!-- End: Logo -->
+
+        <!-- Start: Menu vertical -->
+        <nav class="menu menu--hor">
+            <ul class="menu--list d_flex flex_row">
+                <li class="menu--item"><a class="menu--item-link" href="index.html">Home</a></li>
+                <li class="menu--item"><a class="menu--item-link active" href="docs.html">Documentations</a></li>
+                <li class="menu--item"><a class="menu--item-link" href="">Examples</a></li>
+                <li class="menu--item"><a class="menu--item-link" href="">Next Plan</a></li>
+                <li class="menu--item"><a class="menu--item-link" href="">Blog</a></li>
+            </ul>
+        </nav>
+        <!-- End: Menu vertical -->
+
+        <!-- Start: Right menu -->
+
+        <!-- End: Right menu -->
+    </header>
+    <!-- End: Header -->
+    <!-- Start: Content -->
+    <section id="content" class="content d_flex align_items_stretch">
+        <!-- Start: Sidebar (Have search component) -->
+        <aside class="menu menu--ver sidebar position_sticky c_12 c_md_3 c_xl_2">
+            <!-- Start: Search component -->
+            <form action="docs.html" method="POST" class="menu--search d_flex align_items_center">
+                <!-- When using framework, u can remove form element to using. Endjoy!!! -->
+                <input type="text" class="form-control d_block" placeholder="Search..." autocomplete="off" name="textSearch" value="">
+            </form>
+            <!-- End: Search component -->
+
+            <!-- Start: List menu sidebar component -->
+            <nav class="nav">
+                <ul class="nav--list">
+                    <li class="nav--list-item">
+                        <a href="#" class="nav--link">Getting Started</a>
+                        <!-- Note: Sub item, u can remove it (when u use item not collapse) -->
+                        <ul class="list--sub">
+                            <li class="list--sub-item">
+                                <a href="#" class="nav--link sub">Introduction</a>
+                            </li>
+                            <li class="list--sub-item">
+                                <a href="#" class="nav--link sub">Download</a>
+                            </li>
+                            <li class="list--sub-item">
+                                <a href="#" class="nav--link sub">Contents</a>
+                            </li>
+                        </ul>
+                        <!-- End: Note sub item -->
+                    </li>
+                    <li class="nav--list-item">
+                        <a href="#" class="nav--link">Layout</a>
+                        <!-- Note: Sub item, u can remove it (when u use item not collapse) -->
+                        <ul class="list--sub">
+                            <li class="list--sub-item">
+                                <a href="#" class="nav--link sub">Overview</a>
+                            </li>
+                            <li class="list--sub-item">
+                                <a href="#" class="nav--link sub">Grid</a>
+                            </li>
+                            <li class="list--sub-item">
+                                <a href="#" class="nav--link sub">Other for layout</a>
+                            </li>
+                        </ul>
+                        <!-- End: Note sub item -->
+                    </li>
+                    <li class="nav--list-item">
+                        <a href="#" class="nav--link">Components</a>
+                        <!-- Note: Sub item, u can remove it (when u use item not collapse) -->
+                        <ul class="list--sub">
+                            <li class="list--sub-item">
+                                <a href="#" class="nav--link sub">Alerts</a>
+                            </li>
+                            <li class="list--sub-item">
+                                <a href="#" class="nav--link sub">Breadcrumb</a>
+                            </li>
+                            <li class="list--sub-item">
+                                <a href="#" class="nav--link sub">Buttons</a>
+                            </li>
+                            <li class="list--sub-item">
+                                <a href="#" class="nav--link sub">Button Group</a>
+                            </li>
+                            <li class="list--sub-item">
+                                <a href="#" class="nav--link sub active">Labels</a>
+                            </li>
+                        </ul>
+                        <!-- End: Note sub item -->
+                    </li>
+                    <li class="nav--list-item">
+                        <a href="#" class="nav--link">Utilities</a>
+                        <!-- Note: Sub item, u can remove it (when u use item not collapse) -->
+                        <ul class="list--sub">
+                            <li class="list--sub-item">
+                                <a href="#" class="nav--link sub">Close icon</a>
+                            </li>
+                            <li class="list--sub-item">
+                                <a href="#" class="nav--link sub">Colors</a>
+                            </li>
+                            <li class="list--sub-item">
+                                <a href="#" class="nav--link sub">Display</a>
+                            </li>
+                            <li class="list--sub-item">
+                                <a href="#" class="nav--link sub">Flex</a>
+                            </li>
+                            <li class="list--sub-item">
+                                <a href="#" class="nav--link sub">Float</a>
+                            </li>
+                            <li class="list--sub-item">
+                                <a href="#" class="nav--link sub">Position</a>
+                            </li>
+                            <li class="list--sub-item">
+                                <a href="#" class="nav--link sub">Text</a>
+                            </li>
+                            <li class="list--sub-item">
+                                <a href="#" class="nav--link sub">Show</a>
+                            </li>
+                        </ul>
+                        <!-- End: Note sub item -->
+                    </li>
+                </ul>
+            </nav>
+            <!-- End: List menu sidebar component -->
+        </aside>
+        <!-- End: Sidebar (have search component) -->
+
+        <!-- Start: Main (Using rules - history) -->
+        <main class="main c_12 c_md_9 c_xl_10">
+          <div class="main--wrapper">
+            <article class="section">
+              <h1 class="section--title">Introduction</h1>
+              <p class="section--desc">Get started with Rbox, the best most light library for building responsive, mobile-first sites, with Rbox Git and a template starter page.</p>
+              <div class="section--content">
+                <h2 class="section--title-sub">Getting Started</h2>
+                <p>Looking to quickly add Rbox to your project? Use Rbox Git, provided for free by the repo at Github. Using a package manager or need to download the source files? Head to the downloads page. <a href="#">Head to the downloads page.</a></p>
+                <h2 class="section--title-sub">CSS</h2>
+                <p>Copy-paste the stylesheet <code class="html">&lt;link&gt;</code> into your <code class="html">&lt;head&gt;</code> before all other stylesheets to load our CSS.</p>
+                <div class="box box--code no_border">
+                  <pre>
+                    <code class="html">&lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"&gt;</code>
+                  </pre>
+                </div>
+                <h2 class="section--title-sub">JS</h2>
+                <p>Many of our components require the use of JavaScript to function. Specifically, they require jQuery, Popper.js, and our own JavaScript plugins. Place the following <code class="html">&lt;script&gt;</code>s near the end of your pages, right before the closing <code class="html">&lt;body&gt;</code> tag, to enable them. jQuery must come first, then Popper.js, and then our JavaScript plugins.</p>
+                <p>We use jQuery’s slim build, but the full version is also supported.</p>
+                <div class="box box--code no_border">
+                  <pre>
+                    <code class="html">&lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"&gt;</code>
+                  </pre>
+                </div>
+                <h2 class="section--title-sub">Starter template</h2>
+                <p>Be sure to have your pages set up with the latest design and development standards. That means using an HTML5 doctype and including a viewport meta tag for proper responsive behaviors. Put it all together and your pages should look like this:</p>
+                <div class="box box--code no_border">
+                  <pre>
+                    <code class="html">&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;!-- Required meta tags --&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"&gt;
+
+    &lt;!-- Bootstrap CSS --&gt;
+    &lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"&gt;
+
+    &lt;title&gt;Hello, world!&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello, world!&lt;/h1&gt;
+
+    &lt;!-- Optional JavaScript --&gt;
+    &lt;!-- jQuery first, then Popper.js, then Bootstrap JS --&gt;
+    &lt;script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"&gt;&lt;/script&gt;
+    &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"&gt;&lt;/script&gt;
+    &lt;script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code>
+                  </pre>
+                </div>
+                <p>That’s all you need for overall page requirements. Visit the Layout docs or our official examples to start laying out your site’s content and components.</p>
+              </div>
+            </article>
+          </div>
+        </main>
+        <!-- End: Main (Using rules - history) -->
+    </section>
+    <!-- End: Content -->
+
+    <!-- This is a page not using footer component -->
+</body>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+</html>

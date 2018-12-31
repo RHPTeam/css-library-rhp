@@ -176,6 +176,65 @@
 
         <!-- Start: Main (Using rules - history) -->
         <main class="main c_12 c_md_9 c_xl_10">
+            <!-- Start: Introduction -->
+            <div class="main--wrapper">
+                <article class="section">
+                    <h1 class="section--title">Introduction</h1>
+                    <p class="section--desc">Get started with Rbox, the best most light library for building responsive, mobile-first sites, with Rbox Git and a template starter page.</p>
+                    <div class="section--content">
+                        <h2 class="section--title-sub">Getting Started</h2>
+                        <p>Looking to quickly add Rbox to your project? Use Rbox Git, provided for free by the repo at Github. Using a package manager or need to download the source files? Head to the downloads page. <a href="#">Head
+                                to the downloads page.</a></p>
+                        <h2 class="section--title-sub">CSS</h2>
+                        <p>Copy-paste the stylesheet <code class="html">&lt;link&gt;</code> into your <code class="html">&lt;head&gt;</code> before all other stylesheets to load our CSS.</p>
+                        <div class="box box--code no_border">
+                            <pre>
+                                <code class="html">&lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"&gt;</code>
+                            </pre>
+                        </div>
+                        <h2 class="section--title-sub">JS</h2>
+                        <p>Many of our components require the use of JavaScript to function. Specifically, they require jQuery, Popper.js, and our own JavaScript plugins. Place the following <code class="html">&lt;script&gt;</code>s near the end of your
+                            pages, right before the closing <code class="html">&lt;body&gt;</code> tag, to enable them. jQuery must come first, then Popper.js, and then our JavaScript plugins.</p>
+                        <p>We use jQuery’s slim build, but the full version is also supported.</p>
+                        <div class="box box--code no_border">
+                            <pre>
+                                <code class="html">&lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"&gt;</code>
+                            </pre>
+                        </div>
+                        <h2 class="section--title-sub">Starter template</h2>
+                        <p>Be sure to have your pages set up with the latest design and development standards. That means using an HTML5 doctype and including a viewport meta tag for proper responsive behaviors. Put it all together and your pages should
+                            look like this:</p>
+                        <div class="box box--code no_border">
+                            <pre>
+                                <code class="html">&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;!-- Required meta tags --&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"&gt;
+
+    &lt;!-- Bootstrap CSS --&gt;
+    &lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"&gt;
+
+    &lt;title&gt;Hello, world!&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello, world!&lt;/h1&gt;
+
+    &lt;!-- Optional JavaScript --&gt;
+    &lt;!-- jQuery first, then Popper.js, then Bootstrap JS --&gt;
+    &lt;script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"&gt;&lt;/script&gt;
+    &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"&gt;&lt;/script&gt;
+    &lt;script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code>
+                  </pre>
+                        </div>
+                        <p>That’s all you need for overall page requirements. Visit the Layout docs or our official examples to start laying out your site’s content and components.</p>
+                    </div>
+                </article>
+            </div>
+            <!-- End: Introduction -->
             <!-- Start: Component -->
             <div class="main--wrapper">
                 <!-- Start: Breadcrumb -->
@@ -2596,7 +2655,8 @@
                         <!-- Disabled  -->
                         <h5 class="section--title-child">Disabled</h5>
                         <p>
-                            Custom checkboxes and radios can also be disabled. Add the <code class="class-name">disabled</code> boolean attribute to the <code class="class-name">&lt;input&gt;</code> and the custom indicator and label description will be automatically styled.
+                            Custom checkboxes and radios can also be disabled. Add the <code class="class-name">disabled</code> boolean attribute to the <code class="class-name">&lt;input&gt;</code> and the custom indicator and label description will
+                            be automatically styled.
                         </p>
                         <div class="box box--example">
                             <div class="custom_control custom_checkbox">
@@ -2621,7 +2681,7 @@
     &lt;label class="custom_control_label" for="customRadioDisabled2"&gt;Toggle this custom radio&lt;/label&gt;
 &lt;/div&gt;                                
                             </code></pre>
-                        </div>                       
+                        </div>
                         <!-- End: Checkboxes and radios -->
                         <!-- End: Custom forms -->
                         <!-- Start: Switches -->
@@ -2655,7 +2715,8 @@
                         <!-- Start: Select menu -->
                         <h2 class="section--title-sub">Select menu</h2>
                         <p>
-                            Custom <code class="class-name">&lt;select&gt;</code> menus need only a custom class, <code class="class-name">.custom-select</code> to trigger the custom styles. Custom styles are limited to the <code class="class-name">select</code>’s initial appearance and cannot modify the <code class="class-name">&lt;option&gt;</code>s due to browser limitations.
+                            Custom <code class="class-name">&lt;select&gt;</code> menus need only a custom class, <code class="class-name">.custom-select</code> to trigger the custom styles. Custom styles are limited to the <code class="class-name">select</code>’s
+                            initial appearance and cannot modify the <code class="class-name">&lt;option&gt;</code>s due to browser limitations.
                         </p>
                         <div class="box box--example">
                             <select class="custom_select">
@@ -2721,7 +2782,8 @@
                         <!-- Start: Range -->
                         <h2 class="section--title-sub">Range</h2>
                         <p>
-                            Create custom <code class="class-name">&lt;input type="range"&gt;</code> controls with <code class="class-name">.custom_range</code>. The track (the background) and thumb (the value) are both styled to appear the same across browsers. As only IE and Firefox support “filling” their track from the left or right of the thumb as a means to visually indicate progress, we do not currently support it.
+                            Create custom <code class="class-name">&lt;input type="range"&gt;</code> controls with <code class="class-name">.custom_range</code>. The track (the background) and thumb (the value) are both styled to appear the same across
+                            browsers. As only IE and Firefox support “filling” their track from the left or right of the thumb as a means to visually indicate progress, we do not currently support it.
                         </p>
                         <div class="box box--example">
                             <label for="customRange1">Example range</label>
@@ -2734,7 +2796,8 @@
                             </code></pre>
                         </div>
                         <p>
-                            Range inputs have implicit values for <code class="class-name">min</code> and <code class="class-name">max</code>—<code class="class-name">0</code> and <code class="class-name">100</code>, respectively. You may specify new values for those using the <code class="class-name">min</code> and <code class="class-name">max</code> attributes.
+                            Range inputs have implicit values for <code class="class-name">min</code> and <code class="class-name">max</code>—<code class="class-name">0</code> and <code class="class-name">100</code>, respectively. You may specify new
+                            values for those using the <code class="class-name">min</code> and <code class="class-name">max</code> attributes.
                         </p>
                         <div class="box box--example">
                             <label for="customRange2">Example range</label>
@@ -2767,8 +2830,8 @@
                         </p>
                         <div class="box box--example">
                             <div class="custom_file">
-                            <input type="file" class="custom_file_input" id="customFile">
-                            <label class="custom_file_label" for="customFile">Choose file</label>
+                                <input type="file" class="custom_file_input" id="customFile">
+                                <label class="custom_file_label" for="customFile">Choose file</label>
                             </div>
                         </div>
                         <div class="box box--code">
@@ -2780,7 +2843,9 @@
                             </code></pre>
                         </div>
                         <p>
-                            We hide the default file <code class="class-name">&lt;input&gt;</code> via <code class="class-name">opacity</code> and instead style the <code class="class-name">&lt;label&gt;</code>. The button is generated and positioned with <code class="class-name">::after</code>. Lastly, we declare a <code class="class-name">width</code> and <code class="class-name">height</code> on the <code class="class-name">&lt;input&gt;</code> for proper spacing for surrounding content.
+                            We hide the default file <code class="class-name">&lt;input&gt;</code> via <code class="class-name">opacity</code> and instead style the <code class="class-name">&lt;label&gt;</code>. The button is generated and positioned
+                            with <code class="class-name">::after</code>. Lastly, we declare a <code class="class-name">width</code> and <code class="class-name">height</code> on the <code class="class-name">&lt;input&gt;</code> for proper spacing for
+                            surrounding content.
                         </p>
                         <!-- End: File browser -->
 
