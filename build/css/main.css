@@ -1514,6 +1514,10 @@ DICTIONARY WORD:
   .btn:not(:disabled):not(.disabled) {
     cursor: pointer; }
 
+a.btn.disabled,
+fieldset:disabled a.btn {
+  pointer-events: none; }
+
 .btn_primary {
   color: #fff;
   background-color: #007bff;
