@@ -162,7 +162,7 @@ input[type="button"] {
 .btn_group.show .dropdown_toggle {
     @include box-shadow($btn-active-box-shadow);
     // Show no shadow for `.btn-link` since it has no other button styles.
-    &.btn-link {
+    &.btn_link {
         @include box-shadow(none);
     }
 }
@@ -184,7 +184,7 @@ input[type="button"] {
     }
     // Reset rounded corners
     >.btn:not(:last-child):not(.dropdown_toggle),
-    >.btn-group:not(:last-child)>.btn {
+    >.btn_group:not(:last-child)>.btn {
         @include border-bottom-radius(0);
     }
     >.btn:not(:first-child),
