@@ -11,14 +11,25 @@
     border: 1px solid #eee;
     border-left-width: .25rem;
     border-radius: .25rem;
+    .note--document-title {
+            font-size: 1.5em;
+        }
     &.border-warning {
         border-left-color: #f0ad4e;
+        .note--document-title {
+            color: #f0ad4e;
+        }
     }
     &.border-info {
         border-left-color: #5bc0de;
         .note--document-title {
-            font-size: 1.5em;
             color: #5bc0de;
+        }
+    }
+    &.border-error {
+        border-left-color: #d9534f;
+        .note--document-title {
+            color: #d9534f;
         }
     }
     .note--document-detail {
