@@ -30,6 +30,13 @@ gulp.task('copyHtmlFile', gulp.series(function(done) {
     done()
 }))
 
+gulp.task('copyCssFile', gulp.series(function(done) {
+    gulp.src('src/css/**/*.css')
+        .pipe(gulp.dest('build/css'))
+        .pipe(browserSync.stream())
+    done()
+}))
+
 gulp.task('optimizeImage', gulp.series(function(done) {
     gulp.src('src/images/*')
         .pipe(imagein())
@@ -92,14 +99,15 @@ gulp.task('browserSync', gulp.series(function(done) {
     done()
 }))
 
-gulp.task('configServer', gulp.series(['browserSync', 'copyHtmlFile', 'optimizeImage', 'sass', 'jsCombine'], function(done) {
+gulp.task('configServer', gulp.series(['browserSync', 'copyHtmlFile', 'copyCssFile', 'optimizeImage', 'sass', 'jsCombine'], function(done) {
     gulp.watch('src/**/*.html', gulp.series('copyHtmlFile'))
+    gulp.watch('src/css/**/*.css', gulp.series('copyCssFile'))
     gulp.watch('src/images/**/*', gulp.series('optimizeImage'))
     gulp.watch('src/scss/**/*.scss', gulp.series('sass'))
     gulp.watch('src/js/**/*.js', gulp.series('jsCombine'))
     gulp.watch('src/**/*.html', browserSync.reload)
 }))
 
-gulp.task('default', gulp.series('configServer' , function(done) {
+gulp.task('default', gulp.series('configServer', function(done) {
     done()
 }))

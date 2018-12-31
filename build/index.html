@@ -1,14 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Build front-end page faster with css architecture</title>
+    <link rel="stylesheet" href="css/rbox.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+        crossorigin="anonymous">
 </head>
+
 <body>
-    <h1>Hello everyone</h1>
-    <h2>Hello members RHP Team</h2>
+    <!-- TEMPLATE: DOC CSS LIBRARY FOR RHP TEAM -->
+    <!-- 
+        Note: Info author build web 
+        @Author: RHP Teamr
+    -->
+
+
+    <!-- Start: Header -->
+    <header class="header" id="header">
+        <!-- Start: Logo -->
+        <div class="logo">
+            <a href="index.html">
+                <!-- Note: Using logo with svg type. -->
+                <img src="something.svg" alt="Logo for homepage of documentation library" srcset="">
+            </a>
+        </div>
+        <!-- End: Logo -->
+
+        <!-- Start: Menu vertical -->
+        <nav class="menu menu--ver">
+            <ul class="menu--list">
+                <li class="menu--item"><a class="menu--item-link" href="index.html">Home</a></li>
+                <li class="menu--item"><a class="menu--item-link" href="docs.html">Documentations</a></li>
+                <li class="menu--item"><a class="menu--item-link" href="">Examples</a></li>
+                <li class="menu--item"><a class="menu--item-link" href="">Next Plan</a></li>
+                <li class="menu--item"><a class="menu--item-link" href="">Blog</a></li>
+            </ul>
+        </nav>
+        <!-- End: Menu vertical -->
+
+        <!-- Start: Right menu -->
+        <ul class="menu menu--action">
+            <li class="menu--action-version">
+                <!-- Note: Using dropdown effect. i don't use nested element. U can change it :)) I hope enjoy with my issues -->
+                <!-- Note for icon arrow-down for :after - U need font-family to FontAwesome 5 Free. If u bought pro version u need config key in link element of header -->
+                <a href="javascript:void(0)">v1.0</a>
+                <div class="dropdown dropdown--content">
+                    <ul>
+                        <li><a href="#">1.0</a></li>
+                        <div class="devine"></div>
+                        <li><a href="#">All versions</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="menu--action-social">
+                <ul class="social--list">
+                    <li class="social--list--item">
+                        <a href="#" class="social--link">
+                            <!-- Note: Using icon fontawesome. When u use icon for brand, example: facebook, twitter. u need change fas, far to fab (b which mean is brand) -->
+                            <i class="fab fa-something"></i>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="menu--action-down">
+                <!-- Note: Button directly to link to download source code. So I don't use a element -->
+                <button class="btn btn-outline-orange">Download</button>
+            </li>
+        </ul>
+        <!-- End: Right menu -->
+    </header>
+    <!-- End: Header -->
+
+    <!-- Start: Content -->
+    <section id="content" class="conteintro-contentnt">
+        <main>
+            <div class="container">
+                <div class="intro">
+                    <div class="intro-item">
+                        <h1>Bootstrap</h1>
+                        <p>Build responsive, mobile-first projects on the web with the world’s most popular front-end
+                            component library.</p>
+                        <p>Bootstrap is an open source toolkit for developing with HTML, CSS, and JS. Quickly prototype
+                            your ideas or build your entire app with our Sass variables and mixins, responsive grid
+                            system, extensive prebuilt components, and powerful plugins built on jQuery</p>
+                        <div class="button-intro">
+                            <button>Get started</button>
+                            <button>Download</button>
+                            <p><small>Currently v4.2.1</small></p>
+                        </div>
+
+                    </div>
+                    <img class="intro-item" src="images/logo.png" alt="">
+                </div>
+                <div class="carbonads">
+                    <img src="https://cdn4.buysellads.net/uu/1/41369/1544727215-bigstock-1.jpg" alt="">
+                    <small>
+                        <a href=""> Explore Bigstock. Start today, and get a 7-day free trial.</a><br>
+                        <a href="">ads via Carbon</a>
+                    </small>
+
+                </div>
+            </div>
+        </main>
+        <div class="getstart">
+            <div class="getstart-item ">
+                <i class="far fa-arrow-alt-circle-down"></i>
+                <h3>Installation</h3>
+                <p>Include Bootstrap’s source Sass and JavaScript files via npm, Composer or Meteor. Package managed
+                    installs don’t include documentation, but do include our build system and readme.</p>
+                <pre><code>$ npm install bootstrap</code></pre>
+                <pre><code>$ gem install bootstrap -v 4.2.1</code></pre>
+                <br><br>
+                <p>_____________</p>
+                <button>Read Installation docs</button>
+
+            </div>
+            <div class="getstart-item">
+                <i class="fas fa-cloud"></i>
+                <h3>BootstrapCDN</h3>
+                <p>When you only need to include Bootstrap’s compiled CSS or JS, you can use <a href="">BootstrapCDN</a></p>
+                <h5>CSS only</h5>
+                <h5>JS, Popper.js, and jQuery</h5>
+                <br><br>
+                <p>_____________</p>
+                <button>Read Installation docs</button>
+            </div>
+            <div class="getstart-item">
+                <i class="fas fa-bolt"></i>
+                <h3>Official Themes</h3>
+                <p>Take Bootstrap 4 to the next level with official premium themes—toolkits built on Bootstrap with new
+                    components and plugins, docs, and build tools. .</p>
+                <img src="images/abc.png" alt="">
+                <br><br>
+                <p>_____________</p>
+                <button>Read Installation docs</button>
+            </div>
+        </div>
+    </section>
+    <!-- End: Content -->
+    <footer>
+        <ul>
+            <li> <a href="">Github</a></li>
+            <li> <a href="">Twitter</a> </li>
+            <li> <a href="">Examples</a>  </li>
+            <li> <a href="">About</a> </li>
+        </ul>
+        <br>
+        <p>Designed and built with all the love in the world by <a href="">@mdo</a> and <a href="">@fat</a>. Maintained
+            by the <a href="">core team</a> with the help of <a href="">our contributors</a> .</p>
+        <p>Currently v4.2.1. Code licensed <a href="">MIT</a>, docs <a href="">CC BY 3.0</a>.</p>
+    </footer>
+    <!-- This is a page not using footer component -->
 </body>
+
 </html>
