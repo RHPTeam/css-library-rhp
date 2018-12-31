@@ -10,6 +10,88 @@
 </head>
 
 <body>
+    <!-- Button trigger modal -->
+<button type="button" class="btn btn_primary"  onclick="showModal(this)" data-target="#exampleModal">
+        Launch demo modal
+      </button>
+      
+      <!-- Modal -->
+      <div class="modal fade"  aria-modal="true" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" onclick="hideModal()" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                    <div class="modal-body">
+                            <div class="ct_f">
+                              <div class="r">
+                                    <button type="button" class="btn btn_secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                            Tooltip on top
+                                        </button>
+                                <div class="c_md_4">.col-md-4</div>
+                                <div class="c_md_4 ml_auto">.col-md-4 .ml-auto</div>
+                              </div>
+                              <div class="r">
+                                <div class="c_md-3 ml_auto">.col-md-3 .ml-auto</div>
+                                <div class="c_md-2 ml_auto">.col-md-2 .ml-auto</div>
+                              </div>
+                              <div class="r">
+                                <div class="c_md-6 ml_auto">.col-md-6 .ml-auto</div>
+                              </div>
+                              <div class="r">
+                                <div class="c_sm_9">
+                                  Level 1: .col-sm-9
+                                  <div class="row">
+                                    <div class="c_8 c_sm_6">
+                                      Level 2: .col-8 .col-sm-6
+                                    </div>
+                                    <div class="c_4 c_sm_6">
+                                      Level 2: .col-4 .col-sm-6
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="ct_f">
+                                    <div class="r">
+                                      <div class="c_md_4">.col-md-4</div>
+                                      <div class="c_md_4 ml_auto">.col-md-4 .ml-auto</div>
+                                    </div>
+                                    <div class="r">
+                                      <div class="c_md-3 ml_auto">.col-md-3 .ml-auto</div>
+                                      <div class="c_md-2 ml_auto">.col-md-2 .ml-auto</div>
+                                    </div>
+                                    <div class="r">
+                                      <div class="c_md-6 ml_auto">.col-md-6 .ml-auto</div>
+                                    </div>
+                                    <div class="r">
+                                      <div class="c_sm_9">
+                                        Level 1: .col-sm-9
+                                        <div class="row">
+                                          <div class="c_8 c_sm_6">
+                                            Level 2: .col-8 .col-sm-6
+                                          </div>
+                                          <div class="c_4 c_sm_6">
+                                            Level 2: .col-4 .col-sm-6
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                          </div>
+                          
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn_secondary"  onclick="hideModal()" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn_primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
     <h1 style="margin-top: 0">Alert component</h1>
     <div class="alert alert_success alert_dismissible fade show" role="alert">
         Alert component
@@ -508,8 +590,29 @@
             </div>
         </div>
     </div>
+    <p>
+    <div class="collapse collapseExample" id="">
+            <div class="card card-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+        </div>
+    </div>
+    <a class="btn btn_primary" data-toggle="collapse" href="#collapseExample" onclick="collapse(this)" role="button" aria-expanded="false" aria-controls="collapseExample">
+        Link with href
+    </a>
+    <button class="btn btn_primary" type="button" data-toggle="collapse" onclick="collapse(this)"  data-target=".collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        Button with data-target
+    </button>
+    </p>
+    <div class="collapse collapseExample" id="collapseExample">
+            <div class="card card-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+        </div>
+    </div>
+    
 </body>
 <script>
+    dropdown();
+    modal();
 </script>
 
 </html>

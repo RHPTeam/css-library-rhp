@@ -154,40 +154,50 @@ function dropdown(){
 function collapse(ele){
     if(ele.hasAttribute("href")){
        href=ele.getAttribute("href");
-       name=href.substr(1,href.length);
+       val=href.substr(1,href.length);
     }else{
+        //get value attribute data-target 
         target=ele.getAttribute("data-target");
-        name=target.substr(1,target.length);
+        //get name from target ex: #modal => name= modal
+        val=target.substr(1,target.length);
+        //get fisrt character of target ( '.' || '#')
         char = target.substr(0,1);
+        //if char is '.'  then show all element have class val
         if(char=="."){
-            ar_content = document.getElementsByClassName(name);
-            console.log(ar_content);
+            ar_content = document.getElementsByClassName(val);
             for(j=0 ; j<ar_content.length;j++){
                 collapsing(ar_content[j]);
             }
+            // stop show content
             return false;
         }
     }
-    content = document.getElementById(name);
+    //show element have id  val
+    content = document.getElementById(val);
     collapsing(content);
 }
+//function doing collapse element
+//parameters: content: element need to show by collapse
 function collapsing(content){
+    //if this element have class show then which will be remove class show
     if(content.className.search('show')>=0){
         content.classList.remove('collapse')
-       content.classList.remove("show");
-       height = content.offsetHeight;  
-       content.style.height=height+"px";
-       content.classList.add("collapsing");
-       setTimeout(function(){
+        content.classList.remove("show");
+        height = content.offsetHeight;  
+        content.style.height=height+"px";
+        content.classList.add("collapsing");
+        setTimeout(function(){
            content.style.height=0+"px";
-       },100);
+        },100);
       
-       setTimeout(function(){
+        setTimeout(function(){
            content.classList.remove("collapsing");
            content.classList.add('collapse')
            content.style.height="";
-       },500);
-    }else{
+        },500);
+    }
+    //else this element will be add class show
+    else{
         content.classList.remove("collapse");
         height = content.offsetHeight;  
         content.classList.add("collapsing");
@@ -203,3 +213,54 @@ function collapsing(content){
     }
 }
 //collapse end
+
+//modal start
+//show modal
+function showModal(ele){
+    //hide the scroll in body;
+    document.getElementsByTagName("body")[0].style.overflow="hidden";
+    //get value attribute data-target 
+    target=ele.getAttribute("data-target");
+    //get name from target ex: #modal => name = modal
+    name=target.substr(1,target.length);
+    //get div element need show modal
+    modal = document.getElementById(name);
+
+    //show element have class modal
+    modal.classList.add("show");
+    modal.style.display="block";
+
+    //setting style for animation show modal
+    modal_dialog = findElementsByClassName(modal.childNodes,"modal-dialog");
+    modal_dialog.style.opacity=0;
+    modal_dialog.style.top="-20px";
+    setTimeout(function(){
+        modal_dialog.style.opacity=1;
+        modal_dialog.style.top="0";
+    },100)
+}
+
+//setting default hide modal when click over modal content
+function modal(){
+    arModal =  document.getElementsByClassName("modal")
+    window.onclick = function(event) {
+        for(var i = 0 ; i<arModal.length;i++){
+            if(event.target==arModal[i]){
+                arModal[i].style.display="none";
+                arModal[i].classList.remove("show");
+                document.getElementsByTagName("body")[0].style.overflow="auto";
+            }
+        } 
+    }
+}
+//hide modals
+function hideModal(){
+    arModal =  document.getElementsByClassName("modal");
+    for(var i = 0 ; i<arModal.length;i++){   
+        arModal[i].style.display="none";
+        arModal[i].classList.remove("show");
+        document.getElementsByTagName("body")[0].style.overflow="auto";
+    } 
+}
+
+//modal end
