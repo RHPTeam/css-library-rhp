@@ -33,7 +33,7 @@
         }
     }
     .note--document-detail {
-        margin-bottom: 0;
+        margin: 0;
     }
 }
 
@@ -41,7 +41,6 @@
     width: 100%;
     max-width: 100%;
     margin-bottom: 1rem;
-    border-collapse: collapse;
 
     th, td {
         padding: .75rem;
@@ -54,3 +53,20 @@
     background-color: rgba(86,61,124,.15);
     border: 1px solid rgba(86,61,124,.15);
 }
+
+.box--example {
+    .r {
+        .c,
+        [class^=c_] {
+            padding-top: .75rem;
+            padding-bottom: .75rem;
+            background-color: rgba(86,61,124,.15);
+            border: 1px solid rgba(86,61,124,.2);
+        }
+        +.r {
+                margin-top: 1rem;
+        }
+    }
+}
+
+

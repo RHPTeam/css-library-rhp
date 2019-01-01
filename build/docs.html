@@ -235,6 +235,1305 @@
                 </article>
             </div>
             <!-- End: Introduction -->
+            <!-- Start: Layout -->
+            <div class="main--wrapper">
+                <!-- Start: Overview -->
+                <article class="section">
+                    <h1 class="section--title">Overview</h1>
+                    <p class="section--desc">Components and options for laying out your Rbox project, including wrapping containers, a powerful grid system, a flexible media object, and responsive utility classes.</p>
+                    <div class="section--content">
+                        <!-- Start: Containers -->
+                        <h2 class="section--title-sub">Containers</h2>
+                        <p>
+                            Containers are the most basic layout element in Rbox and are <b>required when using our default grid system</b>. Choose from a responsive, fixed-width container (meaning its <code class="class-name">max-width</code> changes at each breakpoint) or fluid-width (meaning it’s <code class="class-name">100%</code> wide all the time).
+                        </p>
+                        <p>
+                            While containers <i>can</i> be nested, most layouts do not require a nested container.
+                        </p>
+                        <div class="box box--example">
+                            <div class="ct bd_highlight">
+                                Container
+                            </div>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="ct"&gt;
+  &lt;!-- Content here --&gt;
+&lt;/div&gt;        
+                            </code></pre>
+                        </div>
+                        <p>
+                            Use <code class="class-name">.ct_f</code> for a full width container, spanning the entire width of the viewport.
+                        </p>
+                        <div class="box box--example">
+                            <div class="ct bd_highlight">
+                                Container Fluid
+                            </div>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="ct_f"&gt;
+  &lt;!-- Content here --&gt;
+&lt;/div&gt;        
+                            </code></pre>
+                        </div>
+                        <!-- End: Containers -->
+                        <!-- Start: Responsive breakpoints -->
+                        <h2 class="section--title-sub">Responsive breakpoints</h2>
+                        <p>
+                            Since Rbox is developed to be mobile first, we use a handful of <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries">media queries</a> to create sensible breakpoints for our layouts and interfaces. These breakpoints are mostly based on minimum viewport widths and allow us to scale up elements as the viewport changes.
+                        </p>
+                        <p>
+                            Rbox primarily uses the following media query ranges—or breakpoints—in our source Sass files for our layout, grid system, and components.
+                        </p>
+                        <div class="box box--code">
+                            <pre><code class="css">
+// Extra small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Rbox
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }                                
+                            </code></pre>
+                        </div>
+                        <p>
+                            Since we write our source CSS in Sass, all our media queries are available via Sass mixins:
+                        </p>
+                        <div class="box box--code">
+                            <pre><code class="css">
+// No media query necessary for xs breakpoint as it's effectively `@media (min-width: 0) { ... }`
+@include media-breakpoint-up(sm) { ... }
+@include media-breakpoint-up(md) { ... }
+@include media-breakpoint-up(lg) { ... }
+@include media-breakpoint-up(xl) { ... }
+
+// Example: Hide starting at `min-width: 0`, and then show at the `sm` breakpoint
+.custom-class {
+  display: none;
+}
+@include media-breakpoint-up(sm) {
+  .custom-class {
+    display: block;
+  }
+}                                
+                            </code></pre>
+                        </div>
+                        <p>
+                            We occasionally use media queries that go in the other direction (the given screen size <i>or smaller</i>):
+                        </p>
+                        <div class="box box--code">
+                            <pre><code class="css">
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) { ... }
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) { ... }
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) { ... }
+
+// Large devices (desktops, less than 1200px)
+@media (max-width: 1199.98px) { ... }
+
+// Extra large devices (large desktops)
+// No media query since the extra-large breakpoint has no upper bound on its width                                
+                            </code></pre>
+                        </div>
+                        <div class="note--document border-info">
+                            <p class="note--document-detail">Note that since browsers do not currently support <a href="https://www.w3.org/TR/mediaqueries-4/#range-context">range context queries</a>, we work around the limitations of <a href="https://www.w3.org/TR/mediaqueries-4/#mq-min-max">min- and max- prefixes</a> and viewports with fractional widths (which can occur under certain conditions on high-dpi devices, for instance) by using values with higher precision for these comparisons.</p>
+                        </div>
+                        <p>
+                            Once again, these media queries are also available via Sass mixins:
+                        </p>
+                        <div class="box box--code">
+                            <pre><code class="css">
+@include media-breakpoint-down(xs) { ... }
+@include media-breakpoint-down(sm) { ... }
+@include media-breakpoint-down(md) { ... }
+@include media-breakpoint-down(lg) { ... }
+// No media query necessary for xl breakpoint as it has no upper bound on its width
+
+// Example: Style from medium breakpoint and down
+@include media-breakpoint-down(md) {
+  .custom-class {
+    display: block;
+  }
+}                                
+                            </code></pre>
+                        </div>
+                        <p>
+                            There are also media queries and mixins for targeting a single segment of screen sizes using the minimum and maximum breakpoint widths.
+                        </p>
+                        <div class="box box--code">
+                            <pre><code class="css">
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) { ... }
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) { ... }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) { ... }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199.98px) { ... }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }                                
+                            </code></pre>
+                        </div>
+                        <p>
+                            These media queries are also available via Sass mixins:
+                        </p>
+                        <div class="box box--code">
+                            <pre><code class="css">
+@include media-breakpoint-only(xs) { ... }
+@include media-breakpoint-only(sm) { ... }
+@include media-breakpoint-only(md) { ... }
+@include media-breakpoint-only(lg) { ... }
+@include media-breakpoint-only(xl) { ... }                                
+                            </code></pre>
+                        </div>
+                        <p>
+                            Similarly, media queries may span multiple breakpoint widths:
+                        </p>
+                        <div class="box box--code">
+                            <pre><code class="css">
+// Example
+// Apply styles starting from medium devices and up to extra large devices
+@media (min-width: 768px) and (max-width: 1199.98px) { ... }                                
+                            </code></pre>
+                        </div>
+                        <p>
+                            The Sass mixin for targeting the same screen size range would be:
+                        </p>
+                        <div class="box box--code">
+                            <pre><code class="scss">
+@include media-breakpoint-between(md, xl) { ... }                                
+                            </code></pre>
+                        </div>
+                        <!-- End: Responsive breakpoints -->
+                    </div>
+                </article>
+                <!-- End: Overview -->
+                <!-- Start: Grid system -->
+                <article class="section">
+                    <h1 class="section--title">Grid system</h1>
+                    <p class="section--desc">Use our powerful mobile-first flexbox grid to build layouts of all shapes and sizes thanks to a twelve column system, five default responsive tiers, Sass variables and mixins, and dozens of predefined classes.</p>
+                    <div class="section--content">
+                        <!-- Start: How it works -->
+                        <h2 class="section--title-sub">How it works</h2>
+                        <p>
+                            Rbox’s grid system uses a series of containers, rows, and columns to layout and align content. It’s built with <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox">flexbox</a> and is fully responsive. Below is an example and an in-depth look at how the grid comes together.
+                        </p>
+                        <p>
+                            <b>New to or unfamiliar with flexbox?</b> <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/#flexbox-background">Read this CSS Tricks flexbox guide</a> for background, terminology, guidelines, and code snippets.
+                        </p>
+                        <div class="box box--example">
+                            <div class="ct">
+                                <div class="r">
+                                    <div class="c_sm">
+                                        One of three columns
+                                    </div>
+                                    <div class="c_sm">
+                                        One of three columns
+                                    </div>
+                                    <div class="c_sm">
+                                        One of three columns
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="ct"&gt;
+    &lt;div class="r"&gt;
+        &lt;div class="c_sm"&gt;
+            One of three columns
+        &lt;/div&gt;
+        &lt;div class="c_sm"&gt;
+            One of three columns
+        &lt;/div&gt;
+        &lt;div class="c_sm"&gt;
+            One of three columns
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;                                
+                            </code></pre>
+                        </div>
+                        <p>                           
+                            The above example creates three equal-width columns on small, medium, large, and extra large devices using our predefined grid classes. Those columns are centered in the page with the parent <code class="class-name">.ct</code>.
+                        </p>
+                        <p>
+                            Breaking it down, here’s how it works:
+                        </p>
+                        <ul>
+                            <li>Containers provide a means to center and horizontally pad your site’s contents. Use <code class="class-name">.ct</code> for a responsive pixel width or <code class="class-name">.ct_f</code> for <code class="class-name">width: 100%</code> across all viewport and device sizes.</li>
+                            <li>Rows are wrappers for columns. Each column has horizontal <code class="class-name">padding</code> (called a gutter) for controlling the space between them. This <code class="class-name">padding</code> is then counteracted on the rows with negative margins. This way, all the content in your columns is visually aligned down the left side.</li>
+                            <li>In a grid layout, content must be placed within columns and only columns may be immediate children of rows.</li>
+                            <li>Thanks to flexbox, grid columns without a specified width will automatically layout as equal <code class="class-name">width</code> columns. For example, four instances of <code class="class-name">.c_sm</code> will each automatically be 25% wide from the small breakpoint and up. See the auto-layout columns section for more examples.</li>
+                            <li>Column classes indicate the number of columns you’d like to use out of the possible 12 per row. So, if you want three equal-width columns across, you can use <code class="class-name">.c_4</code>.</li>
+                            <li>Column <code class="class-name">width</code>s are set in percentages, so they’re always fluid and sized relative to their parent element.</li>
+                            <li>Columns have horizontal <code class="class-name">padding</code> to create the gutters between individual columns, however, you can remove the <code class="class-name">margin</code> from rows and <code class="class-name">padding</code> from columns with <code class="class-name">.no_g</code> on the <code class="class-name">.r</code>.</li>
+                            <li>To make the grid responsive, there are five grid breakpoints, one for each responsive breakpoint: all breakpoints (extra small), small, medium, large, and extra large.</li>
+                            <li>Grid breakpoints are based on minimum width media queries, meaning <b>they apply to that one breakpoint and all those above it</b> (e.g., <code class="class-name">.c_sm_4</code> applies to small, medium, large, and extra large devices, but not the first <code class="class-name">xs</code> breakpoint).</li>
+                            <li>You can use predefined grid classes (like <code class="class-name">.c_4</code>) or Sass mixins for more semantic markup.</li>
+                        </ul>
+                        <p>Be aware of the limitations and <a href="https://github.com/philipwalton/flexbugs">bugs around flexbox</a>, like the <a href="https://github.com/philipwalton/flexbugs#flexbug-9">inability to use some HTML elements as flex containers.</a></p>
+                        <!-- End: How it works -->
+                        <!-- Start: Grid options -->
+                        <h2 class="section--title-sub">Grid options</h2>
+                        <p>
+                            While Rbox uses <code class="class-name">em</code>s or <code class="class-name">rem</code>s for defining most sizes, <code class="class-name">px</code>s are used for grid breakpoints and container widths. This is because the viewport width is in pixels and does not change with the <a href="https://drafts.csswg.org/mediaqueries-3/#units">font size</a>.
+                        </p>
+                        <p>
+                            See how aspects of the Rbox grid system work across multiple devices with a handy table.
+                        </p>
+                        <table class="table--document">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th class="text_center">
+                                        Extra small<br>
+                                        <small>&lt;576px</small>
+                                    </th>
+                                    <th class="text_center">
+                                        Small<br>
+                                        <small>≥576px</small>
+                                    </th>
+                                    <th class="text_center">
+                                        Medium<br>
+                                        <small>≥768px</small>
+                                    </th>
+                                    <th class="text_center">
+                                        Large<br>
+                                        <small>≥992px</small>
+                                    </th>
+                                    <th class="text_center">
+                                        Extra large<br>
+                                        <small>≥1200px</small>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th class="text_nowrap">Max container width</th>
+                                    <td>None (auto)</td>
+                                    <td>540px</td>
+                                    <td>720px</td>
+                                    <td>960px</td>
+                                    <td>1140px</td>
+                                </tr>
+                                <tr>
+                                    <th class="text_nowrap">Class prefix</th>
+                                    <td><code class="class-name">.c_</code></td>
+                                    <td><code class="class-name">.c_sm_</code></td>
+                                    <td><code class="class-name">.c_md_</code></td>
+                                    <td><code class="class-name">.c_lg_</code></td>
+                                    <td><code class="class-name">.c_xl_</code></td>
+                                </tr>
+                                <tr>
+                                    <th class="text_nowrap"># of columns</th>
+                                    <td colspan="5">12</td>
+                                </tr>
+                                <tr>
+                                    <th class="text_nowrap">Gutter width</th>
+                                    <td colspan="5">30px (15px on each side of a column)</td>
+                                </tr>
+                                <tr>
+                                    <th class="text_nowrap">Nestable</th>
+                                    <td colspan="5">Yes</td>
+                                </tr>
+                                <tr>
+                                    <th class="text_nowrap">Column ordering</th>
+                                    <td colspan="5">Yes</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- End: Grid options -->
+                        <!-- Start: Auto-layout columns -->
+                        <h2 class="section--title-sub">Auto-layout columns</h2>
+                        <p>
+                            Utilize breakpoint-specific column classes for easy column sizing without an explicit numbered class like <code class="class-name">.col_sm_6</code>.
+                        </p>
+                        	<!-- Start: Equal-width -->
+                        <h4 class="section--title-part">Equal-width</h4>
+                        <p>
+                            For example, here are two grid layouts that apply to every device and viewport, from xs to xl. Add any number of unit-less classes for each breakpoint you need and every column will be the same width.
+                        </p>
+                        <div class="box box--example">
+                            <div class="ct">
+                                <div class="r">
+                                    <div class="c">
+                                        1 of 2
+                                    </div>
+                                    <div class="c">
+                                        2 of 2
+                                    </div>
+                                </div>
+                                <div class="r">
+                                    <div class="c">
+                                        1 of 3
+                                    </div>
+                                    <div class="c">
+                                        2 of 3
+                                    </div>
+                                    <div class="c">
+                                        3 of 3
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="ct"&gt;
+    &lt;div class="r"&gt;
+        &lt;div class="c"&gt;
+            1 of 2
+        &lt;/div&gt;
+        &lt;div class="c"&gt;
+            2 of 2
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="r"&gt;
+        &lt;div class="c"&gt;
+            1 of 3
+        &lt;/div&gt;
+        &lt;div class="c"&gt;
+            2 of 3
+        &lt;/div&gt;
+        &lt;div class="c"&gt;
+            3 of 3
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;                                
+                            </code></pre>
+                        </div>
+                        <p>
+                            Equal-width columns can be broken into multiple lines, but there was a <a href="https://github.com/philipwalton/flexbugs#flexbug-11">Safari flexbox bug</a> that prevented this from working without an explicit <code class="class-name">flex-basis</code> or <code class="class-name">border</code>. There are workarounds for older browser versions, but they shouldn’t be necessary if you’re up-to-date.
+                        </p>
+                        <div class="box box--example">
+                            <div class="ct">
+                                <div class="r">
+                                    <div class="c">Column</div>
+                                    <div class="c">Column</div>
+                                    <div style="width: 100%"></div>
+                                    <div class="c">Column</div>
+                                    <div class="c">Column</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="ct"&gt;
+    &lt;div class="r"&gt;
+        &lt;div class="c"&gt;Column&lt;/div&gt;
+        &lt;div class="c"&gt;Column&lt;/div&gt;
+        &lt;div style="width: 100%"&gt;&lt;/div&gt;
+        &lt;div class="c"&gt;Column&lt;/div&gt;
+        &lt;div class="c"&gt;Column&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;                                
+                            </code></pre>
+                        </div>
+                            <!-- End: Equal-width -->
+                            	<!-- Start: Setting one column width -->
+                            <h4 class="section--title-part">Setting one column width</h4>
+                            <p>
+                                Auto-layout for flexbox grid columns also means you can set the width of one column and have the sibling columns automatically resize around it. You may use predefined grid classes (as shown below), grid mixins, or inline widths. Note that the other columns will resize no matter the width of the center column.
+                            </p>
+                            <div class="box box--example">
+                                <div class="ct">
+                                    <div class="r">
+                                        <div class="c">
+                                            1 of 3
+                                        </div>
+                                        <div class="c_6">
+                                            2 of 3 (wider)
+                                        </div>
+                                        <div class="c">
+                                            3 of 3
+                                        </div>
+                                    </div>
+                                    <div class="r">
+                                        <div class="c">
+                                            1 of 3
+                                        </div>
+                                        <div class="c_5">
+                                            2 of 3 (wider)
+                                        </div>
+                                        <div class="c">
+                                            3 of 3
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box box--code">
+                                <pre><code class="html">
+&lt;div class="ct"&gt;
+    &lt;div class="r"&gt;
+        &lt;div class="c"&gt;
+            1 of 3
+        &lt;/div&gt;
+        &lt;div class="c_6"&gt;
+            2 of 3 (wider)
+        &lt;/div&gt;
+        &lt;div class="c"&gt;
+            3 of 3
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="r"&gt;
+        &lt;div class="c"&gt;
+            1 of 3
+        &lt;/div&gt;
+        &lt;div class="c_5"&gt;
+            2 of 3 (wider)
+        &lt;/div&gt;
+        &lt;div class="c"&gt;
+            3 of 3
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;                                    
+                                </code></pre>
+                            </div>
+                                <!-- End: Setting one column width -->
+                                	<!-- Start: Variable width content -->
+                        <h4 class="section--title-part">Variable width content</h4>
+                        <p>
+                            Use <code class="class-name">c_{breakpoint}_auto</code> classes to size columns based on the natural width of their content.
+                        </p>
+                        <div class="box box--example">
+                            <div class="ct">
+                                <div class="r justify_content_md_center">
+                                    <div class="c c_lg_2">
+                                    1 of 3
+                                    </div>
+                                    <div class="c_md_auto">
+                                    Variable width content
+                                    </div>
+                                    <div class="c c_lg_2">
+                                    3 of 3
+                                    </div>
+                                </div>
+                                <div class="r">
+                                    <div class="c">
+                                    1 of 3
+                                    </div>
+                                    <div class="c_md_auto">
+                                    Variable width content
+                                    </div>
+                                    <div class="c c_lg_2">
+                                    3 of 3
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="ct"&gt;
+    &lt;div class="r justify_content_md_center"&gt;
+        &lt;div class="c c_lg_2"&gt;
+        1 of 3
+        &lt;/div&gt;
+        &lt;div class="c_md_auto"&gt;
+        Variable width content
+        &lt;/div&gt;
+        &lt;div class="c c_lg_2"&gt;
+        3 of 3
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="r"&gt;
+        &lt;div class="c"&gt;
+        1 of 3
+        &lt;/div&gt;
+        &lt;div class="c_md_auto"&gt;
+        Variable width content
+        &lt;/div&gt;
+        &lt;div class="c c_lg_2"&gt;
+        3 of 3
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;                                
+                            </code></pre>
+                        </div>
+                            <!-- End: Variable width content -->
+                            	<!-- Start: Equal-width multi-row -->
+                        <h4 class="section--title-part">Equal-width multi-row</h4>
+                        <p>
+                            Create equal-width columns that span multiple rows by inserting a <code class="class-name">style="width: 100%"</code> where you want the columns to break to a new line. Make the breaks responsive by mixing the <code class="class-name">style="width: 100%"</code> with some responsive display utilities.
+                        </p>
+                        <div class="box box--example">
+                            <div class="ct">
+                                <div class="r">
+                                    <div class="c">Column</div>
+                                    <div class="c">Column</div>
+                                    <div style="width: 100%"></div>
+                                    <div class="c">Column</div>
+                                    <div class="c">Column</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="ct"&gt;
+    &lt;div class="r"&gt;
+        &lt;div class="c"&gt;Column&lt;/div&gt;
+        &lt;div class="c"&gt;Column&lt;/div&gt;
+        &lt;div style="width: 100%"&gt;&lt;/div&gt;
+        &lt;div class="c"&gt;Column&lt;/div&gt;
+        &lt;div class="c"&gt;Column&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;                                
+                            </code></pre>
+                        </div>
+                            <!-- End: Equal-width multi-row -->
+                        <!-- End: Auto-layout columns -->
+                        <!-- Start: Responsive classes -->
+                        <h2 class="section--title-sub">Responsive classes</h2>
+                        <p>
+                           Rbox’s grid includes five tiers of predefined classes for building complex responsive layouts. Customize the size of your columns on extra small, small, medium, large, or extra large devices however you see fit.
+                        </p>
+                        	<!-- Start: All breakpoints -->
+                        <h4 class="section--title-part">All breakpoints</h4>
+                        <p>
+                            For grids that are the same from the smallest of devices to the largest, use the <code class="class-name">.c</code> and <code class="class-name">.c_*</code> classes. Specify a numbered class when you need a particularly sized column; otherwise, feel free to stick to <code class="class-name">.c</code>.
+                        </p>
+                        <div class="box box--example">
+                        <div class="ct">
+                            <div class="r">
+                                <div class="c">c</div>
+                                <div class="c">c</div>
+                                <div class="c">c</div>
+                                <div class="c">c</div>
+                            </div>
+                            <div class="r">
+                                <div class="c_8">c_8</div>
+                                <div class="c_4">c_4</div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="ct"&gt;
+    &lt;div class="r"&gt;
+        &lt;div class="c"&gt;col&lt;/div&gt;
+        &lt;div class="c"&gt;col&lt;/div&gt;
+        &lt;div class="c"&gt;col&lt;/div&gt;
+        &lt;div class="c"&gt;col&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="r"&gt;
+        &lt;div class="c_8"&gt;c_8&lt;/div&gt;
+        &lt;div class="c_4"&gt;c_4&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;                                
+                            </code></pre>
+                        </div>
+                            <!-- End: All breakpoints -->
+                            	<!-- Start: Stacked to horizontal -->
+                        <h4 class="section--title-part">Stacked to horizontal</h4>
+                        <p>
+                            Using a single set of <code class="class-name">.c_sm_*</code> classes, you can create a basic grid system that starts out stacked and becomes horizontal at the small breakpoint (<code class="class-name">sm</code>).
+                        </p>
+                        <div class="box box--example">
+                            <div class="ct">
+                                <div class="r">
+                                    <div class="c_sm_8">c_sm_8</div>
+                                    <div class="c_sm_4">c_sm_4</div>
+                                </div>
+                                <div class="r">
+                                    <div class="c_sm">c_sm</div>
+                                    <div class="c_sm">c_sm</div>
+                                    <div class="c_sm">c_sm</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="ct"&gt;
+    &lt;div class="r"&gt;
+        &lt;div class="c_sm_8"&gt;c_sm_8&lt;/div&gt;
+        &lt;div class="c_sm_4"&gt;c_sm_4&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="r"&gt;
+        &lt;div class="c_sm"&gt;c_sm&lt;/div&gt;
+        &lt;div class="c_sm"&gt;c_sm&lt;/div&gt;
+        &lt;div class="c_sm"&gt;c_sm&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;                                
+                            </code></pre>
+                        </div>
+                            <!-- End: Stacked to horizontal -->
+                            	<!-- Start: Mix and match -->
+                        <h4 class="section--title-part">Mix and match</h4>
+                        <p>
+                            Don’t want your columns to simply stack in some grid tiers? Use a combination of different classes for each tier as needed. See the example below for a better idea of how it all works.
+                        </p>
+                        <div class="box box--example">
+                            <div class="ct">
+                                <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+                                <div class="r">
+                                    <div class="c_12 c_md_8">.c_12 .c_md_8</div>
+                                    <div class="c_6 c_md_4">.c_6 .c_md_4</div>
+                                </div>
+
+                                <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+                                <div class="r">
+                                    <div class="c_6 c_md_4">.c_6 .c_md_4</div>
+                                    <div class="c_6 c_md_4">.c_6 .c_md_4</div>
+                                    <div class="c_6 c_md_4">.c_6 .c_md_4</div>
+                                </div>
+
+                                <!-- Columns are always 50% wide, on mobile and desktop -->
+                                <div class="r">
+                                    <div class="c_6">.c_6</div>
+                                    <div class="c_6">.c_6</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="ct"&gt;
+    &lt;!-- Stack the columns on mobile by making one full-width and the other half-width --&gt;
+    &lt;div class="r"&gt;
+        &lt;div class="c_12 c_md_8"&gt;.c_12 .c_md_8&lt;/div&gt;
+        &lt;div class="c_6 c_md_4"&gt;.c_6 .c_md_4&lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop --&gt;
+    &lt;div class="r"&gt;
+        &lt;div class="c_6 c_md_4"&gt;.c_6 .c_md_4&lt;/div&gt;
+        &lt;div class="c_6 c_md_4"&gt;.c_6 .c_md_4&lt;/div&gt;
+        &lt;div class="c_6 c_md_4"&gt;.c_6 .c_md_4&lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Columns are always 50% wide, on mobile and desktop --&gt;
+    &lt;div class="r"&gt;
+        &lt;div class="c_6"&gt;.c_6&lt;/div&gt;
+        &lt;div class="c_6"&gt;.c_6&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;                                
+                            </code></pre>
+                        </div>
+                            <!-- End: Mix and match -->
+                            	<!-- Start: Gutters -->
+                        <h4 class="section--title-part">Gutters</h4>
+                        <p>
+                            Gutters can be responsively adjusted by breakpoint-specific padding and negative margin utility classes. To change the gutters in a given row, pair a negative margin utility on the <code class="class-name">.r</code> and matching padding utilities on the <code class="class-name">.c</code>s. The <code class="class-name">.ct</code> or <code class="class-name">.ct_f</code> parent may need to be adjusted too to avoid unwanted overflow, using again matching padding utility.
+                        </p>
+                        <p>
+                            Here’s an example of customizing the Rbox grid at the large (<code class="class-name">lg</code>) breakpoint and above. We’ve increased the <code class="class-name">.c</code> padding with <code class="class-name">.px_lg_5</code>, counteracted that with <code class="class-name">.mx_lg_n5</code> on the parent <code class="class-name">.r</code> and then adjusted the <code class="class-name">.ct</code> wrapper with <code class="class-name">.px_lg_5</code>.
+                        </p>
+                        <div class="box box--example">
+                            <div class="ct px_lg_5">
+                                <div class="r mx_lg_n5">
+                                    <div class="c py_3 px_lg_5 border bg_light">Custom column padding</div>
+                                    <div class="c py_3 px_lg_5 border bg_light">Custom column padding</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="ct px_lg_5"&gt;
+    &lt;div class="r mx_lg_n5"&gt;
+        &lt;div class="c py_3 px_lg_5 border bg_light"&gt;Custom column padding&lt;/div&gt;
+        &lt;div class="c py_3 px_lg_5 border bg_light"&gt;Custom column padding&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;                                
+                            </code></pre>
+                        </div>
+                            <!-- End: Gutters -->
+                        <!-- End: Responsive classes -->
+                        <!-- Start: Alignment -->
+                        <h2 class="section--title-sub">Alignment</h2>
+                        <p>
+                            Use flexbox alignment utilities to vertically and horizontally align columns.
+                        </p>
+                       	    <!-- Start: Vertical alignment -->
+                        <h4 class="section--title-part">Vertical alignment</h4>
+
+                        <div class="box box--example">
+                            <div class="ct">
+                                <div class="r align_items_start" style="min-height: 10rem; background-color: rgba(255,0,0,.1);">
+                                    <div class="c">
+                                        One of three columns
+                                    </div>
+                                    <div class="c">
+                                        One of three columns
+                                    </div>
+                                    <div class="c">
+                                        One of three columns
+                                    </div>
+                                </div>
+                                <div class="r align_items_center" style="min-height: 10rem; background-color: rgba(255,0,0,.1);">
+                                    <div class="c">
+                                        One of three columns
+                                    </div>
+                                    <div class="c">
+                                        One of three columns
+                                    </div>
+                                    <div class="c">
+                                        One of three columns
+                                    </div>
+                                </div>
+                                <div class="r align_items_end" style="min-height: 10rem; background-color: rgba(255,0,0,.1);">
+                                    <div class="c">
+                                        One of three columns
+                                    </div>
+                                    <div class="c">
+                                        One of three columns
+                                    </div>
+                                    <div class="c">
+                                        One of three columns
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="ct"&gt;
+    &lt;div class="r align_items_start"&gt;
+        &lt;div class="c"&gt;
+            One of three columns
+        &lt;/div&gt;
+        &lt;div class="c"&gt;
+            One of three columns
+        &lt;/div&gt;
+        &lt;div class="c"&gt;
+            One of three columns
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="r align_items_center"&gt;
+        &lt;div class="c"&gt;
+            One of three columns
+        &lt;/div&gt;
+        &lt;div class="c"&gt;
+            One of three columns
+        &lt;/div&gt;
+        &lt;div class="c"&gt;
+            One of three columns
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="r align_items_end"&gt;
+        &lt;div class="c"&gt;
+            One of three columns
+        &lt;/div&gt;
+        &lt;div class="c"&gt;
+            One of three columns
+        &lt;/div&gt;
+        &lt;div class="c"&gt;
+            One of three columns
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;                                
+                            </code></pre>
+                        </div>
+                        <div class="box box--example">
+                            <div class="ct">
+                                <div class="r" style="min-height: 10rem; background-color: rgba(255,0,0,.1);">
+                                    <div class="c align_self_start">
+                                        One of three columns
+                                    </div>
+                                    <div class="c align_self_center">
+                                        One of three columns
+                                    </div>
+                                    <div class="c align_self_end">
+                                        One of three columns
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="ct"&gt;
+    &lt;div class="r"&gt;
+        &lt;div class="c align_self_start"&gt;
+            One of three columns
+        &lt;/div&gt;
+        &lt;div class="c align_self_center"&gt;
+            One of three columns
+        &lt;/div&gt;
+        &lt;div class="c align_self_end"&gt;
+            One of three columns
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;                                
+                            </code></pre>
+                        </div>
+                            <!-- End: Vertical alignment -->
+                            	<!-- Start: Horizontal alignment -->
+                        <h4 class="section--title-part">Horizontal alignment</h4>
+                        <div class="box box--example">
+                            <div class="ct">
+                                <div class="r justify_content_start">
+                                    <div class="c_4">
+                                        One of two columns
+                                    </div>
+                                    <div class="c_4">
+                                        One of two columns
+                                    </div>
+                                </div>
+                                <div class="r justify_content_center">
+                                    <div class="c_4">
+                                        One of two columns
+                                    </div>
+                                    <div class="c_4">
+                                        One of two columns
+                                    </div>
+                                </div>
+                                <div class="r justify_content_end">
+                                    <div class="c_4">
+                                        One of two columns
+                                    </div>
+                                    <div class="c_4">
+                                        One of two columns
+                                    </div>
+                                </div>
+                                <div class="r justify_content_around">
+                                    <div class="c_4">
+                                        One of two columns
+                                    </div>
+                                    <div class="c_4">
+                                        One of two columns
+                                </div>
+                                </div>
+                                <div class="r justify_content_between">
+                                    <div class="c_4">
+                                        One of two columns
+                                    </div>
+                                    <div class="c_4">
+                                        One of two columns
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="ct"&gt;
+    &lt;div class="r justify_content_start"&gt;
+        &lt;div class="c_4"&gt;
+            One of two columns
+        &lt;/div&gt;
+        &lt;div class="c_4"&gt;
+            One of two columns
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="r justify_content_center"&gt;
+        &lt;div class="c_4"&gt;
+            One of two columns
+        &lt;/div&gt;
+        &lt;div class="c_4"&gt;
+            One of two columns
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="r justify_content_end"&gt;
+        &lt;div class="c_4"&gt;
+            One of two columns
+        &lt;/div&gt;
+        &lt;div class="c_4"&gt;
+            One of two columns
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="r justify_content_around"&gt;
+        &lt;div class="c_4"&gt;
+            One of two columns
+        &lt;/div&gt;
+        &lt;div class="c_4"&gt;
+            One of two columns
+    &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="r justify_content_between"&gt;
+        &lt;div class="c_4"&gt;
+            One of two columns
+        &lt;/div&gt;
+        &lt;div class="c_4"&gt;
+            One of two columns
+    &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;                                
+                            </code></pre>
+                        </div>
+                            <!-- End: Horizontal alignment -->
+                            	<!-- Start: No gutters -->
+                        <h4 class="section--title-part">No gutters</h4>
+                        <p>
+                            The gutters between columns in our predefined grid classes can be removed with <code class="class-name">.no_g</code>. This removes the negative <code class="class-name">margin</code>s from <code class="class-name">.r</code> and the horizontal <code class="class-name">padding</code> from all immediate children columns.
+                        </p>
+                        <p>
+                            Here’s the source code for creating these styles. Note that column overrides are scoped to only the first children columns and are targeted via <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors">attribute selector</a>. While this generates a more specific selector, column padding can still be further customized with spacing utilities.
+                        </p>
+                        <p>
+                            <b>Need an edge-to-edge design?</b> Drop the parent <code class="class-name">.ct</code> or <code class="class-name">.ct_f</code>.
+                        </p>
+                        <div class="box box--code">
+                            <pre><code class="css">
+.no_g {
+    margin-right: 0;
+    margin-left: 0;
+
+    > .c,
+    > [class*="c_"] {
+        padding-right: 0;
+        padding-left: 0;
+    }
+}                                
+                            </code></pre>
+                        </div>
+                        <p>
+                            In practice, here’s how it looks. Note you can continue to use this with all other predefined grid classes (including column widths, responsive tiers, reorders, and more).
+                        </p>    
+                        <div class="box box--example">
+                            <div class="r no_g">
+                                <div class="c_12 c_sm_6 c_md_8">.c_12 .c_sm_6 .c_md_8</div>
+                                <div class="c_6 c_md_4">.c_6 .c_md_4</div>
+                            </div>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="r no_g"&gt;
+    &lt;div class="c_12 c_sm_6 c_md_8"&gt;.c_12 .c_sm_6 .c_md_8&lt;/div&gt;
+    &lt;div class="c_6 c_md_4"&gt;.c_6 .c_md_4&lt;/div&gt;
+&lt;/div&gt;                                
+                            </code></pre>
+                        </div>
+                            <!-- End: No gutters -->
+                            	<!-- Start: Column wrapping -->
+                        <h4 class="section--title-part">Column wrapping</h4>
+                        <p>
+                            If more than 12 columns are placed within a single row, each group of extra columns will, as one unit, wrap onto a new line.
+                        </p>
+                        <div class="box box--example">
+                            <div class="ct">
+                                <div class="r">
+                                    <div class="c_9">.c_9</div>
+                                    <div class="c_4">.c_4<br>Since 9 + 4 = 13 &gt; 12, this 4-column-wide div gets wrapped onto a new line as one contiguous unit.</div>
+                                    <div class="c_6">.c_6<br>Subsequent columns continue along the new line.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="ct"&gt;
+    &lt;div class="r"&gt;
+        &lt;div class="c_9"&gt;.c_9&lt;/div&gt;
+        &lt;div class="c_4"&gt;.c_4&lt;br&gt;Since 9 + 4 = 13 &amp;gt; 12, this 4-column-wide div gets wrapped onto a new line as one contiguous unit.&lt;/div&gt;
+        &lt;div class="c_6"&gt;.c_6&lt;br&gt;Subsequent columns continue along the new line.&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;                                
+                            </code></pre>
+                        </div>
+                            <!-- End: Column wrapping -->
+                            	<!-- Start: Column breaks -->
+                        <h4 class="section--title-part">Column breaks</h4>
+                        <p>
+                            Breaking columns to a new line in flexbox requires a small hack: add an element with <code class="class-name">width: 100%</code> wherever you want to wrap your columns to a new line. Normally this is accomplished with multiple <code class="class-name">.r</code>s, but not every implementation method can account for this.
+                        </p>
+                        <div class="box box--example">
+                            <div class="ct">
+                                <div class="r">
+                                    <div class="c_6 c_sm_3">.c_6 .c_sm_3</div>
+                                    <div class="c_6 c_sm_3">.c_6 .c_sm_3</div>
+
+                                    <!-- Force next columns to break to new line -->
+                                    <div style="width: 100%"></div>
+
+                                    <div class="c_6 c_sm_3">.c_6 .c_sm_3</div>
+                                    <div class="c_6 c_sm_3">.c_6 .c_sm_3</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="ct"&gt;
+    &lt;div class="r"&gt;
+        &lt;div class="c_6 c_sm_3"&gt;.c_6 .c_sm_3&lt;/div&gt;
+        &lt;div class="c_6 c_sm_3"&gt;.c_6 .c_sm_3&lt;/div&gt;
+
+        &lt;!-- Force next columns to break to new line --&gt;
+        &lt;div style="width: 100%"&gt;&lt;/div&gt;
+
+        &lt;div class="c_6 c_sm_3"&gt;.c_6 .c_sm_3&lt;/div&gt;
+        &lt;div class="c_6 c_sm_3"&gt;.c_6 .c_sm_3&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;                                
+                            </code></pre>
+                        </div>
+                        <p>
+                            You may also apply this break at specific breakpoints with our responsive display utilities.
+                        </p>
+                        <div class="box box--example">
+                            <div class="ct">
+                                <div class="r">
+                                    <div class="c_6 c_sm_4">.c_6 .c_sm_4</div>
+                                    <div class="c_6 c_sm_4">.c_6 .c_sm_4</div>
+
+                                    <!-- Force next columns to break to new line at md breakpoint and up -->
+                                    <div class="d_none d_md_block" style="width: 100%"></div>
+
+                                    <div class="c_6 c_sm_4">.c_6 .c_sm_4</div>
+                                    <div class="c_6 c_sm_4">.c_6 .c_sm_4</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="ct"&gt;
+    &lt;div class="r"&gt;
+        &lt;div class="c_6 c_sm_4"&gt;.c_6 .c_sm_4&lt;/div&gt;
+        &lt;div class="c_6 c_sm_4"&gt;.c_6 .c_sm_4&lt;/div&gt;
+
+        &lt;!-- Force next columns to break to new line at md breakpoint and up --&gt;
+        &lt;div class="d_none d_md_block" style="width: 100%"&gt;&lt;/div&gt;
+
+        &lt;div class="c_6 c_sm_4"&gt;.c_6 .c_sm_4&lt;/div&gt;
+        &lt;div class="c_6 c_sm_4"&gt;.c_6 .c_sm_4&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;                                
+                            </code></pre>
+                        </div>
+                            <!-- End: Column breaks -->
+                        <!-- End: Alignment -->
+                        <!-- Start: Reordering -->
+                        <h2 class="section--title-sub">Reordering</h2>
+                        	<!-- Start: Order classes -->
+                        <h4 class="section--title-part">Order classes</h4>
+                        <p>
+                            Use <code class="class-name">.or_</code> classes for controlling the <b>visual order</b> of your content. These classes are responsive, so you can set the <code class="class-name">order</code> by breakpoint (e.g., <code class="class-name">.or_1.or_md_2</code>). Includes support for <code class="class-name">1</code> through <code class="class-name">12</code> across all five grid tiers.
+                        </p>
+                        <div class="box box--example">
+                            <div class="ct">
+                                <div class="r">
+                                    <div class="c">
+                                        First, but unordered
+                                    </div>
+                                    <div class="c or_12">
+                                        Second, but last
+                                    </div>
+                                    <div class="c or_1">
+                                        Third, but first
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="ct"&gt;
+    &lt;div class="r"&gt;
+        &lt;div class="c"&gt;
+            First, but unordered
+        &lt;/div&gt;
+        &lt;div class="c or_12"&gt;
+            Second, but last
+        &lt;/div&gt;
+        &lt;div class="c or_1"&gt;
+            Third, but first
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;                                
+                            </code></pre>
+                        </div>
+                        <p>
+                            There are also responsive <code class="class-name">.or_f</code> and <code class="class-name">.or_l</code> classes that change the <code class="class-name">order</code> of an element by applying <code class="class-name">order: -1</code> and <code class="class-name">order: 13 (order: $columns + 1)</code>, respectively. These classes can also be intermixed with the numbered <code class="class-name">.or_*</code> classes as needed.
+                        </p>
+                        <div class="box box--example">
+                            <div class="ct">
+                                <div class="r">
+                                    <div class="c or_l">
+                                        First, but last
+                                    </div>
+                                    <div class="c">
+                                        Second, but unordered
+                                    </div>
+                                    <div class="c or_f">
+                                        Third, but first
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="ct"&gt;
+    &lt;div class="r"&gt;
+        &lt;div class="c or_l"&gt;
+            First, but last
+        &lt;/div&gt;
+        &lt;div class="c"&gt;
+            Second, but unordered
+        &lt;/div&gt;
+        &lt;div class="c or_f"&gt;
+            Third, but first
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;                                
+                            </code></pre>
+                        </div>
+                            <!-- End: Order classes -->
+                            	<!-- Start: Offsetting columns -->
+                        <h4 class="section--title-part">Offsetting columns</h4>
+                        <p>
+                            You can offset grid columns in two ways: our responsive <code class="class-name">.o_</code> grid classes and our margin utilities. Grid classes are sized to match columns while margins are more useful for quick layouts where the width of the offset is variable.
+                        </p>
+                        <!-- Offset classes -->
+                        <h5 class="section--title-part">Offset classes</h4>
+                        <p>
+                            Move columns to the right using <code class="class-name">.o_md_*</code> classes. These classes increase the left margin of a column by <code class="class-name">*</code> columns. For example, <code class="class-name">.o_md_4</code> moves <code class="class-name">.c_md_4</code> over four columns.
+                        </p>
+                        <div class="box box--example">
+                            <div class="ct">
+                                <div class="r">
+                                    <div class="c_md_4">.c_md_4</div>
+                                    <div class="c_md_4 o_md_4">.c_md_4 .o_md_4</div>
+                                </div>
+                                <div class="r">
+                                    <div class="c_md_3 o_md_3">.c_md_3 .o_md_3</div>
+                                    <div class="c_md_3 o_md_3">.c_md_3 .o_md_3</div>
+                                </div>
+                                <div class="r">
+                                    <div class="c_md_6 o_md_3">.c_md_6 .o_md_3</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="ct"&gt;
+    &lt;div class="r"&gt;
+        &lt;div class="c_md_4"&gt;.c_md_4&lt;/div&gt;
+        &lt;div class="c_md_4 o_md_4"&gt;.c_md_4 .o_md_4&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="r"&gt;
+        &lt;div class="c_md_3 o_md_3"&gt;.c_md_3 .o_md_3&lt;/div&gt;
+        &lt;div class="c_md_3 o_md_3"&gt;.c_md_3 .o_md_3&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="r"&gt;
+        &lt;div class="c_md_6 o_md_3"&gt;.c_md_6 .o_md_3&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;                                
+                            </code></pre>
+                        </div>
+                        <p>
+                            In addition to column clearing at responsive breakpoints, you may need to reset offsets.
+                        </p>
+                        <div class="box box--example">
+                            <div class="ct">
+                                <div class="r">
+                                    <div class="c_sm_5 c_md_6">.c_sm_5 .c_md_6</div>
+                                    <div class="c_sm_5 o_sm_2 c_md_6 o_md_0">.c_sm_5 .o_sm_2 .c_md_6 .o_md_0</div>
+                                </div>
+                                <div class="r">
+                                    <div class="c_sm_6 c_md_5 c_lg_6">.c_sm_6 .c_md_5 .c_lg_6</div>
+                                    <div class="c_sm_6 c_md_5 o_md_2 c_lg_6 o_lg_0">.c_sm_6 .c_md_5 .o_md_2 .c_lg_6 .o_lg_0</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="ct"&gt;
+    &lt;div class="r"&gt;
+        &lt;div class="c_sm_5 c_md_6"&gt;.c_sm_5 .c_md_6&lt;/div&gt;
+        &lt;div class="c_sm_5 o_sm_2 c_md_6 o_md_0"&gt;.c_sm_5 .o_sm_2 .c_md_6 .o_md_0&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="r"&gt;
+        &lt;div class="c_sm_6 c_md_5 c_lg_6"&gt;.c_sm_6 .c_md_5 .c_lg_6&lt;/div&gt;
+        &lt;div class="c_sm_6 c_md_5 o_md_2 c_lg_6 o_lg_0"&gt;.c_sm_6 .c_md_5 .o_md_2 .c_lg_6 .o_lg_0&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;                                
+                            </code></pre>
+                        </div>
+                        <!-- Margin utilities -->
+                        <h5 class="section--title-part">Margin utilities</h4>
+                        <p>
+                            With the move to flexbox in v4, you can use margin utilities like <code class="class-name">.mr_auto</code> to force sibling columns away from one another.
+                        </p>
+                        <div class="box box--example">
+                            <div class="ct">
+                                <div class="r">
+                                    <div class="c_md_4">.c_md_4</div>
+                                    <div class="c_md_4 ml_auto">.c_md_4 .ml_auto</div>
+                                </div>
+                                <div class="r">
+                                    <div class="c_md_3 ml_md_auto">.c_md_3 .ml_md_auto</div>
+                                    <div class="c_md_3 ml_md_auto">.c_md_3 .ml_md_auto</div>
+                                </div>
+                                <div class="r">
+                                    <div class="c_auto mr_auto">.c_auto .mr_auto</div>
+                                    <div class="c_auto">.c_auto</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="ct"&gt;
+    &lt;div class="r"&gt;
+        &lt;div class="c_md_4"&gt;.c_md_4&lt;/div&gt;
+        &lt;div class="c_md_4 ml_auto"&gt;.c_md_4 .ml_auto&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="r"&gt;
+        &lt;div class="c_md_3 ml_md_auto"&gt;.c_md_3 .ml_md_auto&lt;/div&gt;
+        &lt;div class="c_md_3 ml_md_auto"&gt;.c_md_3 .ml_md_auto&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="r"&gt;
+        &lt;div class="c_auto mr_auto"&gt;.c_auto .mr_auto&lt;/div&gt;
+        &lt;div class="c_auto"&gt;.c_auto&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;                                
+                            </code></pre>
+                        </div>
+                            <!-- End: Offsetting columns -->
+                        <!-- End: Reordering -->
+                        <!-- Start: Nesting -->
+                        <h2 class="section--title-sub">Nesting</h2>
+                        <p>
+                            To nest your content with the default grid, add a new <code class="class-name">.r</code> and set of <code class="class-name">.c_sm_*</code> columns within an existing <code class="class-name">.c_sm_*</code> column. Nested rows should include a set of columns that add up to 12 or fewer (it is not required that you use all 12 available columns).
+                        </p>
+                        <div class="box box--example">
+                            <div class="ct">
+                                <div class="r">
+                                    <div class="c_sm_9">
+                                        Level 1: .c_sm_9
+                                        <div class="r">
+                                            <div class="c_8 c_sm_6">
+                                                Level 2: .c_8 .c_sm_6
+                                            </div>
+                                            <div class="c_4 c_sm_6">
+                                                Level 2: .c_4 .c_sm_6
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box box--code">
+                            <pre><code class="html">
+&lt;div class="ct"&gt;
+    &lt;div class="r"&gt;
+        &lt;div class="c_sm_9"&gt;
+            Level 1: .c_sm_9
+            &lt;div class="r"&gt;
+                &lt;div class="c_8 c_sm_6"&gt;
+                    Level 2: .c_8 .c_sm_6
+                &lt;/div&gt;
+                &lt;div class="c_4 c_sm_6"&gt;
+                    Level 2: .c_4 .c_sm_6
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;                                
+                            </code></pre>
+                        </div>
+                        <!-- End: Nesting -->
+                    </div>
+                </article>
+                <!-- End: Grid system -->
+            </div>
+            <!-- End: Layout -->
             <!-- Start: Component -->
             <div class="main--wrapper">
                 <!-- Start: Breadcrumb -->
@@ -1030,7 +2329,7 @@
                         <!-- Start: Card layout -->
                         <h2 class="section--title-sub">Card layout</h2>
                         <p>
-                            In addition to styling the content within cards, Bootstrap includes a few options for laying out series of cards. For the time being, <b>these layout options are not yet responsive</b>.
+                            In addition to styling the content within cards, Rbox includes a few options for laying out series of cards. For the time being, <b>these layout options are not yet responsive</b>.
                         </p>
                         <!-- Start: Card groups -->
                         <h4 class="section--title-part">Card groups</h4>
@@ -1809,7 +3108,7 @@
                         <!-- Start: Layout -->
                         <h2 class="section--title-sub">Layout</h2>
                         <p>
-                            Since Bootstrap applies <code class="class-name">display: block</code> and <code class="class-name">width: 100%</code> to almost all our form controls, forms will by default stack vertically. Additional classes can be used
+                            Since Rbox applies <code class="class-name">display: block</code> and <code class="class-name">width: 100%</code> to almost all our form controls, forms will by default stack vertically. Additional classes can be used
                             to vary this layout on a per-form basis.
                         </p>
                         <!-- Start: Form groups -->
@@ -2345,7 +3644,7 @@
                         </p>
                         <ul>
                             <li>Controls are <code class="class-name">display: flex</code>, collapsing any HTML white space and allowing you to provide alignment control with spacing and flexbox utilities.</li>
-                            <li>Controls and input groups receive <code class="class-name">width: auto</code> to override the Bootstrap default
+                            <li>Controls and input groups receive <code class="class-name">width: auto</code> to override the Rbox default
                                 <code class="class-name">width: 100%</code>.</li>
                             <li>Controls only appear inline in viewports that are at least 576px wide to account for narrow viewports on mobile devices.
                             </li>
@@ -3407,7 +4706,7 @@
                         <!-- End: How it works -->
                         <!-- Start: Notation -->
                         <h2 class="section--title-sub">Notation</h2>
-                        <p>Display utility classes that apply to all <a href="https://getbootstrap.com/docs/4.2/layout/overview/#responsive-breakpoints">breakpoints</a>, from <code class="class-name">xs</code> to <code class="class-name">xl</code>, have
+                        <p>Display utility classes that apply to all <a href="">breakpoints</a>, from <code class="class-name">xs</code> to <code class="class-name">xl</code>, have
                             no breakpoint abbreviation in them. This is because those classes are applied from <code class="class-name">min-width: 0;</code> and up, and thus are not bound by a media query. The remaining breakpoints, however, do include
                             a breakpoint abbreviation.</p>
                         <p>As such, the classes are named using the format:</p>
@@ -5002,4 +6301,4 @@
     hljs.initHighlightingOnLoad();
 </script>
 
-</html>child
+</html>
