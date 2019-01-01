@@ -1,6 +1,14 @@
 /*
 Notice: The code below just test, You can delete it and code normally. Enjoy!!!!
 */
+
+//run all action js for html
+tooltip();
+notification();
+dropdown();
+modal();
+alert();
+
 //function find child element by ClassName
 //paremeters: arr_ele: collections object html, name: classname need to find.
 //return: object html
