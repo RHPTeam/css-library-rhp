@@ -264,3 +264,23 @@ function hideModal(){
 }
 
 //modal end
+
+//alert start
+function alert(){
+    arAlert = document.getElementsByClassName("alert");
+    for(var i = 0 ; i<arAlert.length;i++){
+        btnClose = findElementsByClassName(arAlert[i].children,'close');
+        if(typeof(btnClose)=="object"){
+            btnClose.addEventListener("click",function(){
+                pr = this.parentNode;
+                pr.style.opacity=0;
+                setTimeout(function(event){
+                    pr.classList.remove('show');
+                    pr.style.display="none";
+                },500);
+                }
+            );
+        }
+    }
+}
+//alert end
