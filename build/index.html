@@ -10,6 +10,88 @@
 </head>
 
 <body>
+    <!-- Button trigger modal -->
+<button type="button" class="btn btn_primary"  onclick="showModal(this)" data-target="#exampleModal">
+        Launch demo modal
+      </button>
+      
+      <!-- Modal -->
+      <div class="modal fade"  aria-modal="true" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" onclick="hideModal()" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                    <div class="modal-body">
+                            <div class="ct_f">
+                              <div class="r">
+                                    <button type="button" class="btn btn_secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                            Tooltip on top
+                                        </button>
+                                <div class="c_md_4">.col-md-4</div>
+                                <div class="c_md_4 ml_auto">.col-md-4 .ml-auto</div>
+                              </div>
+                              <div class="r">
+                                <div class="c_md-3 ml_auto">.col-md-3 .ml-auto</div>
+                                <div class="c_md-2 ml_auto">.col-md-2 .ml-auto</div>
+                              </div>
+                              <div class="r">
+                                <div class="c_md-6 ml_auto">.col-md-6 .ml-auto</div>
+                              </div>
+                              <div class="r">
+                                <div class="c_sm_9">
+                                  Level 1: .col-sm-9
+                                  <div class="row">
+                                    <div class="c_8 c_sm_6">
+                                      Level 2: .col-8 .col-sm-6
+                                    </div>
+                                    <div class="c_4 c_sm_6">
+                                      Level 2: .col-4 .col-sm-6
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="ct_f">
+                                    <div class="r">
+                                      <div class="c_md_4">.col-md-4</div>
+                                      <div class="c_md_4 ml_auto">.col-md-4 .ml-auto</div>
+                                    </div>
+                                    <div class="r">
+                                      <div class="c_md-3 ml_auto">.col-md-3 .ml-auto</div>
+                                      <div class="c_md-2 ml_auto">.col-md-2 .ml-auto</div>
+                                    </div>
+                                    <div class="r">
+                                      <div class="c_md-6 ml_auto">.col-md-6 .ml-auto</div>
+                                    </div>
+                                    <div class="r">
+                                      <div class="c_sm_9">
+                                        Level 1: .col-sm-9
+                                        <div class="row">
+                                          <div class="c_8 c_sm_6">
+                                            Level 2: .col-8 .col-sm-6
+                                          </div>
+                                          <div class="c_4 c_sm_6">
+                                            Level 2: .col-4 .col-sm-6
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                          </div>
+                          
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn_secondary"  onclick="hideModal()" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn_primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
     <h1 style="margin-top: 0">Alert component</h1>
     <div class="alert alert_success alert_dismissible fade show" role="alert">
         Alert component
@@ -17,7 +99,7 @@
     </div>
     <div class="alert alert_primary alert_dismissible fade show" role="alert">
         Alert component
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <button type="button" class="close" data-dismiss="alert"  aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
@@ -224,14 +306,43 @@
     <button type="button" class="btn btn_secondary" data-toggle="tooltip" data-placement="bottom" data-title="Tooltip on bottom">
     Tooltip on bottom
     </button>
-    <button type="button" class="btn btn_secondary" data-toggle="tooltip" data-placement="left" data-title="Tooltip on left">
+    <button type="button" class="btn btn_secondary" data-toggle="tooltip" data-placement="left" data-title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">
     Tooltip on left
     
     </button>
+    <hr>
+    <hr>
+    
+    
+    <div class="toast fade" data-auto="true" data-delay="5000">
+        <div class="toast-header">
+            <img src="" class="rounded mr-2" alt="">
+            <strong class="mr-auto">Bootstrap</strong>
+            <small>11 mins ago</small>
+            <a type="button" class="ml-2 mb-1 close" onclick="closeNotification(this.parentNode)" data-dismiss="toast" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </a>
+        </div>
+        <div class="toast-body">
+            Hello, world! This is a toast message.
+        </div>
+    </div>
+    <hr>
+    <div class="dropdown">
+            <button class="btn btn_secondary dropdown_toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dropdown button
+            </button>
+            <div class="dropdown_menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown_item" href="#">Action</a>
+              <a class="dropdown_item" href="#">Another action</a>
+              <a class="dropdown_item" href="#">Something else here</a>
+            </div>
+          </div>
 
     <script src="js/main.js"></script>
     <script>
         tooltip();
+        notification();
     </script>
 
     <!-- Dropdowns -->
@@ -479,8 +590,30 @@
             </div>
         </div>
     </div>
+    <p>
+    <div class="collapse collapseExample" id="">
+            <div class="card card-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+        </div>
+    </div>
+    <a class="btn btn_primary" data-toggle="collapse" href="#collapseExample" onclick="collapse(this)" role="button" aria-expanded="false" aria-controls="collapseExample">
+        Link with href
+    </a>
+    <button class="btn btn_primary" type="button" data-toggle="collapse" onclick="collapse(this)"  data-target=".collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        Button with data-target
+    </button>
+    </p>
+    <div class="collapse collapseExample" id="collapseExample">
+            <div class="card card-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+        </div>
+    </div>
+    
 </body>
 <script>
+    dropdown();
+    modal();
+    alert();
 </script>
 
 </html>
