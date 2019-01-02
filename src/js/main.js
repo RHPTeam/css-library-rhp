@@ -160,7 +160,7 @@ function dropdown(){
 
 //collapse start
 function collapse(ele){
-    if(ele.hasAttribute("href")){
+    if(!ele.hasAttribute("data-target")){
        href=ele.getAttribute("href");
        val=href.substr(1,href.length);
     }else{
@@ -173,22 +173,67 @@ function collapse(ele){
         //if char is '.'  then show all element have class val
         if(char=="."){
             ar_content = document.getElementsByClassName(val);
-            for(j=0 ; j<ar_content.length;j++){
-                collapsing(ar_content[j]);
+            if(ele.getAttribute("status")!='true'){
+                for(j=0 ; j<ar_content.length;j++){
+                    if(ar_content[j].className.search("show")<0){
+                        openCollapse(ar_content[j]);
+                    }
+                }  
+                ele.setAttribute("status","true");       
+            }else{
+                for(j=0 ; j<ar_content.length;j++){
+                    if(ar_content[j].className.search("show")>=0){
+                    closeCollapse(ar_content[j]);
+                    }
+                } 
+                ele.setAttribute("status","false");      
             }
-            // stop show content
+            // stop collapse content
             return false;
         }
     }
+
     //show element have id  val
     content = document.getElementById(val);
-    collapsing(content);
+    // if(ele.getAttribute("status")!='true'){
+        if(content.className.search("show")<0){
+            openCollapse(content);
+            ele.setAttribute("status","true");
+        }
+        
+        
+    // }else{
+        if(content.className.search("show")>=0){
+            closeCollapse(content);
+            ele.setAttribute("status","false");
+        }
+       
+       
+    // }
+    
 }
 //function doing collapse element
 //parameters: content: element need to show by collapse
-function collapsing(content){
+function openCollapse(content){
+     //else this element will be add class show
+    
+     content.classList.remove("collapse");
+     height = content.offsetHeight;  
+     content.classList.add("collapsing");
+     setTimeout(function(){
+         content.style.height=height+"px";
+     },100);
+     setTimeout(function(){
+         content.classList.remove("collapsing");
+         content.classList.add("collapse");
+         content.style.height="";
+         content.classList.add("show");
+     },500);
+     content.setAttribute("status",'false');
+}
+function closeCollapse(content){
     //if this element have class show then which will be remove class show
-    if(content.className.search('show')>=0){
+  
         content.classList.remove('collapse')
         content.classList.remove("show");
         height = content.offsetHeight;  
@@ -203,22 +248,7 @@ function collapsing(content){
            content.classList.add('collapse')
            content.style.height="";
         },500);
-    }
-    //else this element will be add class show
-    else{
-        content.classList.remove("collapse");
-        height = content.offsetHeight;  
-        content.classList.add("collapsing");
-        setTimeout(function(){
-            content.style.height=height+"px";
-        },100);
-        setTimeout(function(){
-            content.classList.remove("collapsing");
-            content.classList.add("collapse");
-            content.style.height="";
-            content.classList.add("show");
-        },500);
-    }
+        content.setAttribute("status",'true');
 }
 //collapse end
 
