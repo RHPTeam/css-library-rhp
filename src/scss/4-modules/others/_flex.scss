@@ -71,7 +71,7 @@
         .align_items#{$infix}_stretch {
             align-items: stretch !important;
         }
-        .align-content#{$infix}-start {
+        .align_content#{$infix}_start {
             align-content: flex-start !important;
         }
         .align_content#{$infix}_end {
@@ -95,7 +95,7 @@
         .align_self#{$infix}_start {
             align-self: flex-start !important;
         }
-        .align-self#{$infix}-end {
+        .align_self#{$infix}_end {
             align-self: flex-end !important;
         }
         .align_self#{$infix}_center {

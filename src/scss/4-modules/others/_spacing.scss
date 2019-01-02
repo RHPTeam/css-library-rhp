@@ -1,6 +1,13 @@
-// stylelint-disable declaration-no-important
+/*****************************************************************************************************************
+MENU COMMENT FUNCTION
+------------------------------------------------------------------------------------------------------------------
+Loop breakpoint to devide screen for padding or margin
 
-// Margin and Padding
+DICTIONARY WORD:
+.p    =====> padding
+.m    =====> margin
+.n    =====> all space < 0
+*****************************************************************************************************************/
 
 @each $breakpoint in map-keys($grid-breakpoints) {
     @include media-breakpoint-up($breakpoint) {
@@ -8,21 +15,21 @@
   
       @each $prop, $abbrev in (margin: m, padding: p) {
         @each $size, $length in $spacers {
-          .#{$abbrev}#{$infix}-#{$size} { #{$prop}: $length !important; }
-          .#{$abbrev}t#{$infix}-#{$size},
-          .#{$abbrev}y#{$infix}-#{$size} {
+          .#{$abbrev}#{$infix}_#{$size} { #{$prop}: $length !important; }
+          .#{$abbrev}t#{$infix}_#{$size},
+          .#{$abbrev}y#{$infix}_#{$size} {
             #{$prop}-top: $length !important;
           }
-          .#{$abbrev}r#{$infix}-#{$size},
-          .#{$abbrev}x#{$infix}-#{$size} {
+          .#{$abbrev}r#{$infix}_#{$size},
+          .#{$abbrev}x#{$infix}_#{$size} {
             #{$prop}-right: $length !important;
           }
-          .#{$abbrev}b#{$infix}-#{$size},
-          .#{$abbrev}y#{$infix}-#{$size} {
+          .#{$abbrev}b#{$infix}_#{$size},
+          .#{$abbrev}y#{$infix}_#{$size} {
             #{$prop}-bottom: $length !important;
           }
-          .#{$abbrev}l#{$infix}-#{$size},
-          .#{$abbrev}x#{$infix}-#{$size} {
+          .#{$abbrev}l#{$infix}_#{$size},
+          .#{$abbrev}x#{$infix}_#{$size} {
             #{$prop}-left: $length !important;
           }
         }
@@ -31,44 +38,43 @@
       // Negative margins (e.g., where `.mb-n1` is negative version of `.mb-1`)
       @each $size, $length in $spacers {
         @if $size != 0 {
-          .m#{$infix}-n#{$size} { margin: -$length !important; }
-          .mt#{$infix}-n#{$size},
-          .my#{$infix}-n#{$size} {
+          .m#{$infix}_n#{$size} { margin: -$length !important; }
+          .mt#{$infix}_n#{$size},
+          .my#{$infix}_n#{$size} {
             margin-top: -$length !important;
           }
-          .mr#{$infix}-n#{$size},
-          .mx#{$infix}-n#{$size} {
+          .mr#{$infix}_n#{$size},
+          .mx#{$infix}_n#{$size} {
             margin-right: -$length !important;
           }
-          .mb#{$infix}-n#{$size},
-          .my#{$infix}-n#{$size} {
+          .mb#{$infix}_n#{$size},
+          .my#{$infix}_n#{$size} {
             margin-bottom: -$length !important;
           }
-          .ml#{$infix}-n#{$size},
-          .mx#{$infix}-n#{$size} {
+          .ml#{$infix}_n#{$size},
+          .mx#{$infix}_n#{$size} {
             margin-left: -$length !important;
           }
         }
       }
   
       // Some special margin utils
-      .m#{$infix}-auto { margin: auto !important; }
-      .mt#{$infix}-auto,
-      .my#{$infix}-auto {
+      .m#{$infix}_auto { margin: auto !important; }
+      .mt#{$infix}_auto,
+      .my#{$infix}_auto {
         margin-top: auto !important;
       }
-      .mr#{$infix}-auto,
-      .mx#{$infix}-auto {
+      .mr#{$infix}_auto,
+      .mx#{$infix}_auto {
         margin-right: auto !important;
       }
-      .mb#{$infix}-auto,
-      .my#{$infix}-auto {
+      .mb#{$infix}_auto,
+      .my#{$infix}_auto {
         margin-bottom: auto !important;
       }
-      .ml#{$infix}-auto,
-      .mx#{$infix}-auto {
+      .ml#{$infix}_auto,
+      .mx#{$infix}_auto {
         margin-left: auto !important;
       }
     }
   }
-  

@@ -32,7 +32,7 @@
     }
 }
 
-.page-item {
+.page_item {
     &:first-child {
         .page_link {
             margin-left: 0;
@@ -58,15 +58,4 @@
         background-color: $pagination-disabled-bg;
         border-color: $pagination-disabled-border-color;
     }
-}
-
-//
-// Sizing
-//
-.pagination_lg {
-    @include pagination-size($pagination-padding-y-lg, $pagination-padding-x-lg, $font-size-lg, $line-height-lg, $border-radius-lg);
-}
-
-.pagination_sm {
-    @include pagination-size($pagination-padding-y-sm, $pagination-padding-x-sm, $font-size-sm, $line-height-sm, $border-radius-sm);
 }
