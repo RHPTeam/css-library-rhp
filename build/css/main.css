@@ -3026,8 +3026,7 @@ textarea.form_control {
 .rbox_tooltip_top, .rbox_tooltip_auto[x-placement^="top"] {
   padding: 0.4rem 0; }
   .rbox_tooltip_top .arrow, .rbox_tooltip_auto[x-placement^="top"] .arrow {
-    bottom: 0;
-    left: 45%; }
+    bottom: 0; }
     .rbox_tooltip_top .arrow::before, .rbox_tooltip_auto[x-placement^="top"] .arrow::before {
       top: 0;
       border-width: 0.4rem 0.4rem 0;

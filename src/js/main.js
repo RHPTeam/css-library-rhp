@@ -61,16 +61,22 @@ function tooltip(){
                     switch(pos){
                         case "bottom":
                             this.children[0].style.top=height+"px" ;
+                            //setting arrow postion horizontal
+                            this.children[0].children[0].style.left=((this.children[0].offsetWidth)/2- this.children[0].children[0].offsetWidth/2)+"px";
+                           
                             break;
                         case "top":
                             this.children[0].style.top="-"+(height+5) +"px" ;
+                             //setting arrow postion horizontal
+                            this.children[0].children[0].style.left=((this.children[0].offsetWidth)/2- this.children[0].children[0].offsetWidth/2)+"px";
                             break;
                         case "right":
-                            this.children[0].style.left=width +'px ';
+                            this.children[0].style.left=(width+ this.style.paddingRight+this.style.paddingLeft) +'px ';
                             this.children[0].style.top='10%';
                             break;
                         case "left":
-                            this.children[0].style.left="-"+(width-10) +'px ';
+                            this.children[0].style.left="-"+(width+ this.style.paddingRight+this.style.paddingLeft) +'px ';
+                            
                             this.children[0].style.top='10%';
                             break;
                     }
