@@ -1511,9 +1511,9 @@ DICTIONARY WORD:
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out; }
   @media screen and (prefers-reduced-motion: reduce) {
-    #menuSideBar{
-      display:block;
-    }
+     #menuSideBar{
+    display:block;
+  }
     .btn {
       -webkit-transition: none;
       transition: none; } }
