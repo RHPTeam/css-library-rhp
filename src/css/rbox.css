@@ -624,6 +624,9 @@ DICTIONARY WORD:
   margin-left: 91.66667%; }
 
 @media (min-width: 576px) {
+  #menuSideBar{
+    display:block;
+  }
   .c_sm {
     -ms-flex-preferred-size: 0;
         flex-basis: 0;
@@ -783,6 +786,9 @@ DICTIONARY WORD:
     margin-left: 91.66667%; } }
 
 @media (min-width: 768px) {
+  #menuSideBar{
+    display:block;
+  }
   .c_md {
     -ms-flex-preferred-size: 0;
         flex-basis: 0;
@@ -942,6 +948,9 @@ DICTIONARY WORD:
     margin-left: 91.66667%; } }
 
 @media (min-width: 992px) {
+  #menuSideBar{
+    display:block;
+  }
   .c_lg {
     -ms-flex-preferred-size: 0;
         flex-basis: 0;
@@ -1101,6 +1110,9 @@ DICTIONARY WORD:
     margin-left: 91.66667%; } }
 
 @media (min-width: 1200px) {
+  #menuSideBar{
+    display:block;
+  }
   .c_xl {
     -ms-flex-preferred-size: 0;
         flex-basis: 0;
@@ -1499,6 +1511,9 @@ DICTIONARY WORD:
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out; }
   @media screen and (prefers-reduced-motion: reduce) {
+    #menuSideBar{
+      display:block;
+    }
     .btn {
       -webkit-transition: none;
       transition: none; } }
@@ -3115,12 +3130,25 @@ textarea.form_control {
 
 .dropdown_menu_right {
   right: 0;
-  left: auto; }
-
+  left: auto;text-align: right; }
+.bd-example{
+  position: relative;
+    padding: 1rem;
+    margin: 1rem -15px 0;
+    border: solid #f8f9fa;
+    border-width: .2rem 0 0;
+}
 @media (min-width: 576px) {
   .dropdown_menu_sm_right {
     right: 0;
-    left: auto; } }
+    left: auto; }
+    
+    .bd-example {
+      padding: 1.5rem;
+      margin-right: 0;
+      margin-left: 0;
+      border-width: .2rem;
+  } }
 
 @media (min-width: 768px) {
   .dropdown_menu_md_right {
@@ -3363,7 +3391,7 @@ textarea.form_control {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1050;
+  z-index: 1080;
   display: none;
   width: 100%;
   height: 100%;
