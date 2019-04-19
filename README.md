@@ -6,9 +6,9 @@
 
 Create a branch and switch to new branch.
 
-``` git checkout -b dev-name```
+``` git checkout -b dev-name-api```
 
-> Note: name is real name of you. Example: My name is Tran Quoc Toan. I will set dev-name is dev-toantr. My name is Nguyen Van Hoang. I will set dev-name is dev-hoangnv
+> Note: name is real name of you. Example: My name is Tran Quoc Toan. I will set dev-name is dev-toantr-api. My name is Nguyen Van Hoang. I will set dev-name is dev-hoangnv-vue
 
 
 # How to fix conflict when merge new branch?
